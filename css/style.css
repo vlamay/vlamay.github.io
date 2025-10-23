@@ -1069,3 +1069,13 @@ footer {
     }
 }
 
+
+/* VMware vSphere Icon */
+.vmware-icon {
+    color: #607078 !important; /* VMware brand color */
+}
+
+.vmware-icon:hover {
+    color: #4a5a6a !important; /* Darker VMware color on hover */
+}
+
