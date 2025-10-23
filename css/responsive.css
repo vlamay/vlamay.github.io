@@ -1,0 +1,481 @@
+/* Responsive Design - Mobile First Approach */
+
+/* Extra small devices (phones, 320px and up) */
+@media (min-width: 320px) {
+  .container {
+    padding: 0 var(--space-md);
+  }
+  
+  .hero-title {
+    font-size: var(--text-4xl);
+  }
+  
+  .hero-subtitle {
+    font-size: var(--text-lg);
+  }
+  
+  .section-title {
+    font-size: var(--text-3xl);
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  .achievements-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .outcomes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .tech-icons {
+    justify-content: center;
+  }
+  
+  .tech-item {
+    min-width: 100px;
+  }
+  
+  .languages-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+  
+  .mobile-menu-btn {
+    display: flex;
+  }
+}
+
+/* Small devices (phones, 576px and up) */
+@media (min-width: 576px) {
+  .container {
+    padding: 0 var(--space-lg);
+  }
+  
+  .hero-title {
+    font-size: var(--text-5xl);
+  }
+  
+  .hero-subtitle {
+    font-size: var(--text-xl);
+  }
+  
+  .section-title {
+    font-size: var(--text-4xl);
+  }
+  
+  .cta-buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .btn {
+    width: auto;
+  }
+  
+  .achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .outcomes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .tech-item {
+    min-width: 120px;
+  }
+  
+  .languages-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+    padding: 0 var(--space-xl);
+  }
+  
+  .hero-title {
+    font-size: var(--text-6xl);
+  }
+  
+  .hero-subtitle {
+    font-size: var(--text-2xl);
+  }
+  
+  .achievements-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .outcomes-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .languages-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .nav-links {
+    display: flex;
+  }
+  
+  .mobile-menu-btn {
+    display: none;
+  }
+  
+  .tech-icons {
+    justify-content: flex-start;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+  
+  .achievements-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  
+  .languages-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  
+  .tech-category {
+    margin-bottom: var(--space-3xl);
+  }
+  
+  .tech-icons {
+    justify-content: center;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+  
+  .project-card {
+    max-width: 1000px;
+    margin: 0 auto var(--space-2xl);
+  }
+}
+
+/* XXL devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+  
+  .hero-content {
+    max-width: 1000px;
+  }
+}
+
+/* Ultra-wide screens (1920px and up) */
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1600px;
+  }
+  
+  .hero-content {
+    max-width: 1200px;
+  }
+}
+
+/* Mobile navigation */
+@media (max-width: 767px) {
+  .navbar {
+    padding: var(--space-sm) 0;
+  }
+  
+  .nav-container {
+    padding: 0 var(--space-md);
+  }
+  
+  .logo {
+    font-size: var(--text-lg);
+  }
+  
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: rgba(10, 10, 10, 0.98);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    padding: var(--space-lg);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    border-top: 1px solid var(--glass-border);
+  }
+  
+  .nav-links.active {
+    transform: translateY(0);
+  }
+  
+  .nav-links li {
+    margin: var(--space-sm) 0;
+  }
+  
+  .nav-link {
+    font-size: var(--text-lg);
+    padding: var(--space-sm) 0;
+    display: block;
+  }
+  
+  .mobile-menu-btn {
+    display: flex;
+  }
+  
+  .mobile-menu-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .mobile-menu-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+}
+
+/* Tablet specific adjustments */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-content {
+    max-width: 600px;
+  }
+  
+  .experience-card,
+  .project-card {
+    padding: var(--space-lg);
+  }
+}
+
+/* Desktop specific adjustments */
+@media (min-width: 1024px) {
+  .hero {
+    min-height: 100vh;
+  }
+  
+  .hero-content {
+    max-width: 800px;
+  }
+  
+  .experience-card:hover,
+  .project-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .tech-item:hover {
+    transform: scale(1.1);
+  }
+  
+  .language-item:hover {
+    transform: translateY(-8px);
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .tech-item img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Print styles */
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  .navbar,
+  .mobile-menu-btn,
+  .three-canvas,
+  .btn,
+  .contact-form {
+    display: none !important;
+  }
+  
+  .hero {
+    min-height: auto;
+    padding: var(--space-xl) 0;
+  }
+  
+  .hero-title {
+    font-size: var(--text-3xl);
+    color: black !important;
+  }
+  
+  .hero-subtitle {
+    font-size: var(--text-xl);
+    color: black !important;
+  }
+  
+  .section-title {
+    font-size: var(--text-2xl);
+    color: black !important;
+  }
+  
+  .glass {
+    background: white !important;
+    border: 1px solid #ccc !important;
+  }
+  
+  .experience-card,
+  .project-card {
+    break-inside: avoid;
+    margin-bottom: var(--space-lg);
+  }
+  
+  a {
+    text-decoration: underline;
+  }
+  
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+  }
+}
+
+/* Accessibility - Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .hero-title {
+    animation: none !important;
+  }
+  
+  .gradient-text {
+    animation: none !important;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
+
+/* Light mode support (if implemented) */
+@media (prefers-color-scheme: light) {
+  .light-theme {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-tertiary: #e9ecef;
+    --text-primary: #212529;
+    --text-secondary: #6c757d;
+    --text-muted: #adb5bd;
+  }
+}
+
+/* Focus styles for keyboard navigation */
+@media (prefers-reduced-motion: no-preference) {
+  .btn:focus,
+  .nav-link:focus,
+  .tech-item:focus,
+  input:focus,
+  textarea:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (orientation: landscape) and (max-height: 500px) {
+  .hero {
+    min-height: 100vh;
+    padding: var(--space-lg) 0;
+  }
+  
+  .hero-content {
+    max-width: 90%;
+  }
+  
+  .hero-title {
+    font-size: var(--text-4xl);
+  }
+  
+  .hero-subtitle {
+    font-size: var(--text-lg);
+  }
+  
+  .hero-tagline {
+    font-size: var(--text-base);
+  }
+}
+
+/* Very small screens (320px and below) */
+@media (max-width: 320px) {
+  .container {
+    padding: 0 var(--space-sm);
+  }
+  
+  .hero-title {
+    font-size: var(--text-3xl);
+  }
+  
+  .hero-subtitle {
+    font-size: var(--text-base);
+  }
+  
+  .section-title {
+    font-size: var(--text-2xl);
+  }
+  
+  .experience-card,
+  .project-card {
+    padding: var(--space-md);
+  }
+  
+  .tech-item {
+    min-width: 80px;
+  }
+  
+  .tech-item img {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .text-icon {
+    width: 32px;
+    height: 32px;
+    font-size: var(--text-xs);
+  }
+}
