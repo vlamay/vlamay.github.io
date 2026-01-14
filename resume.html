@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vladyslav Maidaniuk - AI Platform / MLOps Engineer</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .title { font-size: 1.2em; opacity: 0.9; }
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        .contact-info a:hover { background: rgba(255,255,255,0.4); }
+        .content { padding: 40px; }
+        section { margin-bottom: 40px; }
+        h2 {
+            font-size: 1.8em;
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .about { background: #f8f9fa; padding: 20px; border-radius: 8px; }
+        .about p { margin-bottom: 10px; }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .skill-category h3 { color: #667eea; margin-bottom: 10px; font-size: 1.1em; }
+        .skill-category ul { list-style: none; }
+        .skill-category li {
+            background: #f0f0f0;
+            padding: 8px 12px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border-left: 4px solid #667eea;
+        }
+        .job {
+            border-left: 4px solid #667eea;
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+        .job h3 { color: #667eea; font-size: 1.2em; }
+        .job-meta {
+            color: #666;
+            font-style: italic;
+            margin: 5px 0;
+        }
+        .job ul { margin: 15px 0 0 20px; }
+        .job li { margin-bottom: 8px; }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .stat {
+            text-align: center;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .stat-number { font-size: 1.8em; color: #667eea; font-weight: bold; }
+        .stat-label { color: #666; margin-top: 5px; }
+        footer {
+            background: #f8f9fa;
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #e0e0e0;
+        }
+        @media (max-width: 600px) {
+            .skills-grid, .stats { grid-template-columns: 1fr; }
+            h1 { font-size: 1.8em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Vladyslav Maidaniuk</h1>
+            <p class="title">AI Platform / MLOps Engineer</p>
+            <div class="contact-info">
+                <a href="mailto:vla.maidaniuk@gmail.com">Email</a>
+                <a href="https://github.com/vlamay">GitHub</a>
+                <a href="https://linkedin.com/in/maidaniuk">LinkedIn</a>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="about">
+                <p><strong>AI Platform / MLOps Engineer with 4+ years of experience</strong> designing, deploying, and operating production AI systems at scale. Specialized in AI infrastructure, LLM-based systems, AI agent orchestration, and ML lifecycle automation on Kubernetes and cloud platforms. Based in Prague, helping companies build reliable, cost-efficient AI platforms with GPU orchestration.</p>
+            </div>
+
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">99.9%</div>
+                    <div class="stat-label">Uptime Maintained<br/>10k+ concurrent users</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">80%</div>
+                    <div class="stat-label">Deployment Speed<br/>Faster release cycles</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">25%</div>
+                    <div class="stat-label">Cloud Savings<br/>Via AI cost optimization</div>
+                </div>
+            </div>
+
+            <section>
+                <h2>Technical Arsenal</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Cloud & Infra</h3>
+                        <ul>
+                            <li>AWS (EC2/EKS/RDS/S3)</li>
+                            <li>Azure</li>
+                            <li>GCP</li>
+                            <li>Terraform</li>
+                            <li>Ansible</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Container Orchestration</h3>
+                        <ul>
+                            <li>Kubernetes</li>
+                            <li>Helm</li>
+                            <li>Docker</li>
+                            <li>Istio</li>
+                            <li>ArgoCD</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>MLOps & AI</h3>
+                        <ul>
+                            <li>Model Serving</li>
+                            <li>ML Pipelines</li>
+                            <li>Drift Detection</li>
+                            <li>GPU Management</li>
+                            <li>LLM Integration</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>CI/CD & DevOps</h3>
+                        <ul>
+                            <li>GitHub Actions</li>
+                            <li>GitLab CI</li>
+                            <li>Jenkins</li>
+                            <li>Bash Scripting</li>
+                            <li>Python Automation</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Professional Experience</h2>
+                <div class="job">
+                    <h3>AI Platform / MLOps Engineer (Contract)</h3>
+                    <div class="job-meta">UP Group (Up Coop) | Jan 2025 - Dec 2025 | Prague, Czech Republic</div>
+                    <ul>
+                        <li>Designed and operated production AI platform supporting AI agents and LLM-based services</li>
+                        <li>Deployed containerized AI workloads on Kubernetes with GPU allocation, autoscaling, and cost optimization</li>
+                        <li>Built CI/CD pipelines for AI model and agent deployment with automated validation and rollback</li>
+                        <li>Implemented AI-powered monitoring and anomaly detection, reducing false alerts by 45%</li>
+                        <li>Established SLO/SLI framework achieving 99.9% uptime for AI services</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <h3>Freelance AI Infrastructure / MLOps Engineer</h3>
+                    <div class="job-meta">Upwork | Jan 2022 - Dec 2024 | Remote</div>
+                    <ul>
+                        <li>Built AI chatbot and document-processing platforms serving 5,000+ daily users</li>
+                        <li>Implemented end-to-end ML deployment pipelines and inference monitoring</li>
+                        <li>Integrated LLM APIs into production systems with security, rate limiting, and observability</li>
+                        <li>Automated AI infrastructure using Terraform, Ansible, and Python</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <h3>Mid-Level Penetration Tester (Contract)</h3>
+                    <div class="job-meta">Foodway | Jul 2018 - Mar 2019 | Novokuznetsk, Russia</div>
+                    <ul>
+                        <li>Led full lifecycle penetration tests (scoping, methodology design, exploitation, reporting)</li>
+                        <li>Exploited critical vulnerabilities such as RCE, SQL injection, and XXE</li>
+                        <li>Designed and executed social engineering assessments and security awareness training</li>
+                        <li>Built and maintained custom Kali Linux images with offensive tools</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <h3>Mid/Senior System Administrator</h3>
+                    <div class="job-meta">PESA Bydgoszcz S.A. | Jan 2017 - Jan 2018 | Bydgoszcz, Poland</div>
+                    <ul>
+                        <li>Architected and oversaw migration to VMware vSphere cluster (20 hosts, 400+ VMs)</li>
+                        <li>Deployed and managed container platform (Docker, Kubernetes) for internal tooling</li>
+                        <li>Defined and enforced security hardening standards (ISO 27001)</li>
+                        <li>Collaborated with network teams to integrate on-prem DCs with Azure AD and Azure Site Recovery</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Education & Certifications</h2>
+                <h3 style="color: #667eea; margin-top: 15px;">Education</h3>
+                <ul style="list-style-position: inside; margin: 10px 0;">
+                    <li><strong>Synergy University:</strong> Master of Development, Maintenance and Security of Information Systems (Dec 2024)</li>
+                    <li><strong>Jagiellonian University:</strong> BSc Computer Science</li>
+                </ul>
+                <h3 style="color: #667eea; margin-top: 20px;">Certifications</h3>
+                <ul style="list-style-position: inside;">
+                    <li>DevSecOps Certificate (TryHackMe)</li>
+                    <li>Certified Ethical Hacker (v12)</li>
+                    <li>CompTIA Security+ & Linux+</li>
+                    <li>Google IT Automation with Python</li>
+                    <li>EF SET English (B2 Upper Intermediate)</li>
+                </ul>
+            </section>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Vladyslav Maidaniuk | Available for Freelance & Projects</p>
+        </footer>
+    </div>
+</body>
+</html>
