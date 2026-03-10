@@ -1,1028 +1,1253 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vladyslav Maidaniuk - DevOps Engineer / Cloud SecOps Specialist</title>
-    <meta name="description" content="DevOps Engineer / Cloud SecOps Specialist with 6+ years experience in cloud infrastructure, cybersecurity, SOAR automation, and compliance. Expert in Kubernetes, Terraform, CyberArk PAM, Splunk SIEM, PostgreSQL.">
-    <meta name="keywords" content="DevOps, Kubernetes, Terraform, AWS, GCP, CyberArk, Splunk, SOAR, PostgreSQL, Redmine, Samba, Security, Compliance, PCI DSS, ISO 27001, SOC 2, Site Reliability Engineering, Cloud Infrastructure, Infrastructure as Code, CI/CD, Docker, Ansible, Burp Suite, Wireshark, Nmap, Nessus, CrowdStrike, Czech, English, Russian, Ukrainian, Polish">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://vlamay.github.io/">
-    <meta property="og:title" content="Vladyslav Maidaniuk - DevOps Engineer / Cloud SecOps Specialist">
-    <meta property="og:description" content="DevOps Engineer / Cloud SecOps Specialist with 6+ years experience in cloud infrastructure, cybersecurity, SOAR automation, and compliance.">
-    <meta property="og:image" content="https://vlamay.github.io/assets/images/og-image.jpg">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vladyslav Maidaniuk | Senior Platform Engineer</title>
+<meta name="description" content="Senior Platform & Integration Engineer. 9+ years in Kubernetes, AWS, DevSecOps, MLOps. Prague — EU/UK/Remote.">
+<meta property="og:title" content="Vladyslav Maidaniuk | Platform Engineer">
+<meta property="og:description" content="Senior Platform & Integration Engineer — Cloud, Kubernetes, MLOps, DevSecOps">
+<meta property="og:url" content="https://vlamay.github.io">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://vlamay.github.io/">
-    <meta property="twitter:title" content="Vladyslav Maidaniuk - DevOps Engineer / Cloud SecOps Specialist">
-    <meta property="twitter:description" content="DevOps Engineer / Cloud SecOps Specialist with 6+ years experience in cloud infrastructure, cybersecurity, SOAR automation, and compliance.">
-    <meta property="twitter:image" content="https://vlamay.github.io/assets/images/og-image.jpg">
+<style>
+:root {
+  --bg: #060b14;
+  --surface: #0d1526;
+  --surface2: #111d33;
+  --accent: #00d4ff;
+  --accent2: #7c3aed;
+  --green: #10b981;
+  --orange: #f59e0b;
+  --text: #e2e8f0;
+  --muted: #64748b;
+  --border: rgba(0,212,255,0.12);
+  --mono: 'JetBrains Mono', monospace;
+  --sans: 'Sora', sans-serif;
+}
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Vladyslav Maidaniuk",
-      "jobTitle": "DevOps Engineer / Cloud SecOps Specialist",
-      "description": "DevOps Engineer / Cloud SecOps Specialist with 6+ years experience in cloud infrastructure, cybersecurity, SOAR automation, and compliance",
-      "url": "https://vlamay.github.io",
-      "email": "vla.maidaniuk@gmail.com",
-      "telephone": "+420721579603",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Prague",
-        "addressCountry": "CZ"
-      },
-      "sameAs": [
-        "https://github.com/vlamay",
-        "https://www.linkedin.com/in/maidaniuk/",
-        "https://t.me/vm_devops"
-      ],
-      "alumniOf": {
-        "@type": "EducationalOrganization",
-        "name": "Jagiellonian University"
-      },
-      "knowsLanguage": [
-        {
-          "@type": "Language",
-          "name": "Czech",
-          "proficiencyLevel": "C1"
-        },
-        {
-          "@type": "Language",
-          "name": "English",
-          "proficiencyLevel": "B2"
-        },
-        {
-          "@type": "Language",
-          "name": "Russian",
-          "proficiencyLevel": "Native"
-        },
-        {
-          "@type": "Language",
-          "name": "Ukrainian",
-          "proficiencyLevel": "Native"
-        },
-        {
-          "@type": "Language",
-          "name": "Polish",
-          "proficiencyLevel": "B1"
-        }
-      ],
-      "knowsAbout": [
-        "Kubernetes",
-        "Terraform",
-        "AWS",
-        "GCP",
-        "CyberArk PAM",
-        "Splunk SIEM",
-        "SOAR",
-        "DevOps",
-        "Cloud Security",
-        "Penetration Testing",
-        "Burp Suite",
-        "Wireshark",
-        "Nmap",
-        "Docker",
-        "Ansible",
-        "CI/CD",
-        "Infrastructure as Code",
-        "PostgreSQL",
-        "Redmine",
-        "Samba",
-        "PCI DSS",
-        "ISO 27001",
-        "SOC 2",
-        "DevOps Engineering",
-        "Cloud SecOps"
-      ],
-      "hasCredential": [
-        {
-          "@type": "EducationalOccupationalCredential",
-          "name": "Certified Ethical Hacker (CEH)",
-          "credentialCategory": "certification"
-        }
-      ]
-    }
-    </script>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* CURSOR */
+.cursor {
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 10000;
+  transition: transform 0.15s ease;
+  mix-blend-mode: screen;
+}
+.cursor-ring {
+  width: 36px; height: 36px;
+  border: 1.5px solid var(--accent);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.4s ease, width 0.3s, height 0.3s;
+  mix-blend-mode: screen;
+  opacity: 0.6;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 1.2rem 3rem;
+  display: flex; align-items: center; justify-content: space-between;
+  backdrop-filter: blur(20px);
+  background: rgba(6,11,20,0.8);
+  border-bottom: 1px solid var(--border);
+  transition: all 0.3s;
+}
+.nav-logo {
+  font-family: var(--mono);
+  font-size: 1rem;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+}
+.nav-logo span { color: var(--text); }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  position: relative;
+  transition: color 0.3s;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute; bottom: -4px; left: 0;
+  width: 0; height: 1px;
+  background: var(--accent);
+  transition: width 0.3s;
+}
+.nav-links a:hover { color: var(--accent); }
+.nav-links a:hover::after { width: 100%; }
+
+/* HERO */
+#hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 8rem 3rem 4rem;
+}
+#hero-canvas {
+  position: absolute; inset: 0;
+  z-index: 0;
+}
+.hero-content {
+  position: relative; z-index: 2;
+  max-width: 900px;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  border: 1px solid var(--border);
+  background: rgba(0,212,255,0.05);
+  padding: 0.4rem 1rem;
+  border-radius: 100px;
+  margin-bottom: 2rem;
+  letter-spacing: 0.1em;
+}
+.hero-badge::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--green);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--green);
+  animation: pulse-dot 2s infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.3); }
+}
+.hero-name {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.5rem;
+}
+.hero-name .line1 { display: block; color: var(--text); }
+.hero-name .line2 {
+  display: block;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-title {
+  font-family: var(--mono);
+  font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+  color: var(--muted);
+  margin: 1.5rem 0 2rem;
+  letter-spacing: 0.05em;
+}
+.hero-title .typed { color: var(--accent); }
+.hero-title .cursor-blink {
+  display: inline-block;
+  width: 2px; height: 1.1em;
+  background: var(--accent);
+  vertical-align: middle;
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+.hero-desc {
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 580px;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+.hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--accent);
+  color: var(--bg);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.9rem 2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  position: relative; overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-primary::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s;
+}
+.btn-primary:hover::before { transform: translateX(100%); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,212,255,0.3); }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  padding: 0.9rem 2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: border-color 0.3s, color 0.3s;
+}
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+/* FLOATING TAGS */
+.hero-tags {
+  display: flex; flex-wrap: wrap; gap: 0.6rem;
+  margin-top: 2rem;
+}
+.hero-tag {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  padding: 0.3rem 0.8rem;
+  border: 1px solid rgba(0,212,255,0.2);
+  border-radius: 3px;
+  color: var(--muted);
+  background: rgba(0,212,255,0.03);
+  animation: float-tag linear infinite;
+}
+@keyframes float-tag {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* STATS */
+#stats {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 4rem 3rem;
+}
+.stats-grid {
+  max-width: 1100px; margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+  text-align: center;
+}
+.stat-item {}
+.stat-number {
+  font-family: var(--mono);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--accent);
+  display: block;
+  line-height: 1;
+}
+.stat-label {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+/* SECTIONS */
+section { padding: 6rem 3rem; }
+.section-header {
+  max-width: 1100px; margin: 0 auto 4rem;
+  display: flex; align-items: center; gap: 1.5rem;
+}
+.section-num {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  opacity: 0.6;
+}
+.section-title {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.section-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--border) 0%, transparent 100%);
+}
+
+/* ABOUT */
+#about { background: var(--bg); }
+.about-grid {
+  max-width: 1100px; margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.about-text p {
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+}
+.about-text p strong { color: var(--text); }
+.location-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--green);
+  border: 1px solid rgba(16,185,129,0.3);
+  background: rgba(16,185,129,0.05);
+  padding: 0.4rem 1rem;
+  border-radius: 100px;
+  margin-top: 1.5rem;
+}
+.location-badge::before {
+  content: '●';
+  font-size: 0.5rem;
+  animation: pulse-dot 2s infinite;
+}
+.terminal-window {
+  background: #060d1a;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(0,212,255,0.05);
+}
+.terminal-bar {
+  display: flex; align-items: center; gap: 0.5rem;
+  padding: 0.8rem 1rem;
+  background: rgba(255,255,255,0.03);
+  border-bottom: 1px solid var(--border);
+}
+.term-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+}
+.term-dot.red { background: #ff5f57; }
+.term-dot.yellow { background: #ffbd2e; }
+.term-dot.green { background: #28ca41; }
+.terminal-title {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin-left: 0.5rem;
+}
+.terminal-body {
+  padding: 1.5rem;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  line-height: 2;
+  min-height: 240px;
+}
+.term-line { display: flex; gap: 0.5rem; }
+.term-prompt { color: var(--green); }
+.term-cmd { color: var(--accent); }
+.term-output { color: var(--muted); padding-left: 1.5rem; }
+.term-output.success { color: var(--green); }
+.term-output.warn { color: var(--orange); }
+
+/* EXPERIENCE */
+#experience { background: var(--surface); }
+.timeline {
+  max-width: 900px; margin: 0 auto;
+  position: relative;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, var(--accent), var(--accent2), transparent);
+  opacity: 0.3;
+}
+.timeline-item {
+  padding: 0 0 3.5rem 2.5rem;
+  position: relative;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.timeline-item.revealed { opacity: 1; transform: translateX(0); }
+.timeline-dot {
+  position: absolute; left: -5px; top: 4px;
+  width: 11px; height: 11px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--accent);
+}
+.timeline-dot.ml { background: var(--accent2); box-shadow: 0 0 12px var(--accent2); }
+.timeline-dot.sec { background: var(--orange); box-shadow: 0 0 12px var(--orange); }
+.timeline-dot.db { background: var(--green); box-shadow: 0 0 12px var(--green); }
+.timeline-period {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+.timeline-role { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.25rem; }
+.timeline-company { color: var(--accent); font-size: 0.9rem; margin-bottom: 1rem; }
+.timeline-highlight {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.tech-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.pill {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 3px;
+  letter-spacing: 0.05em;
+}
+.pill.cloud { background: rgba(0,212,255,0.1); color: var(--accent); border: 1px solid rgba(0,212,255,0.2); }
+.pill.ml { background: rgba(124,58,237,0.1); color: #a78bfa; border: 1px solid rgba(124,58,237,0.2); }
+.pill.sec { background: rgba(245,158,11,0.1); color: var(--orange); border: 1px solid rgba(245,158,11,0.2); }
+.pill.db { background: rgba(16,185,129,0.1); color: var(--green); border: 1px solid rgba(16,185,129,0.2); }
+
+/* SKILLS */
+#skills { background: var(--bg); }
+.skills-container { max-width: 1100px; margin: 0 auto; }
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.skill-group {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+.skill-group.revealed { opacity: 1; transform: translateY(0); }
+.skill-group:hover {
+  border-color: rgba(0,212,255,0.25);
+  box-shadow: 0 4px 30px rgba(0,212,255,0.05);
+}
+.skill-group-title {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 1rem;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.skill-group-title::before {
+  content: '';
+  width: 3px; height: 12px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+.skill-badges { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.skill-badge {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 3px;
+  color: var(--muted);
+  background: rgba(255,255,255,0.02);
+  transition: all 0.2s;
+  cursor: default;
+}
+.skill-badge:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(0,212,255,0.05);
+  transform: translateY(-1px);
+}
+
+/* CERTS */
+#certs { background: var(--surface); }
+.certs-grid {
+  max-width: 1100px; margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.2rem;
+}
+.cert-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex; gap: 1rem; align-items: flex-start;
+  opacity: 0; transform: translateY(15px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+.cert-card.revealed { opacity: 1; transform: translateY(0); }
+.cert-card:hover {
+  border-color: rgba(0,212,255,0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 40px rgba(0,212,255,0.08);
+}
+.cert-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  width: 2.5rem; height: 2.5rem;
+  display: grid; place-items: center;
+  background: rgba(0,212,255,0.06);
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+.cert-name { font-size: 0.88rem; font-weight: 600; margin-bottom: 0.25rem; }
+.cert-issuer { font-family: var(--mono); font-size: 0.68rem; color: var(--muted); }
+.cert-year { font-family: var(--mono); font-size: 0.65rem; color: var(--accent); margin-top: 0.3rem; }
+.cert-wip {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  color: var(--orange);
+  border: 1px solid rgba(245,158,11,0.3);
+  padding: 0.15rem 0.4rem;
+  border-radius: 2px;
+  margin-top: 0.3rem;
+  display: inline-block;
+}
+
+/* CONTACT */
+#contact {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+.contact-inner {
+  max-width: 700px; margin: 0 auto;
+  text-align: center;
+}
+.contact-inner .section-title { margin-bottom: 1rem; }
+.contact-desc { color: var(--muted); line-height: 1.7; margin-bottom: 3rem; }
+.contact-links {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;
+  margin-bottom: 3rem;
+}
+.contact-link {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  padding: 0.7rem 1.3rem;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+.contact-link:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: rgba(0,212,255,0.04);
+  transform: translateY(-2px);
+}
+.contact-link svg {
+  width: 16px; height: 16px;
+  fill: currentColor;
+}
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
+/* REVEAL ANIMATION */
+.reveal {
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.revealed { opacity: 1; transform: translateY(0); }
+
+/* SCROLLBAR */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: rgba(0,212,255,0.3); border-radius: 2px; }
+
+/* MOBILE */
+@media (max-width: 768px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  #hero, section { padding: 5rem 1.5rem 3rem; }
+  .about-grid { grid-template-columns: 1fr; }
+  .timeline::before { left: 0; }
+  .skills-grid { grid-template-columns: 1fr; }
+  body { cursor: auto; }
+  .cursor, .cursor-ring { display: none; }
+}
+
+/* LOADING SCREEN */
+#loading {
+  position: fixed; inset: 0;
+  background: var(--bg);
+  z-index: 9999;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 1rem;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+#loading.hidden { opacity: 0; visibility: hidden; }
+.loading-text {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--accent);
+  letter-spacing: 0.15em;
+}
+.loading-bar-wrap {
+  width: 200px; height: 2px;
+  background: rgba(0,212,255,0.1);
+  border-radius: 2px;
+}
+.loading-bar {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 2px;
+  width: 0;
+  animation: loading-fill 1.5s ease forwards;
+}
+@keyframes loading-fill { to { width: 100%; } }
+</style>
 </head>
 <body>
-    <!-- Skip to content link for accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <span class="logo-text">Vladyslav Maidaniuk</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#tech-stack" class="nav-link">Tech Stack</a></li>
-                <li><a href="#languages" class="nav-link">Languages</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle mobile menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+<!-- LOADING -->
+<div id="loading">
+  <div class="loading-text">INITIALIZING PLATFORM...</div>
+  <div class="loading-bar-wrap"><div class="loading-bar"></div></div>
+  <div class="loading-text" id="loading-detail" style="opacity:0.5;font-size:0.65rem;">loading modules</div>
+</div>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">VM<span>.</span>dev</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#certs">Certs</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:vla.maidaniuk@gmail.com" class="btn-secondary" style="padding:0.5rem 1.2rem;font-size:0.72rem;">HIRE ME</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-content">
+    <div class="hero-badge">Available for new opportunities</div>
+    <h1 class="hero-name">
+      <span class="line1">Vladyslav</span>
+      <span class="line2">Maidaniuk</span>
+    </h1>
+    <p class="hero-title">
+      &gt;&nbsp;<span class="typed" id="typed-text"></span><span class="cursor-blink"></span>
+    </p>
+    <p class="hero-desc">
+      9+ years architecting mission-critical infrastructure. Kubernetes, cloud-native platforms, MLOps, and DevSecOps at scale across aviation, FinTech, and regulated enterprise.
+    </p>
+    <div class="hero-ctas">
+      <a href="#experience" class="btn-primary">↓ View Experience</a>
+      <a href="mailto:vla.maidaniuk@gmail.com" class="btn-secondary">✉ Get in Touch</a>
+    </div>
+    <div class="hero-tags">
+      <span class="hero-tag" style="animation-duration:3.1s">Kubernetes</span>
+      <span class="hero-tag" style="animation-duration:3.7s">AWS / Azure / GCP</span>
+      <span class="hero-tag" style="animation-duration:2.9s">Terraform</span>
+      <span class="hero-tag" style="animation-duration:4.1s">MLOps</span>
+      <span class="hero-tag" style="animation-duration:3.4s">DevSecOps</span>
+      <span class="hero-tag" style="animation-duration:2.7s">SRE</span>
+      <span class="hero-tag" style="animation-duration:3.9s">Apache NiFi</span>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div id="stats">
+  <div class="stats-grid">
+    <div class="stat-item reveal">
+      <span class="stat-number" data-target="9" data-suffix="+yr">0</span>
+      <span class="stat-label">Years Experience</span>
+    </div>
+    <div class="stat-item reveal">
+      <span class="stat-number" data-target="99.9" data-suffix="%" data-decimal="1">0</span>
+      <span class="stat-label">Uptime SLA</span>
+    </div>
+    <div class="stat-item reveal">
+      <span class="stat-number" data-target="80" data-prefix="−" data-suffix="%">0</span>
+      <span class="stat-label">Deployment Time</span>
+    </div>
+    <div class="stat-item reveal">
+      <span class="stat-number" data-target="40" data-suffix="+">0</span>
+      <span class="stat-label">IaC Modules</span>
+    </div>
+    <div class="stat-item reveal">
+      <span class="stat-number" data-target="95" data-suffix="%+">0</span>
+      <span class="stat-label">CIS Compliance</span>
+    </div>
+    <div class="stat-item reveal">
+      <span class="stat-number" data-target="200" data-suffix="+">0</span>
+      <span class="stat-label">Cloud Resources</span>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header reveal">
+    <span class="section-num">01 /</span>
+    <h2 class="section-title">About</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>I build and stabilize infrastructure that <strong>cannot afford downtime</strong> — and document it so the next engineer doesn't start from scratch.</p>
+      <p>Currently leading the <strong>reverse engineering and reliability engineering</strong> of CAODB at Prague Airport — one of Central Europe's busiest aviation hubs. Working with undocumented legacy systems (Sybase ASE, Perl WatchDog, Java MessageBroker) and making them observable, maintainable, and production-ready.</p>
+      <p>My background spans <strong>Platform Engineering, MLOps, SRE, and Database Reliability</strong> — giving me an unusually broad view of the entire infrastructure stack, from bare metal to ML model serving.</p>
+      <p>I work well in async-first, distributed environments. Comfortable being the person who <strong>figures out undocumented systems, owns the reliability, and ships documentation that actually gets used.</strong></p>
+      <div class="location-badge">Prague, CZ — Open to EU / UK / Remote</div>
+    </div>
+    <div class="reveal" style="transition-delay:0.2s">
+      <div class="terminal-window">
+        <div class="terminal-bar">
+          <div class="term-dot red"></div>
+          <div class="term-dot yellow"></div>
+          <div class="term-dot green"></div>
+          <span class="terminal-title">vlad@platform-eng ~ </span>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
-            <h1 class="hero-title gradient-text">Vladyslav Maidaniuk</h1>
-            <h2 class="hero-subtitle">DevOps Engineer / Cloud SecOps Specialist</h2>
-            <p class="hero-tagline">
-                DevOps Engineer / Cloud SecOps Specialist with 6+ years building secure, 
-                highly reliable cloud infrastructure. Unique combination of SRE/DevOps expertise 
-                and cybersecurity operations background (SOC, SOAR automation, 
-                penetration testing, privileged access management, compliance).
-            </p>
-            <div class="cta-buttons">
-                <a href="#projects" class="btn btn-primary">View Projects</a>
-                <a href="#contact" class="btn btn-secondary">Let's Connect</a>
-            </div>
+        <div class="terminal-body" id="terminal-body">
         </div>
-        <!-- 3D Canvas for Three.js background -->
-        <canvas id="three-canvas" class="three-canvas"></canvas>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Professional Summary -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Professional Summary</h2>
-            <div class="summary-content" data-aos="fade-up" data-aos-delay="200">
-                <p class="lead">
-                    Expert in Kubernetes, Terraform, CyberArk PAM, Splunk SIEM, SOAR platforms, 
-                    PostgreSQL administration, and comprehensive observability maintaining 
-                    99.9%+ uptime for production systems. Strong security-first 
-                    approach ensuring zero incidents through proactive monitoring, 
-                    automated security controls, and compliance validation (PCI DSS, ISO 27001).
-                </p>
-                <p class="lead">
-                    Certified Ethical Hacker (CEH) with deep understanding of threat 
-                    modeling, vulnerability management, privileged access security, SOAR automation, 
-                    and secure infrastructure design. Experienced in project management platforms 
-                    (Redmine) and enterprise file sharing solutions (Samba).
-                </p>
-                <div class="achievements-grid">
-                    <div class="achievement-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>99.9%+ uptime (6 years)</span>
-                    </div>
-                    <div class="achievement-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Zero security incidents</span>
-                    </div>
-                    <div class="achievement-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>40% cost reduction</span>
-                    </div>
-                    <div class="achievement-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>85% faster MTTR</span>
-                    </div>
-                    <div class="achievement-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Led 8 cloud migrations</span>
-                    </div>
-                </div>
-            </div>
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header reveal">
+    <span class="section-num">02 /</span>
+    <h2 class="section-title">Experience</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-period">Jan 2026 — Present</div>
+      <div class="timeline-role">Senior Integration & Platform Engineer</div>
+      <div class="timeline-company">PRINCIPAL — Prague Airport (CAODB)</div>
+      <div class="timeline-highlight">Reverse-engineered undocumented aviation systems; designed 10+ monitoring tasks for the WatchDog alerting system; replaced 15yr old Word/PDF specs with Git-versioned Markdown docs; debugged Apache NiFi ETL pipelines restoring data integrity across critical flows.</div>
+      <div class="tech-pills">
+        <span class="pill db">Sybase ASE</span>
+        <span class="pill db">Oracle EDW</span>
+        <span class="pill cloud">Apache NiFi</span>
+        <span class="pill cloud">Kubernetes</span>
+        <span class="pill cloud">Terraform</span>
+        <span class="pill cloud">Git</span>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot ml"></div>
+      <div class="timeline-period">Jan 2025 — Dec 2025</div>
+      <div class="timeline-role">MLOps & SRE Engineer</div>
+      <div class="timeline-company">Up Coop — Prague</div>
+      <div class="timeline-highlight">Maintained 99.8% uptime SLA on ML serving for 5,000+ users; cut P99 latency by 70% via pipeline redesign; reduced deployment time 60%; built full-stack observability with Prometheus/Grafana/ELK.</div>
+      <div class="tech-pills">
+        <span class="pill ml">MLflow</span>
+        <span class="pill cloud">Kubernetes EKS/GKE</span>
+        <span class="pill cloud">Terraform</span>
+        <span class="pill ml">Helm</span>
+        <span class="pill cloud">GitLab CI</span>
+        <span class="pill sec">Vault</span>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot ml"></div>
+      <div class="timeline-period">Jan 2022 — Dec 2025</div>
+      <div class="timeline-role">Senior Platform & MLOps Engineer (Freelance)</div>
+      <div class="timeline-company">Upwork — CZ, PL, UAE, Canada</div>
+      <div class="timeline-highlight">10+ engagements in FinTech, banking, AI-native companies. Built cloud-native ML platforms; PCI DSS CI/CD for regulated banking; deployed fraud detection ML with low-latency integration into transaction pipelines. 99.8%+ uptime across all engagements.</div>
+      <div class="tech-pills">
+        <span class="pill cloud">AWS / Azure / GCP</span>
+        <span class="pill cloud">Kubernetes</span>
+        <span class="pill cloud">Terraform</span>
+        <span class="pill ml">MLflow</span>
+        <span class="pill sec">PCI DSS</span>
+        <span class="pill cloud">GitHub Actions</span>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot sec"></div>
+      <div class="timeline-period">Jun 2020 — Jan 2022</div>
+      <div class="timeline-role">Security & Reliability Engineer</div>
+      <div class="timeline-company">Motorola Solutions — Prague</div>
+      <div class="timeline-highlight">Monitored security events across ML and cloud infrastructure; automated security scanning in CI/CD pipelines; built ML service monitoring dashboards; performed root cause analysis and incident response.</div>
+      <div class="tech-pills">
+        <span class="pill sec">Security Scanning</span>
+        <span class="pill cloud">CI/CD</span>
+        <span class="pill cloud">Prometheus</span>
+        <span class="pill cloud">Grafana</span>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot db"></div>
+      <div class="timeline-period">Apr 2019 — Jun 2020</div>
+      <div class="timeline-role">Database Reliability Engineer (Oracle)</div>
+      <div class="timeline-company">N-iX — Krakow, Poland</div>
+      <div class="timeline-highlight">Owned reliability of Oracle 11g/12c RAC clusters; automated backup/recovery via RMAN; optimized query latency on critical business workflows; administered Data Guard standby for DR.</div>
+      <div class="tech-pills">
+        <span class="pill db">Oracle 11g/12c RAC</span>
+        <span class="pill db">RMAN</span>
+        <span class="pill db">Data Guard</span>
+        <span class="pill db">Linux</span>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot sec"></div>
+      <div class="timeline-period">May 2015 — Jan 2019</div>
+      <div class="timeline-role">Infrastructure Engineer</div>
+      <div class="timeline-company">PESA Bydgoszcz — Poland</div>
+      <div class="timeline-highlight">Architected VMware vSphere cluster (20 hosts, 400+ VMs); pioneered Docker/K8s adoption; implemented Azure AD hybrid integration reducing onboarding 30%; mentored 4 junior admins.</div>
+      <div class="tech-pills">
+        <span class="pill cloud">VMware vSphere</span>
+        <span class="pill cloud">Kubernetes</span>
+        <span class="pill cloud">Azure AD</span>
+        <span class="pill cloud">Docker</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header reveal">
+    <span class="section-num">03 /</span>
+    <h2 class="section-title">Technical Stack</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="skills-container">
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="skill-group-title">Cloud Platforms</div>
+        <div class="skill-badges">
+          <span class="skill-badge">AWS</span>
+          <span class="skill-badge">Azure</span>
+          <span class="skill-badge">GCP</span>
+          <span class="skill-badge">EKS</span>
+          <span class="skill-badge">AKS</span>
+          <span class="skill-badge">GKE</span>
+          <span class="skill-badge">EC2 / RDS / S3</span>
+          <span class="skill-badge">Lambda / VPC / IAM</span>
         </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Professional Experience</h2>
-            
-            <!-- Current Position -->
-            <div class="experience-card glass" data-aos="fade-up" data-aos-delay="100">
-                <div class="experience-header">
-                    <h3>DevOps Engineer / Cloud SecOps Specialist</h3>
-                    <div class="experience-meta">
-                        <span class="company">Current Position</span>
-                        <span class="duration">Jan 2022 – Present</span>
-                        <span class="location">Prague, Czech Republic</span>
-                    </div>
-                </div>
-                <div class="experience-content">
-                    <p class="experience-description">
-                        Senior DevOps and Cloud Security Operations specialist leading infrastructure reliability, 
-                        security implementation, and SRE practices for enterprise cloud platforms. Ensuring 99.9%+ 
-                        uptime across production systems while maintaining robust security posture.
-                    </p>
-                    <div class="experience-highlights">
-                        <h4>Key Achievements & Responsibilities</h4>
-                        
-                        <h5>🔐 Cloud Security & Privileged Access Management</h5>
-                        <ul>
-                            <li><strong>Implemented CyberArk PAM</strong> solution for privileged access management across 500+ systems, enhancing security controls and audit compliance</li>
-                            <li><strong>Led security compliance initiatives</strong> achieving PCI DSS and ISO 27001 certification for cloud infrastructure</li>
-                            <li>Established zero-trust security principles across multi-cloud environments</li>
-                        </ul>
-                        
-                        <h5>⚡ Security Automation & Orchestration</h5>
-                        <ul>
-                            <li><strong>Deployed SOAR platform</strong> reducing Mean Time to Resolution (MTTR) by 85% through automated incident response workflows</li>
-                            <li>Developed security automation playbooks for threat detection and response</li>
-                            <li>Implemented automated compliance monitoring and reporting</li>
-                        </ul>
-                        
-                        <h5>☁️ Multi-Cloud Infrastructure & Kubernetes</h5>
-                        <ul>
-                            <li><strong>Architected and deployed multi-cloud Kubernetes infrastructure</strong> (GCP, AWS) supporting 200+ microservices</li>
-                            <li>Designed and implemented GitOps workflows using ArgoCD for continuous deployment</li>
-                            <li>Managed infrastructure as code using Terraform and Crossplane</li>
-                        </ul>
-                        
-                        <h5>📊 Observability & SRE Practices</h5>
-                        <ul>
-                            <li><strong>Established comprehensive observability stack</strong> (Prometheus, Grafana, ELK) with 99.9% uptime SLA</li>
-                            <li>Implemented SRE practices including error budgets, SLIs, and SLOs</li>
-                            <li>Reduced incident resolution time through proactive monitoring and alerting</li>
-                            <li>Built centralized logging and monitoring for security events</li>
-                        </ul>
-                        
-                        <h5>🔒 DevSecOps Integration</h5>
-                        <ul>
-                            <li>Integrated security scanning into CI/CD pipelines (SAST, DAST, container scanning)</li>
-                            <li>Implemented secrets management and secure configuration management</li>
-                            <li>Established cloud security posture management (CSPM) across AWS and GCP</li>
-                        </ul>
-                    </div>
-                    <div class="tech-stack">
-                        <h4>Technologies:</h4>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Kubernetes</span>
-                            <span class="tech-tag">Terraform</span>
-                            <span class="tech-tag">CyberArk</span>
-                            <span class="tech-tag">SOAR</span>
-                            <span class="tech-tag">Splunk</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                            <span class="tech-tag">AWS</span>
-                            <span class="tech-tag">GCP</span>
-                            <span class="tech-tag">Docker</span>
-                            <span class="tech-tag">Ansible</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Motorola Experience -->
-            <div class="experience-card glass" data-aos="fade-up" data-aos-delay="200">
-                <div class="experience-header">
-                    <h3>Cybersecurity Analyst</h3>
-                    <div class="experience-meta">
-                        <span class="company">Motorola Solutions</span>
-                        <span class="duration">Jun 2020 – Jan 2022</span>
-                        <span class="location">Prague, Czech Republic</span>
-                    </div>
-                </div>
-                <div class="experience-content">
-                    <p class="experience-description">
-                        SOC analyst supporting security operations for enterprise infrastructure (5,000+ employees).
-                    </p>
-                    <div class="experience-highlights">
-                        <h4>Key Achievements:</h4>
-                        <ul>
-                            <li>Monitored security events in Splunk SIEM (10GB+ daily logs, 500+ correlation rules), analyzing AWS CloudTrail, VPC Flow Logs, GuardDuty findings</li>
-                            <li>Implemented SOAR (Security Orchestration, Automation and Response) playbooks for automated incident response and threat remediation</li>
-                            <li>Managed CyberArk Vault for privileged access management, conducted access reviews and session monitoring</li>
-                            <li>Performed malware analysis (static/dynamic), incident triage, threat hunting, reducing MTTR by 85% through automated SOAR workflows</li>
-                            <li>Conducted vulnerability assessments using Nessus across 500+ systems (cloud/on-prem), tracked remediation to completion</li>
-                            <li>Analyzed security archives and historical incident data using SOAR platform for trend analysis and threat intelligence</li>
-                            <li>Deployed endpoint protection (CrowdStrike Falcon EDR), implemented security policies ensuring compliance</li>
-                            <li>Reduced false positive alerts by 30% through SIEM tuning, threat intelligence integration, correlation logic optimization</li>
-                            <li>Administered Redmine for security incident tracking and project management across SOC team</li>
-                        </ul>
-                    </div>
-                    <div class="tech-stack">
-                        <h4>Technologies:</h4>
-                        <div class="tech-tags">
-                            <span class="tech-tag">CyberArk Vault</span>
-                            <span class="tech-tag">Splunk SIEM</span>
-                            <span class="tech-tag">SOAR Platform</span>
-                            <span class="tech-tag">AWS</span>
-                            <span class="tech-tag">Nessus</span>
-                            <span class="tech-tag">CrowdStrike Falcon</span>
-                            <span class="tech-tag">IDA Pro</span>
-                            <span class="tech-tag">Cuckoo Sandbox</span>
-                            <span class="tech-tag">Redmine</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PESA Experience -->
-            <div class="experience-card glass" data-aos="fade-up" data-aos-delay="300">
-                <div class="experience-header">
-                    <h3>System Administrator</h3>
-                    <div class="experience-meta">
-                        <span class="company">PESA Bydgoszcz S.A.</span>
-                        <span class="duration">May 2015 – Jan 2018</span>
-                        <span class="location">Bydgoszcz, Poland</span>
-                    </div>
-                </div>
-                <div class="experience-content">
-                    <p class="experience-description">
-                        Progressed from Junior to Senior, managing hybrid infrastructure and leading modernization initiatives.
-                    </p>
-                    <div class="experience-highlights">
-                        <h4>Key Achievements:</h4>
-                        <ul>
-                            <li>Architected VMware vSphere cluster (20 hosts, 400+ VMs), improved consolidation by 40%, reduced hardware footprint by 60%</li>
-                            <li>Deployed Docker and Kubernetes platform for dev tools, accelerated delivery by 50%</li>
-                            <li>Implemented hybrid cloud integration (Azure AD, Azure Site Recovery), organization's first cloud capabilities</li>
-                            <li>Administered Samba file servers for cross-platform file sharing (Windows/Linux), managing 200+ users and 10TB+ storage</li>
-                            <li>Configured Redmine project management system for IT department, integrated with Git repositories</li>
-                            <li>Managed PostgreSQL databases supporting internal applications, performed regular maintenance and optimization</li>
-                            <li>Automated routine tasks (100+ PowerShell/Bash scripts), reduced manual workload by 40%</li>
-                            <li>Applied CIS Benchmarks security hardening using Ansible across 60+ servers</li>
-                            <li>Led disaster recovery planning, reduced RTO by 30% through automation and quarterly testing</li>
-                        </ul>
-                    </div>
-                    <div class="tech-stack">
-                        <h4>Technologies:</h4>
-                        <div class="tech-tags">
-                            <span class="tech-tag">VMware vSphere</span>
-                            <span class="tech-tag">Docker</span>
-                            <span class="tech-tag">Kubernetes</span>
-                            <span class="tech-tag">Ansible</span>
-                            <span class="tech-tag">Azure AD</span>
-                            <span class="tech-tag">Samba</span>
-                            <span class="tech-tag">Redmine</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                            <span class="tech-tag">PowerShell</span>
-                            <span class="tech-tag">Bash</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Containers & Orchestration</div>
+        <div class="skill-badges">
+          <span class="skill-badge">Kubernetes</span>
+          <span class="skill-badge">Docker</span>
+          <span class="skill-badge">Helm</span>
+          <span class="skill-badge">RBAC</span>
+          <span class="skill-badge">Network Policies</span>
+          <span class="skill-badge">HPA / VPA</span>
+          <span class="skill-badge">Pod Security</span>
         </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
-            
-            <!-- Project 1: SOAR Automation -->
-            <div class="project-card glass" data-aos="fade-up" data-aos-delay="100">
-                <div class="project-header">
-                    <h3>SOAR Security Automation Platform</h3>
-                    <div class="project-meta">
-                        <span class="badge">18 months</span>
-                        <span class="badge">SOAR</span>
-                        <span class="badge success">85% Faster MTTR</span>
-                    </div>
-                </div>
-                <div class="project-body">
-                    <div class="project-challenge">
-                        <h4>Challenge</h4>
-                        <p>Implement Security Orchestration, Automation and Response (SOAR) platform to automate incident response workflows and reduce mean time to resolution (MTTR) for security incidents</p>
-                    </div>
-                    <div class="project-stack">
-                        <h4>Technology Stack</h4>
-                        <div class="stack-tags">
-                            <span class="tag">SOAR Platform</span>
-                            <span class="tag">Splunk SIEM</span>
-                            <span class="tag">CyberArk</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">AWS Lambda</span>
-                            <span class="tag">Redmine API</span>
-                        </div>
-                    </div>
-                    <div class="project-solution">
-                        <h4>Solution</h4>
-                        <ul>
-                            <li>Deployed SOAR platform integrated with Splunk SIEM for automated threat detection and response</li>
-                            <li>Developed 50+ automated playbooks for common security scenarios (phishing, malware, unauthorized access)</li>
-                            <li>Integrated CyberArk PAM for automated credential rotation and privileged session management</li>
-                            <li>Implemented automated ticket creation in Redmine for security incidents with full context and remediation steps</li>
-                            <li>Created custom Python scripts for threat intelligence enrichment and automated IOC analysis</li>
-                            <li>Established automated archive analysis workflows for historical incident pattern recognition</li>
-                            <li>Reduced manual investigation time by 70% through automated data enrichment and correlation</li>
-                        </ul>
-                    </div>
-                    <div class="project-outcomes">
-                        <h4>Outcomes</h4>
-                        <div class="outcomes-grid">
-                            <div class="outcome-item">
-                                <div class="outcome-value">85%</div>
-                                <div class="outcome-label">Faster MTTR</div>
-                            </div>
-                            <div class="outcome-item">
-                                <div class="outcome-value">70%</div>
-                                <div class="outcome-label">Less manual work</div>
-                            </div>
-                            <div class="outcome-item">
-                                <div class="outcome-value">50+</div>
-                                <div class="outcome-label">Automated playbooks</div>
-                            </div>
-                            <div class="outcome-item">
-                                <div class="outcome-value">30%</div>
-                                <div class="outcome-label">Fewer false positives</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 2: Multi-Region Fintech Cloud Migration -->
-            <div class="project-card glass" data-aos="fade-up" data-aos-delay="200">
-                <div class="project-header">
-                    <h3>Multi-Region Fintech Cloud Migration</h3>
-                    <div class="project-meta">
-                        <span class="badge">6 months</span>
-                        <span class="badge">€750K budget</span>
-                        <span class="badge success">Completed</span>
-                    </div>
-                </div>
-                <div class="project-body">
-                    <div class="project-challenge">
-                        <h4>Challenge</h4>
-                        <p>Migrate 8 legacy banking systems to GCP with zero downtime while maintaining PCI DSS compliance</p>
-                    </div>
-                    <div class="project-stack">
-                        <h4>Technology Stack</h4>
-                        <div class="stack-tags">
-                            <span class="tag">GCP</span>
-                            <span class="tag">Terraform</span>
-                            <span class="tag">Kubernetes</span>
-                            <span class="tag">Vault</span>
-                            <span class="tag">Ansible</span>
-                            <span class="tag">CloudSQL</span>
-                            <span class="tag">GKE</span>
-                        </div>
-                    </div>
-                    <div class="project-solution">
-                        <h4>Solution</h4>
-                        <ul>
-                            <li>Architected multi-region active-active infrastructure across 3 GCP regions</li>
-                            <li>Implemented automated compliance scanning (PCI DSS, ISO 27001)</li>
-                            <li>Blue-green deployment strategy with automated rollback mechanisms</li>
-                            <li>Comprehensive audit logging with BigQuery for regulatory requirements</li>
-                            <li>Service mesh (Istio) for encrypted inter-service communication</li>
-                        </ul>
-                    </div>
-                    <div class="project-outcomes">
-                        <h4>Outcomes</h4>
-                        <div class="outcomes-grid">
-                            <div class="outcome-item">
-                                <div class="outcome-value">100%</div>
-                                <div class="outcome-label">Zero-downtime cutover success</div>
-                            </div>
-                            <div class="outcome-item">
-                                <div class="outcome-value">40%</div>
-                                <div class="outcome-label">Infrastructure cost reduction</div>
-                            </div>
-                            <div class="outcome-item">
-                                <div class="outcome-value">99.95%</div>
-                                <div class="outcome-label">Uptime SLA achieved</div>
-                            </div>
-                            <div class="outcome-item">
-                                <div class="outcome-value">-3 weeks</div>
-                                <div class="outcome-label">Compliance audit duration</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 3: Enterprise Kubernetes Platform -->
-            <div class="project-card glass" data-aos="fade-up" data-aos-delay="300">
-                <div class="project-header">
-                    <h3>Enterprise Kubernetes Platform</h3>
-                    <div class="project-meta">
-                        <span class="badge">4 months</span>
-                        <span class="badge">150+ nodes</span>
-                        <span class="badge success">Production</span>
-                    </div>
-                </div>
-                <div class="project-body">
-                    <div class="project-challenge">
-                        <h4>Challenge</h4>
-                        <p>Modernize monolithic applications for high-frequency trading platform requiring sub-100ms latency</p>
-                    </div>
-                    <div class="project-stack">
-                        <h4>Technology Stack</h4>
-                        <div class="stack-tags">
-                            <span class="tag">Kubernetes</span>
-                            <span class="tag">ArgoCD</span>
-                            <span class="tag">Prometheus</span>
-                            <span class="tag">Grafana</span>
-                            <span class="tag">Istio</span>
-                            <span class="tag">Calico</span>
-                            <span class="tag">Rook/Ceph</span>
-                        </div>
-                    </div>
-                    <div class="project-solution">
-                        <h4>Solution</h4>
-                        <ul>
-                            <li>Multi-cluster federation across 3 geographically distributed data centers</li>
-                            <li>GitOps workflow with automated promotion pipelines (dev → staging → prod)</li>
-                            <li>Service mesh (Istio) for traffic management and distributed tracing</li>
-                            <li>Custom HPA policies for latency-sensitive workloads</li>
-                            <li>Distributed storage with Rook/Ceph for stateful applications</li>
-                        </ul>
-                    </div>
-                    <div class="project-outcomes">
-                        <h4>Outcomes</h4>
-                        <div class="outcomes-grid">
-                            <div class="outcome-item">
-                                <div class="outcome-value">3x</div>
-                                <div class="outcome-label">Application throughput</div>
-                            </div>
-                            <div class="outcome-item">
-                                <div class="outcome-value">60%</div>
-                                <div class="outcome-label">Faster release cycles</div>
-                            </div>
-                            <div class="outcome-item">
-                                <div class="outcome-value">80%</div>
-                                <div class="outcome-label">Reduced MTTR</div>
-                            </div>
-                            <div class="outcome-item">
-                                <div class="outcome-value">&lt;100ms</div>
-                                <div class="outcome-label">Cross-region latency</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Infrastructure as Code</div>
+        <div class="skill-badges">
+          <span class="skill-badge">Terraform</span>
+          <span class="skill-badge">Terragrunt</span>
+          <span class="skill-badge">Ansible</span>
+          <span class="skill-badge">Ansible Tower/AWX</span>
+          <span class="skill-badge">CloudFormation</span>
+          <span class="skill-badge">GitOps</span>
         </div>
-    </section>
-
-    <!-- Tech Stack Section -->
-    <section id="tech-stack" class="tech-stack">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Technology Stack</h2>
-            
-            <div class="tech-category" data-aos="fade-up" data-aos-delay="100">
-                <h3>Cloud Platforms</h3>
-                <div class="tech-icons">
-                    <div class="tech-item glass" data-skill="AWS">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS">
-                        <span>AWS</span>
-                    </div>
-                    <div class="tech-item glass" data-skill="GCP">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCP">
-                        <span>GCP</span>
-                    </div>
-                    <div class="tech-item glass" data-skill="Azure">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
-                        <span>Azure</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tech-category" data-aos="fade-up" data-aos-delay="200">
-                <h3>Orchestration & Containers</h3>
-                <div class="tech-icons">
-                    <div class="tech-item glass" data-skill="Kubernetes">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes">
-                        <span>Kubernetes</span>
-                    </div>
-                    <div class="tech-item glass" data-skill="Docker">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
-                        <span>Docker</span>
-                    </div>
-                    <div class="tech-item glass" data-skill="Helm">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/helm/helm-original.svg" alt="Helm">
-                        <span>Helm</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tech-category" data-aos="fade-up" data-aos-delay="300">
-                <h3>Infrastructure as Code</h3>
-                <div class="tech-icons">
-                    <div class="tech-item glass" data-skill="Terraform">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform">
-                        <span>Terraform</span>
-                    </div>
-                    <div class="tech-item glass" data-skill="Ansible">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ansible/ansible-original.svg" alt="Ansible">
-                        <span>Ansible</span>
-                    </div>
-                    <div class="tech-item glass" data-skill="Pulumi">
-                        <span class="text-icon">Pulumi</span>
-                        <span>Pulumi</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tech-category" data-aos="fade-up" data-aos-delay="400">
-                <h3>CI/CD & GitOps</h3>
-                <div class="tech-icons">
-                    <div class="tech-item glass" data-skill="GitLab CI">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg" alt="GitLab">
-                        <span>GitLab CI</span>
-                    </div>
-                    <div class="tech-item glass" data-skill="GitHub Actions">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Actions">
-                        <span>GitHub Actions</span>
-                    </div>
-                    <div class="tech-item glass" data-skill="ArgoCD">
-                        <span class="text-icon">ArgoCD</span>
-                        <span>ArgoCD</span>
-                    </div>
-                    <div class="tech-item glass" data-skill="Jenkins">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" alt="Jenkins">
-                        <span>Jenkins</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tech-category" data-aos="fade-up" data-aos-delay="500">
-                <h3>Security & Compliance</h3>
-                
-                <!-- CyberArk PAM Subcategory -->
-                <div class="service-category">
-                    <h4>CyberArk PAM</h4>
-                    <div class="service-list">
-                        <div class="service-item glass" data-skill="CyberArk">
-                            <div class="service-icon">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <div class="service-name">CyberArk PAM</div>
-                        </div>
-                        
-                        <div class="service-item glass" data-skill="Splunk">
-                            <div class="service-icon">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <div class="service-name">Splunk SIEM</div>
-                        </div>
-                        
-                        <div class="service-item glass" data-skill="SOAR">
-                            <div class="service-icon">
-                                <i class="fas fa-vial"></i>
-                            </div>
-                            <div class="service-name">SOAR</div>
-                        </div>
-                        
-                        <div class="service-item glass" data-skill="Burp Suite">
-                            <div class="service-icon">
-                                <i class="fas fa-search"></i>
-                            </div>
-                            <div class="service-name">Burp Suite</div>
-                        </div>
-                        
-                        <div class="service-item glass" data-skill="Wireshark">
-                            <div class="service-icon">
-                                <i class="fas fa-network-wired"></i>
-                            </div>
-                            <div class="service-name">Wireshark</div>
-                        </div>
-                        
-                        <div class="service-item glass" data-skill="Nmap">
-                            <div class="service-icon">
-                                <i class="fas fa-satellite-dish"></i>
-                            </div>
-                            <div class="service-name">Nmap</div>
-                        </div>
-                        
-                        <div class="service-item glass" data-skill="Nessus">
-                            <div class="service-icon">
-                                <i class="fas fa-bug"></i>
-                            </div>
-                            <div class="service-name">Nessus</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- CrowdStrike & AWS Subcategory -->
-                <div class="service-category">
-                    <h4>CrowdStrike & AWS</h4>
-                    <div class="service-list">
-                        <div class="service-item glass" data-skill="CrowdStrike">
-                            <div class="service-icon">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <div class="service-name">CrowdStrike</div>
-                        </div>
-                        
-                        <div class="service-item glass" data-skill="Trivy">
-                            <div class="service-icon">
-                                <i class="fas fa-search"></i>
-                            </div>
-                            <div class="service-name">Trivy</div>
-                        </div>
-                        
-                        <div class="service-item glass" data-skill="AWS GuardDuty">
-                            <div class="service-icon">
-                                <i class="fab fa-aws"></i>
-                            </div>
-                            <div class="service-name">AWS GuardDuty</div>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-
-            <div class="tech-category" data-aos="fade-up" data-aos-delay="600">
-                <h3>Databases & Storage</h3>
-                <div class="tech-icons">
-                    <div class="tech-item glass" data-skill="PostgreSQL">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
-                        <span>PostgreSQL</span>
-                    </div>
-                    <div class="tech-item glass" data-skill="MySQL">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
-                        <span>MySQL</span>
-                    </div>
-                    <div class="tech-item glass" data-skill="Oracle">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" alt="Oracle">
-                        <span>Oracle DB</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tech-category" data-aos="fade-up" data-aos-delay="700">
-                <h3>Collaboration & Project Management</h3>
-                <div class="tech-icons">
-                    <div class="tech-item glass" data-skill="Redmine">
-                        <span class="text-icon">📋</span>
-                        <span>Redmine</span>
-                    </div>
-                    <div class="tech-item glass" data-skill="Jira">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" alt="Jira">
-                        <span>Jira</span>
-                    </div>
-                    <div class="tech-item glass" data-skill="GitLab">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg" alt="GitLab">
-                        <span>GitLab</span>
-                    </div>
-                    <div class="tech-item glass" data-skill="Confluence">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/confluence/confluence-original.svg" alt="Confluence">
-                        <span>Confluence</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tech-category" data-aos="fade-up" data-aos-delay="800">
-                <h3>Monitoring & Observability</h3>
-                <div class="tech-icons">
-                    <div class="tech-item glass" data-skill="Prometheus">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg" alt="Prometheus">
-                        <span>Prometheus</span>
-                    </div>
-                    <div class="tech-item glass" data-skill="Grafana">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" alt="Grafana">
-                        <span>Grafana</span>
-                    </div>
-                    <div class="tech-item glass" data-skill="ELK Stack">
-                        <span class="text-icon">ELK</span>
-                        <span>ELK Stack</span>
-                    </div>
-                    <div class="tech-item glass" data-skill="Datadog">
-                        <span class="text-icon">Datadog</span>
-                        <span>Datadog</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tech-category" data-aos="fade-up" data-aos-delay="900">
-                <h3>Additional Tools & Technologies</h3>
-                <div class="tech-icons">
-                    <div class="tech-item glass" data-skill="Samba">
-                        <span class="text-icon">Samba</span>
-                        <span>Samba</span>
-                    </div>
-                    <div class="tech-item glass" data-skill="Python">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
-                        <span>Python</span>
-                    </div>
-                    <div class="tech-item glass" data-skill="Bash">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash">
-                        <span>Bash</span>
-                    </div>
-                    <div class="tech-item glass" data-skill="Go">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" alt="Go">
-                        <span>Go</span>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">ML / MLOps Platforms</div>
+        <div class="skill-badges">
+          <span class="skill-badge">MLflow</span>
+          <span class="skill-badge">KServe</span>
+          <span class="skill-badge">Seldon Core</span>
+          <span class="skill-badge">Ray</span>
+          <span class="skill-badge">Kubeflow</span>
+          <span class="skill-badge">Apache Airflow</span>
+          <span class="skill-badge">NVIDIA GPU Operator</span>
         </div>
-    </section>
-
-    <!-- Languages Section -->
-    <section id="languages" class="languages section-languages">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Languages</h2>
-            
-            <div class="languages-grid">
-                <div class="language-item glass" data-aos="fade-up" data-aos-delay="100">
-                    <div class="language-flag">🇨🇿</div>
-                    <h3>Czech</h3>
-                    <div class="language-level">
-                        <div class="level-bar">
-                            <div class="level-fill" data-progress="90"></div>
-                        </div>
-                        <div class="level-label">Advanced (C1)</div>
-                    </div>
-                    <p class="language-desc">Professional working proficiency</p>
-                </div>
-
-                <div class="language-item glass" data-aos="fade-up" data-aos-delay="200">
-                    <div class="language-flag">🇬🇧</div>
-                    <h3>English</h3>
-                    <div class="language-level">
-                        <div class="level-bar">
-                            <div class="level-fill" data-progress="80"></div>
-                        </div>
-                        <div class="level-label">Upper-Intermediate (B2)</div>
-                    </div>
-                    <p class="language-desc">Full professional proficiency</p>
-                </div>
-
-                <div class="language-item glass native" data-aos="fade-up" data-aos-delay="300">
-                    <div class="language-flag">🇷🇺</div>
-                    <h3>Russian</h3>
-                    <div class="language-level">
-                        <div class="level-bar">
-                            <div class="level-fill" data-progress="100"></div>
-                        </div>
-                        <div class="level-label">Native</div>
-                    </div>
-                    <p class="language-desc">Native</p>
-                </div>
-
-                <div class="language-item glass native" data-aos="fade-up" data-aos-delay="400">
-                    <div class="language-flag">🇺🇦</div>
-                    <h3>Ukrainian</h3>
-                    <div class="language-level">
-                        <div class="level-bar">
-                            <div class="level-fill" data-progress="100"></div>
-                        </div>
-                        <div class="level-label">Native</div>
-                    </div>
-                    <p class="language-desc">Native</p>
-                </div>
-
-                <div class="language-item glass" data-aos="fade-up" data-aos-delay="500">
-                    <div class="language-flag">🇵🇱</div>
-                    <h3>Polish</h3>
-                    <div class="language-level">
-                        <div class="level-bar">
-                            <div class="level-fill" data-progress="60"></div>
-                        </div>
-                        <div class="level-label">Intermediate (B1)</div>
-                    </div>
-                    <p class="language-desc">Limited working proficiency</p>
-                </div>
-            </div>
-
-            <div class="language-note" data-aos="fade-up" data-aos-delay="600">
-                <p>✓ Multilingual professional capable of working in international teams</p>
-                <p>✓ Technical documentation and communication in English</p>
-                <p>✓ Native Slavic language speaker (Russian, Ukrainian)</p>
-            </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Observability & SRE</div>
+        <div class="skill-badges">
+          <span class="skill-badge">Prometheus</span>
+          <span class="skill-badge">Grafana</span>
+          <span class="skill-badge">ELK Stack</span>
+          <span class="skill-badge">Splunk</span>
+          <span class="skill-badge">Loki</span>
+          <span class="skill-badge">SLO / SLI / SLA</span>
+          <span class="skill-badge">Error Budgets</span>
+          <span class="skill-badge">PagerDuty</span>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Let's Connect</h2>
-            
-            <div class="contact-grid">
-                <div class="contact-info" data-aos="fade-up" data-aos-delay="100">
-                    <h3>Ready to discuss your project?</h3>
-                    <p>
-                        I'm available for consulting, implementation partnerships, and 
-                        long-term collaborations. Let's talk about how I can help you 
-                        build secure, scalable infrastructure.
-                    </p>
-                    
-                    <div class="contact-methods">
-                        <div class="contact-item glass">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>Email</h4>
-                                <a href="mailto:vla.maidaniuk@gmail.com">vla.maidaniuk@gmail.com</a>
-                            </div>
-                        </div>
-
-                        <div class="contact-item glass">
-                            <div class="contact-icon">
-                                <i class="fab fa-telegram"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>Telegram</h4>
-                                <a href="https://t.me/vm_devops" target="_blank" rel="noopener">@vm_devops</a>
-                            </div>
-                        </div>
-
-                        <div class="contact-item glass">
-                            <div class="contact-icon">
-                                <i class="fab fa-whatsapp"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>WhatsApp</h4>
-                                <a href="https://wa.me/420721579603" target="_blank" rel="noopener">+420 721 579 603</a>
-                            </div>
-                        </div>
-
-                        <div class="contact-item glass">
-                            <div class="contact-icon">
-                                <i class="fab fa-github"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>GitHub</h4>
-                                <a href="https://github.com/vlamay" target="_blank" rel="noopener">github.com/vlamay</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="availability">
-                        <h4>Availability & Details</h4>
-                        <p><strong>Location:</strong> Prague, Czech Republic (Remote-friendly)</p>
-                        <p><strong>Work Authorization:</strong> EU Citizen</p>
-                        <p><strong>Contract Types:</strong> Employee, B2B, Deel</p>
-                        <p><strong>Languages:</strong> Czech (C1), English (B2), Russian (Native), Ukrainian (Native), Polish (B1)</p>
-                    </div>
-                </div>
-
-                <div class="contact-form glass" data-aos="fade-up" data-aos-delay="200">
-                    <h3>Quick Contact</h3>
-                    <form id="contactForm" action="https://formspree.io/f/xpwgkqkp" method="POST">
-                        <div class="form-group">
-                            <label for="name">Name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="company">Company</label>
-                            <input type="text" id="company" name="company">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                </div>
-            </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Security & Compliance</div>
+        <div class="skill-badges">
+          <span class="skill-badge">HashiCorp Vault</span>
+          <span class="skill-badge">Trivy</span>
+          <span class="skill-badge">SAST</span>
+          <span class="skill-badge">CIS Benchmarks</span>
+          <span class="skill-badge">ISO 27001</span>
+          <span class="skill-badge">PCI DSS</span>
+          <span class="skill-badge">CEH v12</span>
+          <span class="skill-badge">Nmap / Metasploit</span>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 Vladyslav Maidaniuk. All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="https://github.com/vlamay" target="_blank" rel="noopener">GitHub</a>
-                    <a href="mailto:vla.maidaniuk@gmail.com">Email</a>
-                    <a href="https://t.me/vm_devops" target="_blank" rel="noopener">Telegram</a>
-                </div>
-            </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">CI/CD & Delivery</div>
+        <div class="skill-badges">
+          <span class="skill-badge">GitHub Actions</span>
+          <span class="skill-badge">GitLab CI</span>
+          <span class="skill-badge">Jenkins</span>
+          <span class="skill-badge">Canary Deployments</span>
+          <span class="skill-badge">Trunk-Based Dev</span>
         </div>
-    </footer>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Languages & Databases</div>
+        <div class="skill-badges">
+          <span class="skill-badge">Python</span>
+          <span class="skill-badge">Bash / Shell</span>
+          <span class="skill-badge">PowerShell</span>
+          <span class="skill-badge">Go</span>
+          <span class="skill-badge">T-SQL</span>
+          <span class="skill-badge">PostgreSQL</span>
+          <span class="skill-badge">Oracle</span>
+          <span class="skill-badge">Sybase ASE</span>
+          <span class="skill-badge">MongoDB</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Data Integration</div>
+        <div class="skill-badges">
+          <span class="skill-badge">Apache NiFi</span>
+          <span class="skill-badge">Kafka</span>
+          <span class="skill-badge">RabbitMQ</span>
+          <span class="skill-badge">Oracle EDW</span>
+          <span class="skill-badge">Sybase Replication</span>
+          <span class="skill-badge">REST APIs</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/particles-simple.js"></script>
+<!-- CERTIFICATIONS -->
+<section id="certs">
+  <div class="section-header reveal">
+    <span class="section-num">04 /</span>
+    <h2 class="section-title">Certifications</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="certs-grid">
+    <div class="cert-card">
+      <div class="cert-icon">🛡️</div>
+      <div>
+        <div class="cert-name">Certified Ethical Hacker v12</div>
+        <div class="cert-issuer">EC-Council</div>
+        <div class="cert-year">2024</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">🔐</div>
+      <div>
+        <div class="cert-name">DevSecOps Certificate</div>
+        <div class="cert-issuer">TryHackMe</div>
+        <div class="cert-year">2025</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">🔥</div>
+      <div>
+        <div class="cert-name">Cybersecurity Professional Certificate</div>
+        <div class="cert-issuer">Palo Alto Networks</div>
+        <div class="cert-year">2025</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">🐍</div>
+      <div>
+        <div class="cert-name">IT Automation with Python</div>
+        <div class="cert-issuer">Google</div>
+        <div class="cert-year">2024</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">🐧</div>
+      <div>
+        <div class="cert-name">CompTIA Linux+ (XK0-005)</div>
+        <div class="cert-issuer">CompTIA</div>
+        <div class="cert-year">Active</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">☁️</div>
+      <div>
+        <div class="cert-name">AWS Solutions Architect – Associate</div>
+        <div class="cert-issuer">Amazon Web Services</div>
+        <div class="cert-wip">⬡ IN PROGRESS</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">⚙️</div>
+      <div>
+        <div class="cert-name">Certified Kubernetes Administrator</div>
+        <div class="cert-issuer">CNCF</div>
+        <div class="cert-wip">⬡ IN PROGRESS</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="reveal">
+      <h2 class="section-title" style="text-align:center;margin-bottom:1rem">Let's Build Something</h2>
+      <p class="contact-desc">Open to Senior / Staff roles in Platform Engineering, Integration Engineering, or SRE. Prefer remote-first or hybrid (EU / Global). Available for immediate transition.</p>
+    </div>
+    <div class="contact-links reveal" style="transition-delay:0.2s">
+      <a href="mailto:vla.maidaniuk@gmail.com" class="contact-link">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        vla.maidaniuk@gmail.com
+      </a>
+      <a href="https://github.com/vlamay" target="_blank" class="contact-link">
+        <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+        github.com/vlamay
+      </a>
+      <a href="https://linkedin.com/in/maidaniuk" target="_blank" class="contact-link">
+        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        linkedin.com/in/maidaniuk
+      </a>
+      <a href="tel:+420721579603" class="contact-link">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        +420 721 579 603
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span style="color:var(--accent)">VM</span>.dev — Vladyslav Maidaniuk © 2025 — Prague, Czech Republic
+</footer>
+
+<script>
+// ── LOADING ──────────────────────────────────────────────
+const loadingMsgs = ['loading modules...', 'initializing k8s...', 'connecting to cluster...', 'ready.'];
+let mi = 0;
+const loadingDetail = document.getElementById('loading-detail');
+const msgInterval = setInterval(() => {
+  if (mi < loadingMsgs.length) { loadingDetail.textContent = loadingMsgs[mi++]; }
+}, 400);
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    clearInterval(msgInterval);
+    document.getElementById('loading').classList.add('hidden');
+  }, 1600);
+});
+
+// ── CURSOR ────────────────────────────────────────────────
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursor-ring');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.left = mx - 5 + 'px'; cursor.style.top = my - 5 + 'px'; });
+function animateRing() {
+  rx += (mx - rx - 18) * 0.12;
+  ry += (my - ry - 18) * 0.12;
+  ring.style.left = rx + 'px';
+  ring.style.top = ry + 'px';
+  requestAnimationFrame(animateRing);
+}
+animateRing();
+document.querySelectorAll('a, button').forEach(el => {
+  el.addEventListener('mouseenter', () => { ring.style.width = '50px'; ring.style.height = '50px'; cursor.style.transform = 'scale(0.5)'; });
+  el.addEventListener('mouseleave', () => { ring.style.width = '36px'; ring.style.height = '36px'; cursor.style.transform = 'scale(1)'; });
+});
+
+// ── HERO CANVAS ───────────────────────────────────────────
+const canvas = document.getElementById('hero-canvas');
+const ctx = canvas.getContext('2d');
+let W, H, dots = [];
+function resizeCanvas() {
+  W = canvas.width = canvas.offsetWidth;
+  H = canvas.height = canvas.offsetHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+for (let i = 0; i < 80; i++) {
+  dots.push({ x: Math.random()*2000, y: Math.random()*900, vx: (Math.random()-.5)*0.3, vy: (Math.random()-.5)*0.3, r: Math.random()*1.5+0.5 });
+}
+function drawCanvas() {
+  ctx.clearRect(0, 0, W, H);
+  // grid
+  ctx.strokeStyle = 'rgba(0,212,255,0.04)';
+  ctx.lineWidth = 1;
+  const gs = 60;
+  for (let x = 0; x < W; x += gs) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke(); }
+  for (let y = 0; y < H; y += gs) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke(); }
+  // dots
+  dots.forEach(d => {
+    d.x += d.vx; d.y += d.vy;
+    if (d.x < 0 || d.x > W) d.vx *= -1;
+    if (d.y < 0 || d.y > H) d.vy *= -1;
+    ctx.beginPath();
+    ctx.arc(d.x, d.y, d.r, 0, Math.PI*2);
+    ctx.fillStyle = 'rgba(0,212,255,0.4)';
+    ctx.fill();
+  });
+  // connections
+  dots.forEach((a, i) => {
+    dots.slice(i+1).forEach(b => {
+      const dist = Math.hypot(a.x-b.x, a.y-b.y);
+      if (dist < 120) {
+        ctx.beginPath();
+        ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
+        ctx.strokeStyle = `rgba(0,212,255,${0.12*(1-dist/120)})`;
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+      }
+    });
+  });
+  requestAnimationFrame(drawCanvas);
+}
+drawCanvas();
+
+// ── TYPEWRITER ────────────────────────────────────────────
+const phrases = [
+  'Senior Platform Engineer',
+  'SRE / MLOps Specialist',
+  'DevSecOps Architect',
+  'Kubernetes Expert',
+  'Cloud Infrastructure Lead'
+];
+let pi = 0, ci = 0, deleting = false;
+const typedEl = document.getElementById('typed-text');
+function typeLoop() {
+  const phrase = phrases[pi];
+  if (!deleting) {
+    typedEl.textContent = phrase.slice(0, ++ci);
+    if (ci === phrase.length) { deleting = true; setTimeout(typeLoop, 2000); return; }
+  } else {
+    typedEl.textContent = phrase.slice(0, --ci);
+    if (ci === 0) { deleting = false; pi = (pi+1) % phrases.length; }
+  }
+  setTimeout(typeLoop, deleting ? 40 : 80);
+}
+setTimeout(typeLoop, 1800);
+
+// ── TERMINAL ──────────────────────────────────────────────
+const termLines = [
+  { type: 'cmd', text: 'kubectl get nodes -o wide' },
+  { type: 'out', text: 'NAME       STATUS   ROLES   AGE   VERSION', cls: '' },
+  { type: 'out', text: 'node-001   Ready    master  42d   v1.29.2', cls: 'success' },
+  { type: 'out', text: 'node-002   Ready    worker  42d   v1.29.2', cls: 'success' },
+  { type: 'cmd', text: 'terraform plan -out=prod.tfplan' },
+  { type: 'out', text: 'Plan: 3 to add, 1 to change, 0 to destroy.', cls: 'success' },
+  { type: 'cmd', text: 'ansible-playbook hardening.yml --check' },
+  { type: 'out', text: 'ok=18  changed=0  unreachable=0  failed=0', cls: 'success' },
+  { type: 'cmd', text: 'uptime-check --sla 99.9%' },
+  { type: 'out', text: '✓ SLA maintained — 99.97% last 30d', cls: 'success' },
+];
+const termBody = document.getElementById('terminal-body');
+let tli = 0;
+function addTermLine() {
+  if (tli >= termLines.length) return;
+  const l = termLines[tli++];
+  const div = document.createElement('div');
+  div.className = 'term-line';
+  if (l.type === 'cmd') {
+    div.innerHTML = `<span class="term-prompt">❯</span><span class="term-cmd">${l.text}</span>`;
+  } else {
+    div.innerHTML = `<span class="term-output ${l.cls||''}">${l.text}</span>`;
+  }
+  termBody.appendChild(div);
+  termBody.scrollTop = termBody.scrollHeight;
+  setTimeout(addTermLine, l.type === 'cmd' ? 700 : 200);
+}
+setTimeout(addTermLine, 2500);
+
+// ── COUNTERS ──────────────────────────────────────────────
+function animateCounter(el) {
+  const target = parseFloat(el.dataset.target);
+  const prefix = el.dataset.prefix || '';
+  const suffix = el.dataset.suffix || '';
+  const decimal = parseInt(el.dataset.decimal) || 0;
+  const duration = 1800;
+  const start = Date.now();
+  function update() {
+    const elapsed = Date.now() - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const ease = 1 - Math.pow(1 - progress, 3);
+    const val = target * ease;
+    el.textContent = prefix + val.toFixed(decimal) + suffix;
+    if (progress < 1) requestAnimationFrame(update);
+  }
+  update();
+}
+
+// ── INTERSECTION OBSERVER ─────────────────────────────────
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('revealed');
+      // Counter animation
+      const num = entry.target.querySelector('[data-target]') || (entry.target.dataset.target ? entry.target : null);
+      if (entry.target.classList.contains('stat-item')) {
+        const numEl = entry.target.querySelector('[data-target]');
+        if (numEl && !numEl.dataset.animated) {
+          numEl.dataset.animated = 'true';
+          animateCounter(numEl);
+        }
+      }
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.reveal, .timeline-item, .skill-group, .cert-card, .stat-item').forEach(el => observer.observe(el));
+
+// Stagger delays for groups
+document.querySelectorAll('.skill-group').forEach((el, i) => el.style.transitionDelay = (i * 0.07) + 's');
+document.querySelectorAll('.cert-card').forEach((el, i) => el.style.transitionDelay = (i * 0.07) + 's');
+document.querySelectorAll('.timeline-item').forEach((el, i) => el.style.transitionDelay = (i * 0.1) + 's');
+</script>
 </body>
 </html>
