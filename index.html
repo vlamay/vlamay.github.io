@@ -645,7 +645,8 @@ footer {
   flex-direction: column; gap: 1rem;
   transition: opacity 0.5s, visibility 0.5s;
 }
-#loading.hidden { opacity: 0; visibility: hidden; }
+#loading.hidden { opacity: 0; pointer-events: none; animation: none; }
+#loading.gone { display: none; }
 .loading-text {
   font-family: var(--mono);
   font-size: 0.8rem;
@@ -796,7 +797,7 @@ footer {
     <div class="timeline-item">
       <div class="timeline-dot"></div>
       <div class="timeline-period">Jan 2026 — Present</div>
-      <div class="timeline-role">Senior Integration & Platform Engineer</div>
+      <div class="timeline-role">Integration & Platform Engineer</div>
       <div class="timeline-company">PRINCIPAL — Prague Airport (CAODB)</div>
       <div class="timeline-highlight">Reverse-engineered undocumented aviation systems; designed 10+ monitoring tasks for the WatchDog alerting system; replaced 15yr old Word/PDF specs with Git-versioned Markdown docs; debugged Apache NiFi ETL pipelines restoring data integrity across critical flows.</div>
       <div class="tech-pills">
@@ -815,6 +816,15 @@ footer {
       <div class="timeline-role">MLOps &amp; SRE Engineer — Financial Services Platform</div>
       <div class="timeline-company">Up Coop (UP Group) — Prague · Financial services · regulated environment · 5,000+ users</div>
       <div class="timeline-highlight">Delivered reliability and integration engineering for a regulated financial-services ML platform — working directly with backend and analytics teams to integrate services into live banking transaction pipelines.</div>
+
+      <div class="timeline-section-label">AS400 / Core Banking backend development</div>
+      <ul class="timeline-bullets">
+        <li>Developed and modified backend components running on <strong>IBM AS400 (IBM i)</strong> platform — business logic, batch processing and service interfaces within core banking systems</li>
+        <li>Worked with <strong>RPG and COBOL</strong> codebases typical of regulated banking environments — extended and refactored legacy modules for new business requirements</li>
+        <li>Designed and optimised <strong>DB2 SQL queries</strong> for financial data retrieval, aggregation and reconciliation across core banking schemas</li>
+        <li>Integrated banking subsystems via <strong>MQ, XML and SOAP</strong> — implemented and debugged message-based interfaces between AS400 services and external systems</li>
+        <li>Translated <strong>business requirements from analysts</strong> into AS400 backend solutions — independently analysed, designed and delivered technical changes end-to-end</li>
+      </ul>
 
       <div class="timeline-section-label">Backend integration &amp; data pipeline reliability</div>
       <ul class="timeline-bullets">
@@ -835,8 +845,11 @@ footer {
       </ul>
 
       <div class="tech-pills" style="margin-top:1rem;">
+        <span class="pill db">AS400 / IBM i</span>
+        <span class="pill db">COBOL / RPG</span>
+        <span class="pill db">DB2</span>
+        <span class="pill db">MQ / SOAP / XML</span>
         <span class="pill db">Kafka / MQ</span>
-        <span class="pill db">XML / REST</span>
         <span class="pill db">PostgreSQL</span>
         <span class="pill db">SQL</span>
         <span class="pill ml">MLflow</span>
@@ -1132,7 +1145,7 @@ footer {
   <span style="color:var(--accent)">VM</span>.dev — Vladyslav Maidaniuk © 2025 — Prague, Czech Republic
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 // ── LOADING ──────────────────────────────────────────────
 const loadingMsgs = ['loading modules...', 'initializing k8s...', 'connecting to cluster...', 'ready.'];
 let mi = 0;
@@ -1140,12 +1153,16 @@ const loadingDetail = document.getElementById('loading-detail');
 const msgInterval = setInterval(() => {
   if (mi < loadingMsgs.length) { loadingDetail.textContent = loadingMsgs[mi++]; }
 }, 400);
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    clearInterval(msgInterval);
-    document.getElementById('loading').classList.add('hidden');
-  }, 1600);
-});
+function hideLoader() {
+  clearInterval(msgInterval);
+  const el = document.getElementById('loading');
+  el.classList.add('hidden');
+  setTimeout(() => el.classList.add('gone'), 600);
+}
+// Fire on DOMContentLoaded (fast) with short delay for animation
+document.addEventListener('DOMContentLoaded', () => setTimeout(hideLoader, 1400));
+// Absolute fallback — never stay stuck longer than 2.5s
+setTimeout(hideLoader, 2500);
 
 // ── CURSOR ────────────────────────────────────────────────
 const cursor = document.getElementById('cursor');
@@ -1307,4 +1324,18 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal, .timeline-item, .skill-group, .cert-card, .stat-item').forEach(el => observer.observe(el));
 
 // Stagger delays for groups
-doc
+document.querySelectorAll('.skill-group').forEach((el, i) => {
+  el.style.transitionDelay = `${i * 0.1}s`;
+});
+
+document.querySelectorAll('.cert-card').forEach((el, i) => {
+  el.style.transitionDelay = `${i * 0.1}s`;
+});
+
+document.querySelectorAll('.timeline-item').forEach((el, i) => {
+  el.style.transitionDelay = `${i * 0.15}s`;
+});
+
+</script>
+</body>
+</html>
