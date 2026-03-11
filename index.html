@@ -415,6 +415,43 @@ section { padding: 6rem 3rem; }
   line-height: 1.6;
   margin-bottom: 1rem;
 }
+.timeline-section-label {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent2);
+  margin: 1rem 0 0.5rem 0;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--accent2);
+}
+.timeline-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.25rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.timeline-bullets li {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.55;
+  padding-left: 1.1rem;
+  position: relative;
+}
+.timeline-bullets li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.7rem;
+  top: 0.15em;
+}
+.timeline-bullets li strong {
+  color: var(--text);
+  font-weight: 600;
+}
 .tech-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .pill {
   font-family: var(--mono);
@@ -653,7 +690,7 @@ footer {
     <li><a href="#certs">Certs</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="mailto:vla.maidaniuk@gmail.com" class="btn-secondary" style="padding:0.5rem 1.2rem;font-size:0.72rem;">HIRE ME</a>
+  <a href="/cdn-cgi/l/email-protection#0e78626f20636f676a6f60677b654e69636f6762206d6163" class="btn-secondary" style="padding:0.5rem 1.2rem;font-size:0.72rem;">HIRE ME</a>
 </nav>
 
 <!-- HERO -->
@@ -673,7 +710,7 @@ footer {
     </p>
     <div class="hero-ctas">
       <a href="#experience" class="btn-primary">↓ View Experience</a>
-      <a href="mailto:vla.maidaniuk@gmail.com" class="btn-secondary">✉ Get in Touch</a>
+      <a href="/cdn-cgi/l/email-protection#d1a7bdb0ffbcb0b8b5b0bfb8a4ba91b6bcb0b8bdffb2bebc" class="btn-secondary">✉ Get in Touch</a>
     </div>
     <div class="hero-tags">
       <span class="hero-tag" style="animation-duration:3.1s">Kubernetes</span>
@@ -775,15 +812,40 @@ footer {
     <div class="timeline-item">
       <div class="timeline-dot ml"></div>
       <div class="timeline-period">Jan 2025 — Dec 2025</div>
-      <div class="timeline-role">MLOps & SRE Engineer</div>
-      <div class="timeline-company">Up Coop — Prague</div>
-      <div class="timeline-highlight">Maintained 99.8% uptime SLA on ML serving for 5,000+ users; cut P99 latency by 70% via pipeline redesign; reduced deployment time 60%; built full-stack observability with Prometheus/Grafana/ELK.</div>
-      <div class="tech-pills">
+      <div class="timeline-role">MLOps &amp; SRE Engineer — Financial Services Platform</div>
+      <div class="timeline-company">Up Coop (UP Group) — Prague · Financial services · regulated environment · 5,000+ users</div>
+      <div class="timeline-highlight">Delivered reliability and integration engineering for a regulated financial-services ML platform — working directly with backend and analytics teams to integrate services into live banking transaction pipelines.</div>
+
+      <div class="timeline-section-label">Backend integration &amp; data pipeline reliability</div>
+      <ul class="timeline-bullets">
+        <li>Integrated ML inference services into banking transaction flows via <strong>message-queue patterns (Kafka)</strong> and <strong>REST/XML interfaces</strong> — ensuring sub-100ms response under production load</li>
+        <li>Debugged and stabilised <strong>ETL pipelines</strong> processing financial transactions across multiple backend systems — root cause analysis at SQL and data-layer level</li>
+        <li>Wrote and optimised <strong>SQL queries against PostgreSQL</strong> supporting ML feature engineering and transaction analytics</li>
+        <li>Collaborated with core backend developers and business analysts to translate <strong>financial business requirements</strong> into reliable technical designs</li>
+        <li>Managed <strong>data integrity</strong> between upstream banking sources and ML serving infrastructure — validation, reconciliation, and anomaly detection</li>
+      </ul>
+
+      <div class="timeline-section-label">Platform reliability &amp; observability</div>
+      <ul class="timeline-bullets">
+        <li>Maintained <strong>99.8% uptime SLA</strong> across all production models with autoscaling and controlled canary rollouts</li>
+        <li>Redesigned inference pipeline with caching and request batching — <strong>P99 latency −70%</strong> without hardware scaling</li>
+        <li>Built full-stack observability: Prometheus, Grafana, ELK, Sentry — outages detected by engineers, not users</li>
+        <li>Built standardised CI/CD (GitLab CI + Terraform + Helm) — eliminated manual release steps, <strong>−60% deploy time</strong></li>
+        <li>Led post-mortem analyses and corrective actions improving MTTR across platform incidents</li>
+      </ul>
+
+      <div class="tech-pills" style="margin-top:1rem;">
+        <span class="pill db">Kafka / MQ</span>
+        <span class="pill db">XML / REST</span>
+        <span class="pill db">PostgreSQL</span>
+        <span class="pill db">SQL</span>
         <span class="pill ml">MLflow</span>
         <span class="pill cloud">Kubernetes EKS/GKE</span>
         <span class="pill cloud">Terraform</span>
         <span class="pill ml">Helm</span>
         <span class="pill cloud">GitLab CI</span>
+        <span class="pill cloud">Prometheus / Grafana</span>
+        <span class="pill cloud">ELK</span>
         <span class="pill sec">Vault</span>
       </div>
     </div>
@@ -1046,9 +1108,9 @@ footer {
       <p class="contact-desc">Open to Senior / Staff roles in Platform Engineering, Integration Engineering, or SRE. Prefer remote-first or hybrid (EU / Global). Available for immediate transition.</p>
     </div>
     <div class="contact-links reveal" style="transition-delay:0.2s">
-      <a href="mailto:vla.maidaniuk@gmail.com" class="contact-link">
+      <a href="/cdn-cgi/l/email-protection#146278753a79757d70757a7d617f547379757d783a777b79" class="contact-link">
         <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        vla.maidaniuk@gmail.com
+        <span class="__cf_email__" data-cfemail="bdcbd1dc93d0dcd4d9dcd3d4c8d6fddad0dcd4d193ded2d0">[email&#160;protected]</span>
       </a>
       <a href="https://github.com/vlamay" target="_blank" class="contact-link">
         <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
@@ -1070,7 +1132,7 @@ footer {
   <span style="color:var(--accent)">VM</span>.dev — Vladyslav Maidaniuk © 2025 — Prague, Czech Republic
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── LOADING ──────────────────────────────────────────────
 const loadingMsgs = ['loading modules...', 'initializing k8s...', 'connecting to cluster...', 'ready.'];
 let mi = 0;
@@ -1245,9 +1307,4 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal, .timeline-item, .skill-group, .cert-card, .stat-item').forEach(el => observer.observe(el));
 
 // Stagger delays for groups
-document.querySelectorAll('.skill-group').forEach((el, i) => el.style.transitionDelay = (i * 0.07) + 's');
-document.querySelectorAll('.cert-card').forEach((el, i) => el.style.transitionDelay = (i * 0.07) + 's');
-document.querySelectorAll('.timeline-item').forEach((el, i) => el.style.transitionDelay = (i * 0.1) + 's');
-</script>
-</body>
-</html>
+doc
