@@ -1,1334 +1,1779 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vladyslav Maidaniuk | Full-Stack & Platform Engineer</title>
-<meta name="description" content="Senior Platform/Backend Engineer transitioning into Full-Stack (React + Node/Python). 9+ years in infrastructure, backend, and DevSecOps.">
-<meta property="og:title" content="Vladyslav Maidaniuk | Full-Stack & Platform Engineer">
-<meta property="og:description" content="Senior Platform/Backend Engineer transitioning into Full-Stack — React, Node, Python, Cloud, Kubernetes">
-<meta property="og:url" content="https://vlamay.github.io">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vladyslav Maidaniuk | Full-Stack & Platform Engineer</title>
+  <meta name="description"
+    content="Senior Platform/Backend Engineer transitioning into Full-Stack (React + Node/Python). 9+ years in infrastructure, backend, and DevSecOps.">
+  <meta property="og:title" content="Vladyslav Maidaniuk | Full-Stack & Platform Engineer">
+  <meta property="og:description"
+    content="Senior Platform/Backend Engineer transitioning into Full-Stack — React, Node, Python, Cloud, Kubernetes">
+  <meta property="og:url" content="https://vlamay.github.io">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Sora:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
-<style>
-:root {
-  --bg: #060b14;
-  --surface: #0d1526;
-  --surface2: #111d33;
-  --accent: #00d4ff;
-  --accent2: #7c3aed;
-  --green: #10b981;
-  --orange: #f59e0b;
-  --text: #e2e8f0;
-  --muted: #64748b;
-  --border: rgba(0,212,255,0.12);
-  --mono: 'JetBrains Mono', monospace;
-  --sans: 'Sora', sans-serif;
-}
+  <style>
+    :root {
+      --bg: #060b14;
+      --surface: #0d1526;
+      --surface2: #111d33;
+      --accent: #00d4ff;
+      --accent2: #7c3aed;
+      --green: #10b981;
+      --orange: #f59e0b;
+      --text: #e2e8f0;
+      --muted: #64748b;
+      --border: rgba(0, 212, 255, 0.12);
+      --mono: 'JetBrains Mono', monospace;
+      --sans: 'Sora', sans-serif;
+    }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
-body {
-  font-family: var(--sans);
-  background: var(--bg);
-  color: var(--text);
-  overflow-x: hidden;
-  cursor: none;
-}
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      cursor: none;
+    }
 
-/* CURSOR */
-.cursor {
-  width: 10px; height: 10px;
-  background: var(--accent);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 10000;
-  transition: transform 0.15s ease;
-  mix-blend-mode: screen;
-}
-.cursor-ring {
-  width: 36px; height: 36px;
-  border: 1.5px solid var(--accent);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-  transition: transform 0.4s ease, width 0.3s, height 0.3s;
-  mix-blend-mode: screen;
-  opacity: 0.6;
-}
+    /* CURSOR */
+    .cursor {
+      width: 10px;
+      height: 10px;
+      background: var(--accent);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 10000;
+      transition: transform 0.15s ease;
+      mix-blend-mode: screen;
+    }
 
-/* NAV */
-nav {
-  position: fixed; top: 0; left: 0; right: 0;
-  z-index: 1000;
-  padding: 1.2rem 3rem;
-  display: flex; align-items: center; justify-content: space-between;
-  backdrop-filter: blur(20px);
-  background: rgba(6,11,20,0.8);
-  border-bottom: 1px solid var(--border);
-  transition: all 0.3s;
-}
-.nav-logo {
-  font-family: var(--mono);
-  font-size: 1rem;
-  color: var(--accent);
-  letter-spacing: 0.05em;
-}
-.nav-logo span { color: var(--text); }
-.nav-links { display: flex; gap: 2.5rem; list-style: none; }
-.nav-links a {
-  font-family: var(--mono);
-  font-size: 0.78rem;
-  color: var(--muted);
-  text-decoration: none;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  position: relative;
-  transition: color 0.3s;
-}
-.nav-links a::after {
-  content: '';
-  position: absolute; bottom: -4px; left: 0;
-  width: 0; height: 1px;
-  background: var(--accent);
-  transition: width 0.3s;
-}
-.nav-links a:hover { color: var(--accent); }
-.nav-links a:hover::after { width: 100%; }
+    .cursor-ring {
+      width: 36px;
+      height: 36px;
+      border: 1.5px solid var(--accent);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      transition: transform 0.4s ease, width 0.3s, height 0.3s;
+      mix-blend-mode: screen;
+      opacity: 0.6;
+    }
 
-/* HERO */
-#hero {
-  min-height: 100vh;
-  display: flex; align-items: center;
-  position: relative;
-  overflow: hidden;
-  padding: 8rem 3rem 4rem;
-}
-#hero-canvas {
-  position: absolute; inset: 0;
-  z-index: 0;
-}
-.hero-content {
-  position: relative; z-index: 2;
-  max-width: 900px;
-}
-.hero-badge {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  font-family: var(--mono);
-  font-size: 0.75rem;
-  color: var(--accent);
-  border: 1px solid var(--border);
-  background: rgba(0,212,255,0.05);
-  padding: 0.4rem 1rem;
-  border-radius: 100px;
-  margin-bottom: 2rem;
-  letter-spacing: 0.1em;
-}
-.hero-badge::before {
-  content: '';
-  width: 6px; height: 6px;
-  background: var(--green);
-  border-radius: 50%;
-  box-shadow: 0 0 8px var(--green);
-  animation: pulse-dot 2s infinite;
-}
-@keyframes pulse-dot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(1.3); }
-}
-.hero-name {
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: -0.03em;
-  margin-bottom: 0.5rem;
-}
-.hero-name .line1 { display: block; color: var(--text); }
-.hero-name .line2 {
-  display: block;
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.hero-title {
-  font-family: var(--mono);
-  font-size: clamp(0.85rem, 1.5vw, 1.1rem);
-  color: var(--muted);
-  margin: 1.5rem 0 2rem;
-  letter-spacing: 0.05em;
-}
-.hero-title .typed { color: var(--accent); }
-.hero-title .cursor-blink {
-  display: inline-block;
-  width: 2px; height: 1.1em;
-  background: var(--accent);
-  vertical-align: middle;
-  animation: blink 1s step-end infinite;
-}
-@keyframes blink { 50% { opacity: 0; } }
-.hero-desc {
-  font-size: 1.05rem;
-  color: var(--muted);
-  max-width: 580px;
-  line-height: 1.7;
-  margin-bottom: 2.5rem;
-}
-.hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
-.btn-primary {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  background: var(--accent);
-  color: var(--bg);
-  font-family: var(--mono);
-  font-size: 0.8rem;
-  font-weight: 700;
-  padding: 0.9rem 2rem;
-  border-radius: 4px;
-  text-decoration: none;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  position: relative; overflow: hidden;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-.btn-primary::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-  transform: translateX(-100%);
-  transition: transform 0.5s;
-}
-.btn-primary:hover::before { transform: translateX(100%); }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,212,255,0.3); }
-.btn-secondary {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  border: 1px solid var(--border);
-  color: var(--text);
-  font-family: var(--mono);
-  font-size: 0.8rem;
-  padding: 0.9rem 2rem;
-  border-radius: 4px;
-  text-decoration: none;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transition: border-color 0.3s, color 0.3s;
-}
-.btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1.2rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      backdrop-filter: blur(20px);
+      background: rgba(6, 11, 20, 0.8);
+      border-bottom: 1px solid var(--border);
+      transition: all 0.3s;
+    }
 
-/* FLOATING TAGS */
-.hero-tags {
-  display: flex; flex-wrap: wrap; gap: 0.6rem;
-  margin-top: 2rem;
-}
-.hero-tag {
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  padding: 0.3rem 0.8rem;
-  border: 1px solid rgba(0,212,255,0.2);
-  border-radius: 3px;
-  color: var(--muted);
-  background: rgba(0,212,255,0.03);
-  animation: float-tag linear infinite;
-}
-@keyframes float-tag {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
-}
+    .nav-logo {
+      font-family: var(--mono);
+      font-size: 1rem;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+    }
 
-/* STATS */
-#stats {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 4rem 3rem;
-}
-.stats-grid {
-  max-width: 1100px; margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 2rem;
-  text-align: center;
-}
-.stat-item {}
-.stat-number {
-  font-family: var(--mono);
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  color: var(--accent);
-  display: block;
-  line-height: 1;
-}
-.stat-label {
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  margin-top: 0.5rem;
-  display: block;
-}
+    .nav-logo span {
+      color: var(--text);
+    }
 
-/* SECTIONS */
-section { padding: 6rem 3rem; }
-.section-header {
-  max-width: 1100px; margin: 0 auto 4rem;
-  display: flex; align-items: center; gap: 1.5rem;
-}
-.section-num {
-  font-family: var(--mono);
-  font-size: 0.75rem;
-  color: var(--accent);
-  opacity: 0.6;
-}
-.section-title {
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-}
-.section-line {
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, var(--border) 0%, transparent 100%);
-}
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
 
-/* ABOUT */
-#about { background: var(--bg); }
-.about-grid {
-  max-width: 1100px; margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-}
-.about-text p {
-  color: var(--muted);
-  line-height: 1.8;
-  margin-bottom: 1.2rem;
-  font-size: 1rem;
-}
-.about-text p strong { color: var(--text); }
-.location-badge {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  font-family: var(--mono);
-  font-size: 0.75rem;
-  color: var(--green);
-  border: 1px solid rgba(16,185,129,0.3);
-  background: rgba(16,185,129,0.05);
-  padding: 0.4rem 1rem;
-  border-radius: 100px;
-  margin-top: 1.5rem;
-}
-.location-badge::before {
-  content: '●';
-  font-size: 0.5rem;
-  animation: pulse-dot 2s infinite;
-}
-.terminal-window {
-  background: #060d1a;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 40px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(0,212,255,0.05);
-}
-.terminal-bar {
-  display: flex; align-items: center; gap: 0.5rem;
-  padding: 0.8rem 1rem;
-  background: rgba(255,255,255,0.03);
-  border-bottom: 1px solid var(--border);
-}
-.term-dot {
-  width: 10px; height: 10px;
-  border-radius: 50%;
-}
-.term-dot.red { background: #ff5f57; }
-.term-dot.yellow { background: #ffbd2e; }
-.term-dot.green { background: #28ca41; }
-.terminal-title {
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  color: var(--muted);
-  margin-left: 0.5rem;
-}
-.terminal-body {
-  padding: 1.5rem;
-  font-family: var(--mono);
-  font-size: 0.8rem;
-  line-height: 2;
-  min-height: 240px;
-}
-.term-line { display: flex; gap: 0.5rem; }
-.term-prompt { color: var(--green); }
-.term-cmd { color: var(--accent); }
-.term-output { color: var(--muted); padding-left: 1.5rem; }
-.term-output.success { color: var(--green); }
-.term-output.warn { color: var(--orange); }
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      position: relative;
+      transition: color 0.3s;
+    }
 
-/* EXPERIENCE */
-#experience { background: var(--surface); }
-.timeline {
-  max-width: 900px; margin: 0 auto;
-  position: relative;
-}
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 1px;
-  background: linear-gradient(180deg, var(--accent), var(--accent2), transparent);
-  opacity: 0.3;
-}
-.timeline-item {
-  padding: 0 0 3.5rem 2.5rem;
-  position: relative;
-  opacity: 0;
-  transform: translateX(-30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.timeline-item.revealed { opacity: 1; transform: translateX(0); }
-.timeline-dot {
-  position: absolute; left: -5px; top: 4px;
-  width: 11px; height: 11px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 12px var(--accent);
-}
-.timeline-dot.ml { background: var(--accent2); box-shadow: 0 0 12px var(--accent2); }
-.timeline-dot.sec { background: var(--orange); box-shadow: 0 0 12px var(--orange); }
-.timeline-dot.db { background: var(--green); box-shadow: 0 0 12px var(--green); }
-.timeline-period {
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  color: var(--muted);
-  letter-spacing: 0.08em;
-  margin-bottom: 0.5rem;
-}
-.timeline-role { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.25rem; }
-.timeline-company { color: var(--accent); font-size: 0.9rem; margin-bottom: 1rem; }
-.timeline-highlight {
-  color: var(--muted);
-  font-size: 0.9rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-.timeline-section-label {
-  font-family: var(--mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent2);
-  margin: 1rem 0 0.5rem 0;
-  padding-left: 0.75rem;
-  border-left: 2px solid var(--accent2);
-}
-.timeline-bullets {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 0.25rem 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.45rem;
-}
-.timeline-bullets li {
-  font-size: 0.88rem;
-  color: var(--muted);
-  line-height: 1.55;
-  padding-left: 1.1rem;
-  position: relative;
-}
-.timeline-bullets li::before {
-  content: "▸";
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-  font-size: 0.7rem;
-  top: 0.15em;
-}
-.timeline-bullets li strong {
-  color: var(--text);
-  font-weight: 600;
-}
-.tech-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-.pill {
-  font-family: var(--mono);
-  font-size: 0.65rem;
-  padding: 0.25rem 0.6rem;
-  border-radius: 3px;
-  letter-spacing: 0.05em;
-}
-.pill.cloud { background: rgba(0,212,255,0.1); color: var(--accent); border: 1px solid rgba(0,212,255,0.2); }
-.pill.ml { background: rgba(124,58,237,0.1); color: #a78bfa; border: 1px solid rgba(124,58,237,0.2); }
-.pill.sec { background: rgba(245,158,11,0.1); color: var(--orange); border: 1px solid rgba(245,158,11,0.2); }
-.pill.db { background: rgba(16,185,129,0.1); color: var(--green); border: 1px solid rgba(16,185,129,0.2); }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.3s;
+    }
 
-/* SKILLS */
-#skills { background: var(--bg); }
-.skills-container { max-width: 1100px; margin: 0 auto; }
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-}
-.skill-group {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 1.5rem;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s, transform 0.5s;
-}
-.skill-group.revealed { opacity: 1; transform: translateY(0); }
-.skill-group:hover {
-  border-color: rgba(0,212,255,0.25);
-  box-shadow: 0 4px 30px rgba(0,212,255,0.05);
-}
-.skill-group-title {
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  margin-bottom: 1rem;
-  display: flex; align-items: center; gap: 0.5rem;
-}
-.skill-group-title::before {
-  content: '';
-  width: 3px; height: 12px;
-  background: var(--accent);
-  border-radius: 2px;
-}
-.skill-badges { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-.skill-badge {
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  padding: 0.3rem 0.7rem;
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 3px;
-  color: var(--muted);
-  background: rgba(255,255,255,0.02);
-  transition: all 0.2s;
-  cursor: default;
-}
-.skill-badge:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: rgba(0,212,255,0.05);
-  transform: translateY(-1px);
-}
+    .nav-links a:hover {
+      color: var(--accent);
+    }
 
-/* CERTS */
-#certs { background: var(--surface); }
-.certs-grid {
-  max-width: 1100px; margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1.2rem;
-}
-.cert-card {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 1.5rem;
-  display: flex; gap: 1rem; align-items: flex-start;
-  opacity: 0; transform: translateY(15px);
-  transition: opacity 0.5s, transform 0.5s;
-}
-.cert-card.revealed { opacity: 1; transform: translateY(0); }
-.cert-card:hover {
-  border-color: rgba(0,212,255,0.3);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 40px rgba(0,212,255,0.08);
-}
-.cert-icon {
-  font-size: 1.5rem;
-  flex-shrink: 0;
-  width: 2.5rem; height: 2.5rem;
-  display: grid; place-items: center;
-  background: rgba(0,212,255,0.06);
-  border-radius: 6px;
-  border: 1px solid var(--border);
-}
-.cert-name { font-size: 0.88rem; font-weight: 600; margin-bottom: 0.25rem; }
-.cert-issuer { font-family: var(--mono); font-size: 0.68rem; color: var(--muted); }
-.cert-year { font-family: var(--mono); font-size: 0.65rem; color: var(--accent); margin-top: 0.3rem; }
-.cert-wip {
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  color: var(--orange);
-  border: 1px solid rgba(245,158,11,0.3);
-  padding: 0.15rem 0.4rem;
-  border-radius: 2px;
-  margin-top: 0.3rem;
-  display: inline-block;
-}
+    .nav-links a:hover::after {
+      width: 100%;
+    }
 
-/* CONTACT */
-#contact {
-  background: var(--bg);
-  border-top: 1px solid var(--border);
-}
-.contact-inner {
-  max-width: 700px; margin: 0 auto;
-  text-align: center;
-}
-.contact-inner .section-title { margin-bottom: 1rem; }
-.contact-desc { color: var(--muted); line-height: 1.7; margin-bottom: 3rem; }
-.contact-links {
-  display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;
-  margin-bottom: 3rem;
-}
-.contact-link {
-  display: inline-flex; align-items: center; gap: 0.6rem;
-  font-family: var(--mono);
-  font-size: 0.8rem;
-  color: var(--muted);
-  text-decoration: none;
-  border: 1px solid var(--border);
-  padding: 0.7rem 1.3rem;
-  border-radius: 4px;
-  transition: all 0.3s;
-}
-.contact-link:hover {
-  color: var(--accent);
-  border-color: var(--accent);
-  background: rgba(0,212,255,0.04);
-  transform: translateY(-2px);
-}
-.contact-link svg {
-  width: 16px; height: 16px;
-  fill: currentColor;
-}
-footer {
-  text-align: center;
-  padding: 2rem;
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  color: var(--muted);
-  border-top: 1px solid var(--border);
-}
+    /* HERO */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 8rem 3rem 4rem;
+    }
 
-/* REVEAL ANIMATION */
-.reveal {
-  opacity: 0; transform: translateY(30px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.reveal.revealed { opacity: 1; transform: translateY(0); }
+    #hero-canvas {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
 
-/* SCROLLBAR */
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: rgba(0,212,255,0.3); border-radius: 2px; }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+    }
 
-/* MOBILE */
-@media (max-width: 768px) {
-  nav { padding: 1rem 1.5rem; }
-  .nav-links { display: none; }
-  #hero, section { padding: 5rem 1.5rem 3rem; }
-  .about-grid { grid-template-columns: 1fr; }
-  .timeline::before { left: 0; }
-  .skills-grid { grid-template-columns: 1fr; }
-  body { cursor: auto; }
-  .cursor, .cursor-ring { display: none; }
-}
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--accent);
+      border: 1px solid var(--border);
+      background: rgba(0, 212, 255, 0.05);
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 2rem;
+      letter-spacing: 0.1em;
+    }
 
-/* LOADING SCREEN */
-#loading {
-  position: fixed; inset: 0;
-  background: var(--bg);
-  z-index: 9999;
-  display: flex; align-items: center; justify-content: center;
-  flex-direction: column; gap: 1rem;
-  transition: opacity 0.5s, visibility 0.5s;
-}
-#loading.hidden { opacity: 0; pointer-events: none; animation: none; }
-#loading.gone { display: none; }
-.loading-text {
-  font-family: var(--mono);
-  font-size: 0.8rem;
-  color: var(--accent);
-  letter-spacing: 0.15em;
-}
-.loading-bar-wrap {
-  width: 200px; height: 2px;
-  background: rgba(0,212,255,0.1);
-  border-radius: 2px;
-}
-.loading-bar {
-  height: 100%;
-  background: var(--accent);
-  border-radius: 2px;
-  width: 0;
-  animation: loading-fill 1.5s ease forwards;
-}
-@keyframes loading-fill { to { width: 100%; } }
-</style>
-</head>
-<body>
+    .hero-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--green);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--green);
+      animation: pulse-dot 2s infinite;
+    }
 
-<!-- LOADING -->
-<div id="loading">
-  <div class="loading-text">INITIALIZING PLATFORM...</div>
-  <div class="loading-bar-wrap"><div class="loading-bar"></div></div>
-  <div class="loading-text" id="loading-detail" style="opacity:0.5;font-size:0.65rem;">loading modules</div>
-</div>
+    @keyframes pulse-dot {
 
-<!-- CURSOR -->
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursor-ring"></div>
-
-<!-- NAV -->
-<nav>
-  <div class="nav-logo">VM<span>.</span>dev</div>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#certs">Certs</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <a href="/cdn-cgi/l/email-protection#0e78626f20636f676a6f60677b654e69636f6762206d6163" class="btn-secondary" style="padding:0.5rem 1.2rem;font-size:0.72rem;">HIRE ME</a>
-</nav>
-
-<!-- HERO -->
-<section id="hero">
-  <canvas id="hero-canvas"></canvas>
-  <div class="hero-content">
-    <div class="hero-badge">Available for new opportunities</div>
-    <h1 class="hero-name">
-      <span class="line1">Vladyslav</span>
-      <span class="line2">Maidaniuk</span>
-    </h1>
-    <p class="hero-title">
-      &gt;&nbsp;<span class="typed" id="typed-text"></span><span class="cursor-blink"></span>
-    </p>
-    <p class="hero-desc">
-      Senior Platform/Backend Engineer transitioning into Full-Stack (React + Node/Python). 9+ year senior foundation in platform engineering, backend, MLOps, and DevSecOps. Specialises in taking complex systems and making them observable, maintainable, and production-ready.
-    </p>
-    <div class="hero-ctas">
-      <a href="#experience" class="btn-primary">↓ View Experience</a>
-      <a href="/cdn-cgi/l/email-protection#d1a7bdb0ffbcb0b8b5b0bfb8a4ba91b6bcb0b8bdffb2bebc" class="btn-secondary">✉ Get in Touch</a>
-    </div>
-    <div class="hero-tags">
-      <span class="hero-tag" style="animation-duration:3.1s">React (Middle)</span>
-      <span class="hero-tag" style="animation-duration:3.7s">Node.js / Python</span>
-      <span class="hero-tag" style="animation-duration:2.9s">Kubernetes</span>
-      <span class="hero-tag" style="animation-duration:4.1s">AWS / Azure / GCP</span>
-      <span class="hero-tag" style="animation-duration:3.4s">Terraform</span>
-      <span class="hero-tag" style="animation-duration:2.7s">MLOps</span>
-      <span class="hero-tag" style="animation-duration:3.9s">DevSecOps</span>
-    </div>
-  </div>
-</section>
-
-<!-- STATS -->
-<div id="stats">
-  <div class="stats-grid">
-    <div class="stat-item reveal">
-      <span class="stat-number" data-target="9" data-suffix="+yr">0</span>
-      <span class="stat-label">Years Experience</span>
-    </div>
-    <div class="stat-item reveal">
-      <span class="stat-number" data-target="99.9" data-suffix="%" data-decimal="1">0</span>
-      <span class="stat-label">Uptime SLA</span>
-    </div>
-    <div class="stat-item reveal">
-      <span class="stat-number" data-target="80" data-prefix="−" data-suffix="%">0</span>
-      <span class="stat-label">Deployment Time</span>
-    </div>
-    <div class="stat-item reveal">
-      <span class="stat-number" data-target="40" data-suffix="+">0</span>
-      <span class="stat-label">IaC Modules</span>
-    </div>
-    <div class="stat-item reveal">
-      <span class="stat-number" data-target="95" data-suffix="%+">0</span>
-      <span class="stat-label">CIS Compliance</span>
-    </div>
-    <div class="stat-item reveal">
-      <span class="stat-number" data-target="200" data-suffix="+">0</span>
-      <span class="stat-label">Cloud Resources</span>
-    </div>
-  </div>
-</div>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="section-header reveal">
-    <span class="section-num">01 /</span>
-    <h2 class="section-title">About</h2>
-    <div class="section-line"></div>
-  </div>
-  <div class="about-grid">
-    <div class="about-text reveal">
-      <p>I am a <strong>Senior Platform/Backend Engineer transitioning into Full-Stack (React + Node/Python)</strong>, targeting Middle Full-Stack roles with ownership over backend and infrastructure.</p>
-      <p>With a 9+ year senior foundation in platform engineering, database reliability, MLOps, and DevSecOps, I am currently expanding into React/frontend to close the full-stack loop. While my backend, infrastructure, and cloud skills are senior-grade, my frontend is middle-grade and growing fast.</p>
-      <p>Currently leading the <strong>reverse engineering and reliability engineering</strong> of CAODB at Prague Airport. I specialise in taking complex, underdocumented legacy systems and making them observable, maintainable, and production-ready.</p>
-      <p>I am an ideal fit for teams that need strong backend/DevOps ownership and can mentor on frontend. I operate autonomously in async-first teams with full ownership from architecture through production.</p>
-      <div class="location-badge">Prague, CZ — Open to EU / UK / Remote</div>
-    </div>
-    <div class="reveal" style="transition-delay:0.2s">
-      <div class="terminal-window">
-        <div class="terminal-bar">
-          <div class="term-dot red"></div>
-          <div class="term-dot yellow"></div>
-          <div class="term-dot green"></div>
-          <span class="terminal-title">vlad@platform-eng ~ </span>
-        </div>
-        <div class="terminal-body" id="terminal-body">
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="section-header reveal">
-    <span class="section-num">02 /</span>
-    <h2 class="section-title">Experience</h2>
-    <div class="section-line"></div>
-  </div>
-  <div class="timeline">
-
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-period">Jan 2026 — Present</div>
-      <div class="timeline-role">Senior Integration & Platform Engineer</div>
-      <div class="timeline-company">PRINCIPAL — Prague Airport (CAODB)</div>
-      <div class="timeline-highlight">Reverse-engineered undocumented aviation systems; designed 10+ monitoring tasks for the WatchDog alerting system; replaced 15yr old Word/PDF specs with Git-versioned Markdown docs; debugged Apache NiFi ETL pipelines restoring data integrity across critical flows.</div>
-      <div class="tech-pills">
-        <span class="pill db">Sybase ASE</span>
-        <span class="pill db">Oracle EDW</span>
-        <span class="pill cloud">Apache NiFi</span>
-        <span class="pill cloud">Kubernetes</span>
-        <span class="pill cloud">Terraform</span>
-        <span class="pill cloud">Git</span>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-dot ml"></div>
-      <div class="timeline-period">Jan 2025 — Dec 2025</div>
-      <div class="timeline-role">MLOps &amp; SRE Engineer — Financial Services Platform</div>
-      <div class="timeline-company">Up Coop (UP Group) — Prague · Financial services · regulated environment · 5,000+ users</div>
-      <div class="timeline-highlight">Delivered reliability and integration engineering for a regulated financial-services ML platform — working directly with backend and analytics teams to integrate services into live banking transaction pipelines.</div>
-
-      <div class="timeline-section-label">Backend integration &amp; data pipeline reliability</div>
-      <ul class="timeline-bullets">
-        <li>Integrated ML inference services into banking transaction flows via <strong>message-queue patterns (Kafka)</strong> and <strong>REST/XML interfaces</strong> — ensuring sub-100ms response under production load</li>
-        <li>Debugged and stabilised <strong>ETL pipelines</strong> processing financial transactions across multiple backend systems — root cause analysis at SQL and data-layer level</li>
-        <li>Wrote and optimised <strong>SQL queries against PostgreSQL</strong> supporting ML feature engineering and transaction analytics</li>
-        <li>Collaborated with core backend developers and business analysts to translate <strong>financial business requirements</strong> into reliable technical designs</li>
-        <li>Managed <strong>data integrity</strong> between upstream banking sources and ML serving infrastructure — validation, reconciliation, and anomaly detection</li>
-      </ul>
-
-      <div class="timeline-section-label">Platform reliability &amp; observability</div>
-      <ul class="timeline-bullets">
-        <li>Maintained <strong>99.8% uptime SLA</strong> across all production models with autoscaling and controlled canary rollouts</li>
-        <li>Redesigned inference pipeline with caching and request batching — <strong>P99 latency −70%</strong> without hardware scaling</li>
-        <li>Built full-stack observability: Prometheus, Grafana, ELK, Sentry — outages detected by engineers, not users</li>
-        <li>Built standardised CI/CD (GitLab CI + Terraform + Helm) — eliminated manual release steps, <strong>−60% deploy time</strong></li>
-        <li>Led post-mortem analyses and corrective actions improving MTTR across platform incidents</li>
-      </ul>
-
-      <div class="tech-pills" style="margin-top:1rem;">
-        <span class="pill db">Kafka / MQ</span>
-        <span class="pill db">XML / REST</span>
-        <span class="pill db">PostgreSQL</span>
-        <span class="pill db">SQL</span>
-        <span class="pill ml">MLflow</span>
-        <span class="pill cloud">Kubernetes EKS/GKE</span>
-        <span class="pill cloud">Terraform</span>
-        <span class="pill ml">Helm</span>
-        <span class="pill cloud">GitLab CI</span>
-        <span class="pill cloud">Prometheus / Grafana</span>
-        <span class="pill cloud">ELK</span>
-        <span class="pill sec">Vault</span>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-dot ml"></div>
-      <div class="timeline-period">Jan 2022 — Dec 2025</div>
-      <div class="timeline-role">Senior Platform & MLOps Engineer (Freelance)</div>
-      <div class="timeline-company">Upwork — CZ, PL, UAE, Canada</div>
-      <div class="timeline-highlight">10+ engagements in FinTech, banking, AI-native companies. Built cloud-native ML platforms; PCI DSS CI/CD for regulated banking; deployed fraud detection ML with low-latency integration into transaction pipelines. 99.8%+ uptime across all engagements.</div>
-      <div class="tech-pills">
-        <span class="pill cloud">AWS / Azure / GCP</span>
-        <span class="pill cloud">Kubernetes</span>
-        <span class="pill cloud">Terraform</span>
-        <span class="pill ml">MLflow</span>
-        <span class="pill sec">PCI DSS</span>
-        <span class="pill cloud">GitHub Actions</span>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-dot sec"></div>
-      <div class="timeline-period">Jun 2020 — Jan 2022</div>
-      <div class="timeline-role">Security & Reliability Engineer</div>
-      <div class="timeline-company">Motorola Solutions — Prague</div>
-      <div class="timeline-highlight">Monitored security events across ML and cloud infrastructure; automated security scanning in CI/CD pipelines; built ML service monitoring dashboards; performed root cause analysis and incident response.</div>
-      <div class="tech-pills">
-        <span class="pill sec">Security Scanning</span>
-        <span class="pill cloud">CI/CD</span>
-        <span class="pill cloud">Prometheus</span>
-        <span class="pill cloud">Grafana</span>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-dot db"></div>
-      <div class="timeline-period">Apr 2019 — Jun 2020</div>
-      <div class="timeline-role">Database Reliability Engineer (Oracle)</div>
-      <div class="timeline-company">N-iX — Krakow, Poland</div>
-      <div class="timeline-highlight">Owned reliability of Oracle 11g/12c RAC clusters; automated backup/recovery via RMAN; optimized query latency on critical business workflows; administered Data Guard standby for DR.</div>
-      <div class="tech-pills">
-        <span class="pill db">Oracle 11g/12c RAC</span>
-        <span class="pill db">RMAN</span>
-        <span class="pill db">Data Guard</span>
-        <span class="pill db">Linux</span>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-dot sec"></div>
-      <div class="timeline-period">May 2015 — Jan 2019</div>
-      <div class="timeline-role">Infrastructure Engineer</div>
-      <div class="timeline-company">PESA Bydgoszcz — Poland</div>
-      <div class="timeline-highlight">Architected VMware vSphere cluster (20 hosts, 400+ VMs); pioneered Docker/K8s adoption; implemented Azure AD hybrid integration reducing onboarding 30%; mentored 4 junior admins.</div>
-      <div class="tech-pills">
-        <span class="pill cloud">VMware vSphere</span>
-        <span class="pill cloud">Kubernetes</span>
-        <span class="pill cloud">Azure AD</span>
-        <span class="pill cloud">Docker</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills">
-  <div class="section-header reveal">
-    <span class="section-num">03 /</span>
-    <h2 class="section-title">Technical Stack</h2>
-    <div class="section-line"></div>
-  </div>
-  <div class="skills-container">
-    <div class="skills-grid">
-      <div class="skill-group">
-        <div class="skill-group-title">Cloud Platforms</div>
-        <div class="skill-badges">
-          <span class="skill-badge">AWS</span>
-          <span class="skill-badge">Azure</span>
-          <span class="skill-badge">GCP</span>
-          <span class="skill-badge">EKS</span>
-          <span class="skill-badge">AKS</span>
-          <span class="skill-badge">GKE</span>
-          <span class="skill-badge">EC2 / RDS / S3</span>
-          <span class="skill-badge">Lambda / VPC / IAM</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">Containers & Orchestration</div>
-        <div class="skill-badges">
-          <span class="skill-badge">Kubernetes</span>
-          <span class="skill-badge">Docker</span>
-          <span class="skill-badge">Helm</span>
-          <span class="skill-badge">RBAC</span>
-          <span class="skill-badge">Network Policies</span>
-          <span class="skill-badge">HPA / VPA</span>
-          <span class="skill-badge">Pod Security</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">Infrastructure as Code</div>
-        <div class="skill-badges">
-          <span class="skill-badge">Terraform</span>
-          <span class="skill-badge">Terragrunt</span>
-          <span class="skill-badge">Ansible</span>
-          <span class="skill-badge">Ansible Tower/AWX</span>
-          <span class="skill-badge">CloudFormation</span>
-          <span class="skill-badge">GitOps</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">ML / MLOps Platforms</div>
-        <div class="skill-badges">
-          <span class="skill-badge">MLflow</span>
-          <span class="skill-badge">KServe</span>
-          <span class="skill-badge">Seldon Core</span>
-          <span class="skill-badge">Ray</span>
-          <span class="skill-badge">Kubeflow</span>
-          <span class="skill-badge">Apache Airflow</span>
-          <span class="skill-badge">NVIDIA GPU Operator</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">Observability & SRE</div>
-        <div class="skill-badges">
-          <span class="skill-badge">Prometheus</span>
-          <span class="skill-badge">Grafana</span>
-          <span class="skill-badge">ELK Stack</span>
-          <span class="skill-badge">Splunk</span>
-          <span class="skill-badge">Loki</span>
-          <span class="skill-badge">SLO / SLI / SLA</span>
-          <span class="skill-badge">Error Budgets</span>
-          <span class="skill-badge">PagerDuty</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">Security & Compliance</div>
-        <div class="skill-badges">
-          <span class="skill-badge">HashiCorp Vault</span>
-          <span class="skill-badge">Trivy</span>
-          <span class="skill-badge">SAST</span>
-          <span class="skill-badge">CIS Benchmarks</span>
-          <span class="skill-badge">ISO 27001</span>
-          <span class="skill-badge">PCI DSS</span>
-          <span class="skill-badge">CEH v12</span>
-          <span class="skill-badge">Nmap / Metasploit</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">CI/CD & Delivery</div>
-        <div class="skill-badges">
-          <span class="skill-badge">GitHub Actions</span>
-          <span class="skill-badge">GitLab CI</span>
-          <span class="skill-badge">Jenkins</span>
-          <span class="skill-badge">Canary Deployments</span>
-          <span class="skill-badge">Trunk-Based Dev</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">Frontend (Middle)</div>
-        <div class="skill-badges">
-          <span class="skill-badge">React (Hooks, State Mgmt)</span>
-          <span class="skill-badge">JavaScript / TypeScript</span>
-          <span class="skill-badge">HTML5 / CSS3</span>
-          <span class="skill-badge">Tailwind CSS</span>
-          <span class="skill-badge">Component Design</span>
-          <span class="skill-badge">REST API Consumption</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">Backend (Senior)</div>
-        <div class="skill-badges">
-          <span class="skill-badge">Python</span>
-          <span class="skill-badge">Node.js</span>
-          <span class="skill-badge">Go</span>
-          <span class="skill-badge">Bash / Shell</span>
-          <span class="skill-badge">REST APIs / SOAP</span>
-          <span class="skill-badge">Kafka / RabbitMQ / IBM MQ</span>
-          <span class="skill-badge">Microservices</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">Databases</div>
-        <div class="skill-badges">
-          <span class="skill-badge">PostgreSQL</span>
-          <span class="skill-badge">Oracle 11g/12c RAC</span>
-          <span class="skill-badge">Sybase ASE</span>
-          <span class="skill-badge">DB2</span>
-          <span class="skill-badge">MongoDB</span>
-          <span class="skill-badge">SQL Optimisation</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">Data Integration</div>
-        <div class="skill-badges">
-          <span class="skill-badge">Apache NiFi</span>
-          <span class="skill-badge">Kafka</span>
-          <span class="skill-badge">RabbitMQ</span>
-          <span class="skill-badge">Oracle EDW</span>
-          <span class="skill-badge">Sybase Replication</span>
-          <span class="skill-badge">REST APIs</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CERTIFICATIONS -->
-<section id="certs">
-  <div class="section-header reveal">
-    <span class="section-num">04 /</span>
-    <h2 class="section-title">Certifications</h2>
-    <div class="section-line"></div>
-  </div>
-  <div class="certs-grid">
-    <div class="cert-card">
-      <div class="cert-icon">🛡️</div>
-      <div>
-        <div class="cert-name">Certified Ethical Hacker v12</div>
-        <div class="cert-issuer">EC-Council</div>
-        <div class="cert-year">2024</div>
-      </div>
-    </div>
-    <div class="cert-card">
-      <div class="cert-icon">🔐</div>
-      <div>
-        <div class="cert-name">DevSecOps Certificate</div>
-        <div class="cert-issuer">TryHackMe</div>
-        <div class="cert-year">2025</div>
-      </div>
-    </div>
-    <div class="cert-card">
-      <div class="cert-icon">🔥</div>
-      <div>
-        <div class="cert-name">Cybersecurity Professional Certificate</div>
-        <div class="cert-issuer">Palo Alto Networks</div>
-        <div class="cert-year">2025</div>
-      </div>
-    </div>
-    <div class="cert-card">
-      <div class="cert-icon">🐍</div>
-      <div>
-        <div class="cert-name">IT Automation with Python</div>
-        <div class="cert-issuer">Google</div>
-        <div class="cert-year">2024</div>
-      </div>
-    </div>
-    <div class="cert-card">
-      <div class="cert-icon">🐧</div>
-      <div>
-        <div class="cert-name">CompTIA Linux+ (XK0-005)</div>
-        <div class="cert-issuer">CompTIA</div>
-        <div class="cert-year">Active</div>
-      </div>
-    </div>
-    <div class="cert-card">
-      <div class="cert-icon">☁️</div>
-      <div>
-        <div class="cert-name">AWS Solutions Architect – Associate</div>
-        <div class="cert-issuer">Amazon Web Services</div>
-        <div class="cert-wip">⬡ IN PROGRESS</div>
-      </div>
-    </div>
-    <div class="cert-card">
-      <div class="cert-icon">⚙️</div>
-      <div>
-        <div class="cert-name">Certified Kubernetes Administrator</div>
-        <div class="cert-issuer">CNCF</div>
-        <div class="cert-wip">⬡ IN PROGRESS</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="contact-inner">
-    <div class="reveal">
-      <h2 class="section-title" style="text-align:center;margin-bottom:1rem">Let's Build Something</h2>
-      <p class="contact-desc">Targeting Middle Full-Stack roles with ownership over backend and infrastructure. Open to remote-first or hybrid (EU / Global). Available for immediate transition.</p>
-    </div>
-    <div class="contact-links reveal" style="transition-delay:0.2s">
-      <a href="/cdn-cgi/l/email-protection#146278753a79757d70757a7d617f547379757d783a777b79" class="contact-link">
-        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        <span class="__cf_email__" data-cfemail="bdcbd1dc93d0dcd4d9dcd3d4c8d6fddad0dcd4d193ded2d0">[email&#160;protected]</span>
-      </a>
-      <a href="https://github.com/vlamay" target="_blank" class="contact-link">
-        <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
-        github.com/vlamay
-      </a>
-      <a href="https://linkedin.com/in/maidaniuk" target="_blank" class="contact-link">
-        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        linkedin.com/in/maidaniuk
-      </a>
-      <a href="tel:+420721579603" class="contact-link">
-        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-        +420 721 579 603
-      </a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <span style="color:var(--accent)">VM</span>.dev — Vladyslav Maidaniuk © 2025 — Prague, Czech Republic
-</footer>
-
-<script>
-// ── LOADING ──────────────────────────────────────────────
-const loadingMsgs = ['loading modules...', 'initializing k8s...', 'connecting to cluster...', 'ready.'];
-let mi = 0;
-const loadingDetail = document.getElementById('loading-detail');
-const msgInterval = setInterval(() => {
-  if (mi < loadingMsgs.length) { loadingDetail.textContent = loadingMsgs[mi++]; }
-}, 400);
-function hideLoader() {
-  clearInterval(msgInterval);
-  const el = document.getElementById('loading');
-  el.classList.add('hidden');
-  setTimeout(() => el.classList.add('gone'), 600);
-}
-// Fire on DOMContentLoaded (fast) with short delay for animation
-document.addEventListener('DOMContentLoaded', () => setTimeout(hideLoader, 1400));
-// Absolute fallback — never stay stuck longer than 2.5s
-setTimeout(hideLoader, 2500);
-
-// ── CURSOR ────────────────────────────────────────────────
-const cursor = document.getElementById('cursor');
-const ring = document.getElementById('cursor-ring');
-let mx = 0, my = 0, rx = 0, ry = 0;
-document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.left = mx - 5 + 'px'; cursor.style.top = my - 5 + 'px'; });
-function animateRing() {
-  rx += (mx - rx - 18) * 0.12;
-  ry += (my - ry - 18) * 0.12;
-  ring.style.left = rx + 'px';
-  ring.style.top = ry + 'px';
-  requestAnimationFrame(animateRing);
-}
-animateRing();
-document.querySelectorAll('a, button').forEach(el => {
-  el.addEventListener('mouseenter', () => { ring.style.width = '50px'; ring.style.height = '50px'; cursor.style.transform = 'scale(0.5)'; });
-  el.addEventListener('mouseleave', () => { ring.style.width = '36px'; ring.style.height = '36px'; cursor.style.transform = 'scale(1)'; });
-});
-
-// ── HERO CANVAS ───────────────────────────────────────────
-const canvas = document.getElementById('hero-canvas');
-const ctx = canvas.getContext('2d');
-let W, H, dots = [];
-function resizeCanvas() {
-  W = canvas.width = canvas.offsetWidth;
-  H = canvas.height = canvas.offsetHeight;
-}
-resizeCanvas();
-window.addEventListener('resize', resizeCanvas);
-for (let i = 0; i < 80; i++) {
-  dots.push({ x: Math.random()*2000, y: Math.random()*900, vx: (Math.random()-.5)*0.3, vy: (Math.random()-.5)*0.3, r: Math.random()*1.5+0.5 });
-}
-function drawCanvas() {
-  ctx.clearRect(0, 0, W, H);
-  // grid
-  ctx.strokeStyle = 'rgba(0,212,255,0.04)';
-  ctx.lineWidth = 1;
-  const gs = 60;
-  for (let x = 0; x < W; x += gs) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke(); }
-  for (let y = 0; y < H; y += gs) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke(); }
-  // dots
-  dots.forEach(d => {
-    d.x += d.vx; d.y += d.vy;
-    if (d.x < 0 || d.x > W) d.vx *= -1;
-    if (d.y < 0 || d.y > H) d.vy *= -1;
-    ctx.beginPath();
-    ctx.arc(d.x, d.y, d.r, 0, Math.PI*2);
-    ctx.fillStyle = 'rgba(0,212,255,0.4)';
-    ctx.fill();
-  });
-  // connections
-  dots.forEach((a, i) => {
-    dots.slice(i+1).forEach(b => {
-      const dist = Math.hypot(a.x-b.x, a.y-b.y);
-      if (dist < 120) {
-        ctx.beginPath();
-        ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
-        ctx.strokeStyle = `rgba(0,212,255,${0.12*(1-dist/120)})`;
-        ctx.lineWidth = 0.5;
-        ctx.stroke();
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
       }
-    });
-  });
-  requestAnimationFrame(drawCanvas);
-}
-drawCanvas();
 
-// ── TYPEWRITER ────────────────────────────────────────────
-const phrases = [
-  'Senior Platform/Backend Engineer',
-  'Transitioning to Full-Stack (React)',
-  'SRE / MLOps Specialist',
-  'Cloud Infrastructure Lead'
-];
-let pi = 0, ci = 0, deleting = false;
-const typedEl = document.getElementById('typed-text');
-function typeLoop() {
-  const phrase = phrases[pi];
-  if (!deleting) {
-    typedEl.textContent = phrase.slice(0, ++ci);
-    if (ci === phrase.length) { deleting = true; setTimeout(typeLoop, 2000); return; }
-  } else {
-    typedEl.textContent = phrase.slice(0, --ci);
-    if (ci === 0) { deleting = false; pi = (pi+1) % phrases.length; }
-  }
-  setTimeout(typeLoop, deleting ? 40 : 80);
-}
-setTimeout(typeLoop, 1800);
-
-// ── TERMINAL ──────────────────────────────────────────────
-const termLines = [
-  { type: 'cmd', text: 'kubectl get nodes -o wide' },
-  { type: 'out', text: 'NAME       STATUS   ROLES   AGE   VERSION', cls: '' },
-  { type: 'out', text: 'node-001   Ready    master  42d   v1.29.2', cls: 'success' },
-  { type: 'out', text: 'node-002   Ready    worker  42d   v1.29.2', cls: 'success' },
-  { type: 'cmd', text: 'terraform plan -out=prod.tfplan' },
-  { type: 'out', text: 'Plan: 3 to add, 1 to change, 0 to destroy.', cls: 'success' },
-  { type: 'cmd', text: 'ansible-playbook hardening.yml --check' },
-  { type: 'out', text: 'ok=18  changed=0  unreachable=0  failed=0', cls: 'success' },
-  { type: 'cmd', text: 'uptime-check --sla 99.9%' },
-  { type: 'out', text: '✓ SLA maintained — 99.97% last 30d', cls: 'success' },
-];
-const termBody = document.getElementById('terminal-body');
-let tli = 0;
-function addTermLine() {
-  if (tli >= termLines.length) return;
-  const l = termLines[tli++];
-  const div = document.createElement('div');
-  div.className = 'term-line';
-  if (l.type === 'cmd') {
-    div.innerHTML = `<span class="term-prompt">❯</span><span class="term-cmd">${l.text}</span>`;
-  } else {
-    div.innerHTML = `<span class="term-output ${l.cls||''}">${l.text}</span>`;
-  }
-  termBody.appendChild(div);
-  termBody.scrollTop = termBody.scrollHeight;
-  setTimeout(addTermLine, l.type === 'cmd' ? 700 : 200);
-}
-setTimeout(addTermLine, 2500);
-
-// ── COUNTERS ──────────────────────────────────────────────
-function animateCounter(el) {
-  const target = parseFloat(el.dataset.target);
-  const prefix = el.dataset.prefix || '';
-  const suffix = el.dataset.suffix || '';
-  const decimal = parseInt(el.dataset.decimal) || 0;
-  const duration = 1800;
-  const start = Date.now();
-  function update() {
-    const elapsed = Date.now() - start;
-    const progress = Math.min(elapsed / duration, 1);
-    const ease = 1 - Math.pow(1 - progress, 3);
-    const val = target * ease;
-    el.textContent = prefix + val.toFixed(decimal) + suffix;
-    if (progress < 1) requestAnimationFrame(update);
-  }
-  update();
-}
-
-// ── INTERSECTION OBSERVER ─────────────────────────────────
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('revealed');
-      // Counter animation
-      const num = entry.target.querySelector('[data-target]') || (entry.target.dataset.target ? entry.target : null);
-      if (entry.target.classList.contains('stat-item')) {
-        const numEl = entry.target.querySelector('[data-target]');
-        if (numEl && !numEl.dataset.animated) {
-          numEl.dataset.animated = 'true';
-          animateCounter(numEl);
-        }
+      50% {
+        opacity: 0.5;
+        transform: scale(1.3);
       }
     }
-  });
-}, { threshold: 0.15 });
 
-document.querySelectorAll('.reveal, .timeline-item, .skill-group, .cert-card, .stat-item').forEach(el => observer.observe(el));
+    .hero-name {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+    }
 
-// Stagger delays for groups
-doc
+    .hero-name .line1 {
+      display: block;
+      color: var(--text);
+    }
+
+    .hero-name .line2 {
+      display: block;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-title {
+      font-family: var(--mono);
+      font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+      color: var(--muted);
+      margin: 1.5rem 0 2rem;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-title .typed {
+      color: var(--accent);
+    }
+
+    .hero-title .cursor-blink {
+      display: inline-block;
+      width: 2px;
+      height: 1.1em;
+      background: var(--accent);
+      vertical-align: middle;
+      animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 580px;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--accent);
+      color: var(--bg);
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.9rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.5s;
+    }
+
+    .btn-primary:hover::before {
+      transform: translateX(100%);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0, 212, 255, 0.3);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      padding: 0.9rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: border-color 0.3s, color 0.3s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* FLOATING TAGS */
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 2rem;
+    }
+
+    .hero-tag {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      padding: 0.3rem 0.8rem;
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      border-radius: 3px;
+      color: var(--muted);
+      background: rgba(0, 212, 255, 0.03);
+      animation: float-tag linear infinite;
+    }
+
+    @keyframes float-tag {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-4px);
+      }
+    }
+
+    /* STATS */
+    #stats {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 4rem 3rem;
+    }
+
+    .stats-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .stat-item {}
+
+    .stat-number {
+      font-family: var(--mono);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--accent);
+      display: block;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-top: 0.5rem;
+      display: block;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 6rem 3rem;
+    }
+
+    .section-header {
+      max-width: 1100px;
+      margin: 0 auto 4rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .section-num {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--accent);
+      opacity: 0.6;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .section-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border) 0%, transparent 100%);
+    }
+
+    /* ABOUT */
+    #about {
+      background: var(--bg);
+    }
+
+    .about-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+    }
+
+    .about-text p strong {
+      color: var(--text);
+    }
+
+    .location-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--green);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      background: rgba(16, 185, 129, 0.05);
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      margin-top: 1.5rem;
+    }
+
+    .location-badge::before {
+      content: '●';
+      font-size: 0.5rem;
+      animation: pulse-dot 2s infinite;
+    }
+
+    .terminal-window {
+      background: #060d1a;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 212, 255, 0.05);
+    }
+
+    .terminal-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1rem;
+      background: rgba(255, 255, 255, 0.03);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .term-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .term-dot.red {
+      background: #ff5f57;
+    }
+
+    .term-dot.yellow {
+      background: #ffbd2e;
+    }
+
+    .term-dot.green {
+      background: #28ca41;
+    }
+
+    .terminal-title {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-left: 0.5rem;
+    }
+
+    .terminal-body {
+      padding: 1.5rem;
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      line-height: 2;
+      min-height: 240px;
+    }
+
+    .term-line {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .term-prompt {
+      color: var(--green);
+    }
+
+    .term-cmd {
+      color: var(--accent);
+    }
+
+    .term-output {
+      color: var(--muted);
+      padding-left: 1.5rem;
+    }
+
+    .term-output.success {
+      color: var(--green);
+    }
+
+    .term-output.warn {
+      color: var(--orange);
+    }
+
+    /* EXPERIENCE */
+    #experience {
+      background: var(--surface);
+    }
+
+    .timeline {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(180deg, var(--accent), var(--accent2), transparent);
+      opacity: 0.3;
+    }
+
+    .timeline-item {
+      padding: 0 0 3.5rem 2.5rem;
+      position: relative;
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .timeline-item.revealed {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -5px;
+      top: 4px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 12px var(--accent);
+    }
+
+    .timeline-dot.ml {
+      background: var(--accent2);
+      box-shadow: 0 0 12px var(--accent2);
+    }
+
+    .timeline-dot.sec {
+      background: var(--orange);
+      box-shadow: 0 0 12px var(--orange);
+    }
+
+    .timeline-dot.db {
+      background: var(--green);
+      box-shadow: 0 0 12px var(--green);
+    }
+
+    .timeline-period {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-role {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-company {
+      color: var(--accent);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .timeline-highlight {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .timeline-section-label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin: 1rem 0 0.5rem 0;
+      padding-left: 0.75rem;
+      border-left: 2px solid var(--accent2);
+    }
+
+    .timeline-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 0.25rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .timeline-bullets li {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.55;
+      padding-left: 1.1rem;
+      position: relative;
+    }
+
+    .timeline-bullets li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.7rem;
+      top: 0.15em;
+    }
+
+    .timeline-bullets li strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .tech-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .pill {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 3px;
+      letter-spacing: 0.05em;
+    }
+
+    .pill.cloud {
+      background: rgba(0, 212, 255, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(0, 212, 255, 0.2);
+    }
+
+    .pill.ml {
+      background: rgba(124, 58, 237, 0.1);
+      color: #a78bfa;
+      border: 1px solid rgba(124, 58, 237, 0.2);
+    }
+
+    .pill.sec {
+      background: rgba(245, 158, 11, 0.1);
+      color: var(--orange);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+    }
+
+    .pill.db {
+      background: rgba(16, 185, 129, 0.1);
+      color: var(--green);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+    }
+
+    /* SKILLS */
+    #skills {
+      background: var(--bg);
+    }
+
+    .skills-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-group {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s, transform 0.5s;
+    }
+
+    .skill-group.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .skill-group:hover {
+      border-color: rgba(0, 212, 255, 0.25);
+      box-shadow: 0 4px 30px rgba(0, 212, 255, 0.05);
+    }
+
+    .skill-group-title {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .skill-group-title::before {
+      content: '';
+      width: 3px;
+      height: 12px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    .skill-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .skill-badge {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      padding: 0.3rem 0.7rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 3px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.02);
+      transition: all 0.2s;
+      cursor: default;
+    }
+
+    .skill-badge:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(0, 212, 255, 0.05);
+      transform: translateY(-1px);
+    }
+
+    /* CERTS */
+    #certs {
+      background: var(--surface);
+    }
+
+    .certs-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .cert-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      opacity: 0;
+      transform: translateY(15px);
+      transition: opacity 0.5s, transform 0.5s;
+    }
+
+    .cert-card.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .cert-card:hover {
+      border-color: rgba(0, 212, 255, 0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 40px rgba(0, 212, 255, 0.08);
+    }
+
+    .cert-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      width: 2.5rem;
+      height: 2.5rem;
+      display: grid;
+      place-items: center;
+      background: rgba(0, 212, 255, 0.06);
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+
+    .cert-name {
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .cert-issuer {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--muted);
+    }
+
+    .cert-year {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--accent);
+      margin-top: 0.3rem;
+    }
+
+    .cert-wip {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      color: var(--orange);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      padding: 0.15rem 0.4rem;
+      border-radius: 2px;
+      margin-top: 0.3rem;
+      display: inline-block;
+    }
+
+    /* CONTACT */
+    #contact {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+    }
+
+    .contact-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .contact-inner .section-title {
+      margin-bottom: 1rem;
+    }
+
+    .contact-desc {
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      padding: 0.7rem 1.3rem;
+      border-radius: 4px;
+      transition: all 0.3s;
+    }
+
+    .contact-link:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+      background: rgba(0, 212, 255, 0.04);
+      transform: translateY(-2px);
+    }
+
+    .contact-link svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    /* REVEAL ANIMATION */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* SCROLLBAR */
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(0, 212, 255, 0.3);
+      border-radius: 2px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem 1.5rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      #hero,
+      section {
+        padding: 5rem 1.5rem 3rem;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline::before {
+        left: 0;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      body {
+        cursor: auto;
+      }
+
+      .cursor,
+      .cursor-ring {
+        display: none;
+      }
+    }
+
+    /* LOADING SCREEN */
+    #loading {
+      position: fixed;
+      inset: 0;
+      background: var(--bg);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 1rem;
+      transition: opacity 0.5s, visibility 0.5s;
+    }
+
+    #loading.hidden {
+      opacity: 0;
+      pointer-events: none;
+      animation: none;
+    }
+
+    #loading.gone {
+      display: none;
+    }
+
+    .loading-text {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--accent);
+      letter-spacing: 0.15em;
+    }
+
+    .loading-bar-wrap {
+      width: 200px;
+      height: 2px;
+      background: rgba(0, 212, 255, 0.1);
+      border-radius: 2px;
+    }
+
+    .loading-bar {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 2px;
+      width: 0;
+      animation: loading-fill 1.5s ease forwards;
+    }
+
+    @keyframes loading-fill {
+      to {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- LOADING -->
+  <div id="loading">
+    <div class="loading-text">INITIALIZING PLATFORM...</div>
+    <div class="loading-bar-wrap">
+      <div class="loading-bar"></div>
+    </div>
+    <div class="loading-text" id="loading-detail" style="opacity:0.5;font-size:0.65rem;">loading modules</div>
+  </div>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">VM<span>.</span>dev</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#certs">Certs</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="/cdn-cgi/l/email-protection#0e78626f20636f676a6f60677b654e69636f6762206d6163" class="btn-secondary"
+      style="padding:0.5rem 1.2rem;font-size:0.72rem;">HIRE ME</a>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-badge">Available for new opportunities</div>
+      <h1 class="hero-name">
+        <span class="line1">Vladyslav</span>
+        <span class="line2">Maidaniuk</span>
+      </h1>
+      <p class="hero-title">
+        &gt;&nbsp;<span class="typed" id="typed-text"></span><span class="cursor-blink"></span>
+      </p>
+      <p class="hero-desc">
+        Senior Platform/Backend Engineer transitioning into Full-Stack (React + Node/Python). 9+ year senior foundation
+        in platform engineering, backend, MLOps, and DevSecOps. Specialises in taking complex systems and making them
+        observable, maintainable, and production-ready.
+      </p>
+      <div class="hero-ctas">
+        <a href="#experience" class="btn-primary">↓ View Experience</a>
+        <a href="/cdn-cgi/l/email-protection#d1a7bdb0ffbcb0b8b5b0bfb8a4ba91b6bcb0b8bdffb2bebc" class="btn-secondary">✉
+          Get in Touch</a>
+      </div>
+      <div class="hero-tags">
+        <span class="hero-tag" style="animation-duration:3.1s">React (Middle)</span>
+        <span class="hero-tag" style="animation-duration:3.7s">Node.js / Python</span>
+        <span class="hero-tag" style="animation-duration:2.9s">Kubernetes</span>
+        <span class="hero-tag" style="animation-duration:4.1s">AWS / Azure / GCP</span>
+        <span class="hero-tag" style="animation-duration:3.4s">Terraform</span>
+        <span class="hero-tag" style="animation-duration:2.7s">MLOps</span>
+        <span class="hero-tag" style="animation-duration:3.9s">DevSecOps</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div id="stats">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <span class="stat-number" data-target="9" data-suffix="+yr">0</span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-number" data-target="99.9" data-suffix="%" data-decimal="1">0</span>
+        <span class="stat-label">Uptime SLA</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-number" data-target="80" data-prefix="−" data-suffix="%">0</span>
+        <span class="stat-label">Deployment Time</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-number" data-target="40" data-suffix="+">0</span>
+        <span class="stat-label">IaC Modules</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-number" data-target="95" data-suffix="%+">0</span>
+        <span class="stat-label">CIS Compliance</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-number" data-target="200" data-suffix="+">0</span>
+        <span class="stat-label">Cloud Resources</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-header reveal">
+      <span class="section-num">01 /</span>
+      <h2 class="section-title">About</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>I am a <strong>Senior Platform/Backend Engineer transitioning into Full-Stack (React + Node/Python)</strong>,
+          targeting Middle Full-Stack roles with ownership over backend and infrastructure.</p>
+        <p>With a 9+ year senior foundation in platform engineering, database reliability, MLOps, and DevSecOps, I am
+          currently expanding into React/frontend to close the full-stack loop. While my backend, infrastructure, and
+          cloud skills are senior-grade, my frontend is middle-grade and growing fast.</p>
+        <p>Currently leading the <strong>reverse engineering and reliability engineering</strong> of CAODB at Prague
+          Airport. I specialise in taking complex, underdocumented legacy systems and making them observable,
+          maintainable, and production-ready.</p>
+        <p>I am an ideal fit for teams that need strong backend/DevOps ownership and can mentor on frontend. I operate
+          autonomously in async-first teams with full ownership from architecture through production.</p>
+        <div class="location-badge">Prague, CZ — Open to EU / UK / Remote</div>
+      </div>
+      <div class="reveal" style="transition-delay:0.2s">
+        <div class="terminal-window">
+          <div class="terminal-bar">
+            <div class="term-dot red"></div>
+            <div class="term-dot yellow"></div>
+            <div class="term-dot green"></div>
+            <span class="terminal-title">vlad@platform-eng ~ </span>
+          </div>
+          <div class="terminal-body" id="terminal-body">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-header reveal">
+      <span class="section-num">02 /</span>
+      <h2 class="section-title">Experience</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-period">Jan 2026 — Present</div>
+        <div class="timeline-role">Senior Integration & Platform Engineer</div>
+        <div class="timeline-company">PRINCIPAL — Prague Airport (CAODB)</div>
+        <div class="timeline-highlight">Reverse-engineered undocumented aviation systems; designed 10+ monitoring tasks
+          for the WatchDog alerting system; replaced 15yr old Word/PDF specs with Git-versioned Markdown docs; debugged
+          Apache NiFi ETL pipelines restoring data integrity across critical flows.</div>
+        <div class="tech-pills">
+          <span class="pill db">Sybase ASE</span>
+          <span class="pill db">Oracle EDW</span>
+          <span class="pill cloud">Apache NiFi</span>
+          <span class="pill cloud">Kubernetes</span>
+          <span class="pill cloud">Terraform</span>
+          <span class="pill cloud">Git</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot ml"></div>
+        <div class="timeline-period">Jan 2025 — Dec 2025</div>
+        <div class="timeline-role">MLOps &amp; SRE Engineer — Financial Services Platform</div>
+        <div class="timeline-company">Up Coop (UP Group) — Prague · Financial services · regulated environment · 5,000+
+          users</div>
+        <div class="timeline-highlight">Delivered reliability and integration engineering for a regulated
+          financial-services ML platform — working directly with backend and analytics teams to integrate services into
+          live banking transaction pipelines.</div>
+
+        <div class="timeline-section-label">Backend integration &amp; data pipeline reliability</div>
+        <ul class="timeline-bullets">
+          <li>Integrated ML inference services into banking transaction flows via <strong>message-queue patterns
+              (Kafka)</strong> and <strong>REST/XML interfaces</strong> — ensuring sub-100ms response under production
+            load</li>
+          <li>Debugged and stabilised <strong>ETL pipelines</strong> processing financial transactions across multiple
+            backend systems — root cause analysis at SQL and data-layer level</li>
+          <li>Wrote and optimised <strong>SQL queries against PostgreSQL</strong> supporting ML feature engineering and
+            transaction analytics</li>
+          <li>Collaborated with core backend developers and business analysts to translate <strong>financial business
+              requirements</strong> into reliable technical designs</li>
+          <li>Managed <strong>data integrity</strong> between upstream banking sources and ML serving infrastructure —
+            validation, reconciliation, and anomaly detection</li>
+        </ul>
+
+        <div class="timeline-section-label">Platform reliability &amp; observability</div>
+        <ul class="timeline-bullets">
+          <li>Maintained <strong>99.8% uptime SLA</strong> across all production models with autoscaling and controlled
+            canary rollouts</li>
+          <li>Redesigned inference pipeline with caching and request batching — <strong>P99 latency −70%</strong>
+            without hardware scaling</li>
+          <li>Built full-stack observability: Prometheus, Grafana, ELK, Sentry — outages detected by engineers, not
+            users</li>
+          <li>Built standardised CI/CD (GitLab CI + Terraform + Helm) — eliminated manual release steps, <strong>−60%
+              deploy time</strong></li>
+          <li>Led post-mortem analyses and corrective actions improving MTTR across platform incidents</li>
+        </ul>
+
+        <div class="tech-pills" style="margin-top:1rem;">
+          <span class="pill db">Kafka / MQ</span>
+          <span class="pill db">XML / REST</span>
+          <span class="pill db">PostgreSQL</span>
+          <span class="pill db">SQL</span>
+          <span class="pill ml">MLflow</span>
+          <span class="pill cloud">Kubernetes EKS/GKE</span>
+          <span class="pill cloud">Terraform</span>
+          <span class="pill ml">Helm</span>
+          <span class="pill cloud">GitLab CI</span>
+          <span class="pill cloud">Prometheus / Grafana</span>
+          <span class="pill cloud">ELK</span>
+          <span class="pill sec">Vault</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot ml"></div>
+        <div class="timeline-period">Jan 2022 — Dec 2025</div>
+        <div class="timeline-role">Senior Platform & MLOps Engineer (Freelance)</div>
+        <div class="timeline-company">Upwork — CZ, PL, UAE, Canada</div>
+        <div class="timeline-highlight">10+ engagements in FinTech, banking, AI-native companies. Built cloud-native ML
+          platforms; PCI DSS CI/CD for regulated banking; deployed fraud detection ML with low-latency integration into
+          transaction pipelines. 99.8%+ uptime across all engagements.</div>
+        <div class="tech-pills">
+          <span class="pill cloud">AWS / Azure / GCP</span>
+          <span class="pill cloud">Kubernetes</span>
+          <span class="pill cloud">Terraform</span>
+          <span class="pill ml">MLflow</span>
+          <span class="pill sec">PCI DSS</span>
+          <span class="pill cloud">GitHub Actions</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot sec"></div>
+        <div class="timeline-period">Jun 2020 — Jan 2022</div>
+        <div class="timeline-role">Security & Reliability Engineer</div>
+        <div class="timeline-company">Motorola Solutions — Prague</div>
+        <div class="timeline-highlight">Monitored security events across ML and cloud infrastructure; automated security
+          scanning in CI/CD pipelines; built ML service monitoring dashboards; performed root cause analysis and
+          incident response.</div>
+        <div class="tech-pills">
+          <span class="pill sec">Security Scanning</span>
+          <span class="pill cloud">CI/CD</span>
+          <span class="pill cloud">Prometheus</span>
+          <span class="pill cloud">Grafana</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot db"></div>
+        <div class="timeline-period">Apr 2019 — Jun 2020</div>
+        <div class="timeline-role">Database Reliability Engineer (Oracle)</div>
+        <div class="timeline-company">N-iX — Krakow, Poland</div>
+        <div class="timeline-highlight">Owned reliability of Oracle 11g/12c RAC clusters; automated backup/recovery via
+          RMAN; optimized query latency on critical business workflows; administered Data Guard standby for DR.</div>
+        <div class="tech-pills">
+          <span class="pill db">Oracle 11g/12c RAC</span>
+          <span class="pill db">RMAN</span>
+          <span class="pill db">Data Guard</span>
+          <span class="pill db">Linux</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot sec"></div>
+        <div class="timeline-period">May 2015 — Jan 2019</div>
+        <div class="timeline-role">Infrastructure Engineer</div>
+        <div class="timeline-company">PESA Bydgoszcz — Poland</div>
+        <div class="timeline-highlight">Architected VMware vSphere cluster (20 hosts, 400+ VMs); pioneered Docker/K8s
+          adoption; implemented Azure AD hybrid integration reducing onboarding 30%; mentored 4 junior admins.</div>
+        <div class="tech-pills">
+          <span class="pill cloud">VMware vSphere</span>
+          <span class="pill cloud">Kubernetes</span>
+          <span class="pill cloud">Azure AD</span>
+          <span class="pill cloud">Docker</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-header reveal">
+      <span class="section-num">03 /</span>
+      <h2 class="section-title">Technical Stack</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="skills-container">
+      <div class="skills-grid">
+        <div class="skill-group">
+          <div class="skill-group-title">Cloud Platforms</div>
+          <div class="skill-badges">
+            <span class="skill-badge">AWS</span>
+            <span class="skill-badge">Azure</span>
+            <span class="skill-badge">GCP</span>
+            <span class="skill-badge">EKS</span>
+            <span class="skill-badge">AKS</span>
+            <span class="skill-badge">GKE</span>
+            <span class="skill-badge">EC2 / RDS / S3</span>
+            <span class="skill-badge">Lambda / VPC / IAM</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Containers & Orchestration</div>
+          <div class="skill-badges">
+            <span class="skill-badge">Kubernetes</span>
+            <span class="skill-badge">Docker</span>
+            <span class="skill-badge">Helm</span>
+            <span class="skill-badge">RBAC</span>
+            <span class="skill-badge">Network Policies</span>
+            <span class="skill-badge">HPA / VPA</span>
+            <span class="skill-badge">Pod Security</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Infrastructure as Code</div>
+          <div class="skill-badges">
+            <span class="skill-badge">Terraform</span>
+            <span class="skill-badge">Terragrunt</span>
+            <span class="skill-badge">Ansible</span>
+            <span class="skill-badge">Ansible Tower/AWX</span>
+            <span class="skill-badge">CloudFormation</span>
+            <span class="skill-badge">GitOps</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">ML / MLOps Platforms</div>
+          <div class="skill-badges">
+            <span class="skill-badge">MLflow</span>
+            <span class="skill-badge">KServe</span>
+            <span class="skill-badge">Seldon Core</span>
+            <span class="skill-badge">Ray</span>
+            <span class="skill-badge">Kubeflow</span>
+            <span class="skill-badge">Apache Airflow</span>
+            <span class="skill-badge">NVIDIA GPU Operator</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Observability & SRE</div>
+          <div class="skill-badges">
+            <span class="skill-badge">Prometheus</span>
+            <span class="skill-badge">Grafana</span>
+            <span class="skill-badge">ELK Stack</span>
+            <span class="skill-badge">Splunk</span>
+            <span class="skill-badge">Loki</span>
+            <span class="skill-badge">SLO / SLI / SLA</span>
+            <span class="skill-badge">Error Budgets</span>
+            <span class="skill-badge">PagerDuty</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Security & Compliance</div>
+          <div class="skill-badges">
+            <span class="skill-badge">HashiCorp Vault</span>
+            <span class="skill-badge">Trivy</span>
+            <span class="skill-badge">SAST</span>
+            <span class="skill-badge">CIS Benchmarks</span>
+            <span class="skill-badge">ISO 27001</span>
+            <span class="skill-badge">PCI DSS</span>
+            <span class="skill-badge">CEH v12</span>
+            <span class="skill-badge">Nmap / Metasploit</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">CI/CD & Delivery</div>
+          <div class="skill-badges">
+            <span class="skill-badge">GitHub Actions</span>
+            <span class="skill-badge">GitLab CI</span>
+            <span class="skill-badge">Jenkins</span>
+            <span class="skill-badge">Canary Deployments</span>
+            <span class="skill-badge">Trunk-Based Dev</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Frontend (Middle)</div>
+          <div class="skill-badges">
+            <span class="skill-badge">React (Hooks, State Mgmt)</span>
+            <span class="skill-badge">JavaScript / TypeScript</span>
+            <span class="skill-badge">HTML5 / CSS3</span>
+            <span class="skill-badge">Tailwind CSS</span>
+            <span class="skill-badge">Component Design</span>
+            <span class="skill-badge">REST API Consumption</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Backend (Senior)</div>
+          <div class="skill-badges">
+            <span class="skill-badge">Python</span>
+            <span class="skill-badge">Node.js</span>
+            <span class="skill-badge">Go</span>
+            <span class="skill-badge">Bash / Shell</span>
+            <span class="skill-badge">REST APIs / SOAP</span>
+            <span class="skill-badge">Kafka / RabbitMQ / IBM MQ</span>
+            <span class="skill-badge">Microservices</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Databases</div>
+          <div class="skill-badges">
+            <span class="skill-badge">PostgreSQL</span>
+            <span class="skill-badge">Oracle 11g/12c RAC</span>
+            <span class="skill-badge">Sybase ASE</span>
+            <span class="skill-badge">DB2</span>
+            <span class="skill-badge">MongoDB</span>
+            <span class="skill-badge">SQL Optimisation</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Data Integration</div>
+          <div class="skill-badges">
+            <span class="skill-badge">Apache NiFi</span>
+            <span class="skill-badge">Kafka</span>
+            <span class="skill-badge">RabbitMQ</span>
+            <span class="skill-badge">Oracle EDW</span>
+            <span class="skill-badge">Sybase Replication</span>
+            <span class="skill-badge">REST APIs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certs">
+    <div class="section-header reveal">
+      <span class="section-num">04 /</span>
+      <h2 class="section-title">Certifications</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="certs-grid">
+      <div class="cert-card">
+        <div class="cert-icon">🛡️</div>
+        <div>
+          <div class="cert-name">Certified Ethical Hacker v12</div>
+          <div class="cert-issuer">EC-Council</div>
+          <div class="cert-year">2024</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">🔐</div>
+        <div>
+          <div class="cert-name">DevSecOps Certificate</div>
+          <div class="cert-issuer">TryHackMe</div>
+          <div class="cert-year">2025</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">🔥</div>
+        <div>
+          <div class="cert-name">Cybersecurity Professional Certificate</div>
+          <div class="cert-issuer">Palo Alto Networks</div>
+          <div class="cert-year">2025</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">🐍</div>
+        <div>
+          <div class="cert-name">IT Automation with Python</div>
+          <div class="cert-issuer">Google</div>
+          <div class="cert-year">2024</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">🐧</div>
+        <div>
+          <div class="cert-name">CompTIA Linux+ (XK0-005)</div>
+          <div class="cert-issuer">CompTIA</div>
+          <div class="cert-year">Active</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">☁️</div>
+        <div>
+          <div class="cert-name">AWS Solutions Architect – Associate</div>
+          <div class="cert-issuer">Amazon Web Services</div>
+          <div class="cert-wip">⬡ IN PROGRESS</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">⚙️</div>
+        <div>
+          <div class="cert-name">Certified Kubernetes Administrator</div>
+          <div class="cert-issuer">CNCF</div>
+          <div class="cert-wip">⬡ IN PROGRESS</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-inner">
+      <div class="reveal">
+        <h2 class="section-title" style="text-align:center;margin-bottom:1rem">Let's Build Something</h2>
+        <p class="contact-desc">Targeting Middle Full-Stack roles with ownership over backend and infrastructure. Open
+          to remote-first or hybrid (EU / Global). Available for immediate transition.</p>
+      </div>
+      <div class="contact-links reveal" style="transition-delay:0.2s">
+        <a href="/cdn-cgi/l/email-protection#146278753a79757d70757a7d617f547379757d783a777b79" class="contact-link">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+          </svg>
+          <span class="__cf_email__"
+            data-cfemail="bdcbd1dc93d0dcd4d9dcd3d4c8d6fddad0dcd4d193ded2d0">[email&#160;protected]</span>
+        </a>
+        <a href="https://github.com/vlamay" target="_blank" class="contact-link">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12" />
+          </svg>
+          github.com/vlamay
+        </a>
+        <a href="https://linkedin.com/in/maidaniuk" target="_blank" class="contact-link">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+          </svg>
+          linkedin.com/in/maidaniuk
+        </a>
+        <a href="tel:+420721579603" class="contact-link">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+          </svg>
+          +420 721 579 603
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span style="color:var(--accent)">VM</span>.dev — Vladyslav Maidaniuk © 2025 — Prague, Czech Republic
+  </footer>
+
+  <script>
+    // ── LOADING ──────────────────────────────────────────────
+    const loadingMsgs = ['loading modules...', 'initializing k8s...', 'connecting to cluster...', 'ready.'];
+    let mi = 0;
+    const loadingDetail = document.getElementById('loading-detail');
+    const msgInterval = setInterval(() => {
+      if (mi < loadingMsgs.length) { loadingDetail.textContent = loadingMsgs[mi++]; }
+    }, 400);
+    function hideLoader() {
+      clearInterval(msgInterval);
+      const el = document.getElementById('loading');
+      el.classList.add('hidden');
+      setTimeout(() => el.classList.add('gone'), 600);
+    }
+    // Fire on DOMContentLoaded (fast) with short delay for animation
+    document.addEventListener('DOMContentLoaded', () => setTimeout(hideLoader, 1400));
+    // Absolute fallback — never stay stuck longer than 2.5s
+    setTimeout(hideLoader, 2500);
+
+    // ── CURSOR ────────────────────────────────────────────────
+    const cursor = document.getElementById('cursor');
+    const ring = document.getElementById('cursor-ring');
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.left = mx - 5 + 'px'; cursor.style.top = my - 5 + 'px'; });
+    function animateRing() {
+      rx += (mx - rx - 18) * 0.12;
+      ry += (my - ry - 18) * 0.12;
+      ring.style.left = rx + 'px';
+      ring.style.top = ry + 'px';
+      requestAnimationFrame(animateRing);
+    }
+    animateRing();
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseenter', () => { ring.style.width = '50px'; ring.style.height = '50px'; cursor.style.transform = 'scale(0.5)'; });
+      el.addEventListener('mouseleave', () => { ring.style.width = '36px'; ring.style.height = '36px'; cursor.style.transform = 'scale(1)'; });
+    });
+
+    // ── HERO CANVAS ───────────────────────────────────────────
+    const canvas = document.getElementById('hero-canvas');
+    const ctx = canvas.getContext('2d');
+    let W, H, dots = [];
+    function resizeCanvas() {
+      W = canvas.width = canvas.offsetWidth;
+      H = canvas.height = canvas.offsetHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+    for (let i = 0; i < 80; i++) {
+      dots.push({ x: Math.random() * 2000, y: Math.random() * 900, vx: (Math.random() - .5) * 0.3, vy: (Math.random() - .5) * 0.3, r: Math.random() * 1.5 + 0.5 });
+    }
+    function drawCanvas() {
+      ctx.clearRect(0, 0, W, H);
+      // grid
+      ctx.strokeStyle = 'rgba(0,212,255,0.04)';
+      ctx.lineWidth = 1;
+      const gs = 60;
+      for (let x = 0; x < W; x += gs) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke(); }
+      for (let y = 0; y < H; y += gs) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke(); }
+      // dots
+      dots.forEach(d => {
+        d.x += d.vx; d.y += d.vy;
+        if (d.x < 0 || d.x > W) d.vx *= -1;
+        if (d.y < 0 || d.y > H) d.vy *= -1;
+        ctx.beginPath();
+        ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(0,212,255,0.4)';
+        ctx.fill();
+      });
+      // connections
+      dots.forEach((a, i) => {
+        dots.slice(i + 1).forEach(b => {
+          const dist = Math.hypot(a.x - b.x, a.y - b.y);
+          if (dist < 120) {
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
+            ctx.strokeStyle = `rgba(0,212,255,${0.12 * (1 - dist / 120)})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        });
+      });
+      requestAnimationFrame(drawCanvas);
+    }
+    drawCanvas();
+
+    // ── TYPEWRITER ────────────────────────────────────────────
+    const phrases = [
+      'Senior Platform/Backend Engineer',
+      'Transitioning to Full-Stack (React)',
+      'SRE / MLOps Specialist',
+      'Cloud Infrastructure Lead'
+    ];
+    let pi = 0, ci = 0, deleting = false;
+    const typedEl = document.getElementById('typed-text');
+    function typeLoop() {
+      const phrase = phrases[pi];
+      if (!deleting) {
+        typedEl.textContent = phrase.slice(0, ++ci);
+        if (ci === phrase.length) { deleting = true; setTimeout(typeLoop, 2000); return; }
+      } else {
+        typedEl.textContent = phrase.slice(0, --ci);
+        if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; }
+      }
+      setTimeout(typeLoop, deleting ? 40 : 80);
+    }
+    setTimeout(typeLoop, 1800);
+
+    // ── TERMINAL ──────────────────────────────────────────────
+    const termLines = [
+      { type: 'cmd', text: 'kubectl get nodes -o wide' },
+      { type: 'out', text: 'NAME       STATUS   ROLES   AGE   VERSION', cls: '' },
+      { type: 'out', text: 'node-001   Ready    master  42d   v1.29.2', cls: 'success' },
+      { type: 'out', text: 'node-002   Ready    worker  42d   v1.29.2', cls: 'success' },
+      { type: 'cmd', text: 'terraform plan -out=prod.tfplan' },
+      { type: 'out', text: 'Plan: 3 to add, 1 to change, 0 to destroy.', cls: 'success' },
+      { type: 'cmd', text: 'ansible-playbook hardening.yml --check' },
+      { type: 'out', text: 'ok=18  changed=0  unreachable=0  failed=0', cls: 'success' },
+      { type: 'cmd', text: 'uptime-check --sla 99.9%' },
+      { type: 'out', text: '✓ SLA maintained — 99.97% last 30d', cls: 'success' },
+    ];
+    const termBody = document.getElementById('terminal-body');
+    let tli = 0;
+    function addTermLine() {
+      if (tli >= termLines.length) return;
+      const l = termLines[tli++];
+      const div = document.createElement('div');
+      div.className = 'term-line';
+      if (l.type === 'cmd') {
+        div.innerHTML = `<span class="term-prompt">❯</span><span class="term-cmd">${l.text}</span>`;
+      } else {
+        div.innerHTML = `<span class="term-output ${l.cls || ''}">${l.text}</span>`;
+      }
+      termBody.appendChild(div);
+      termBody.scrollTop = termBody.scrollHeight;
+      setTimeout(addTermLine, l.type === 'cmd' ? 700 : 200);
+    }
+    setTimeout(addTermLine, 2500);
+
+    // ── COUNTERS ──────────────────────────────────────────────
+    function animateCounter(el) {
+      const target = parseFloat(el.dataset.target);
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '';
+      const decimal = parseInt(el.dataset.decimal) || 0;
+      const duration = 1800;
+      const start = Date.now();
+      function update() {
+        const elapsed = Date.now() - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const ease = 1 - Math.pow(1 - progress, 3);
+        const val = target * ease;
+        el.textContent = prefix + val.toFixed(decimal) + suffix;
+        if (progress < 1) requestAnimationFrame(update);
+      }
+      update();
+    }
+
+    // ── INTERSECTION OBSERVER ─────────────────────────────────
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          // Counter animation
+          const num = entry.target.querySelector('[data-target]') || (entry.target.dataset.target ? entry.target : null);
+          if (entry.target.classList.contains('stat-item')) {
+            const numEl = entry.target.querySelector('[data-target]');
+            if (numEl && !numEl.dataset.animated) {
+              numEl.dataset.animated = 'true';
+              animateCounter(numEl);
+            }
+          }
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal, .timeline-item, .skill-group, .cert-card, .stat-item').forEach(el => observer.observe(el));
+
+    // Stagger delays for groups
+    document.querySelectorAll('.skill-group').forEach((el, i) => {
+      el.style.transitionDelay = `${(i % 3) * 0.1}s`;
+    });
+    document.querySelectorAll('.cert-card').forEach((el, i) => {
+      el.style.transitionDelay = `${(i % 3) * 0.1}s`;
+    });
+  </script>
+</body>
+
+</html>
