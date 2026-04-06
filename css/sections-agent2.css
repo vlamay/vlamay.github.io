@@ -1,0 +1,433 @@
+/* ============================================================
+   AGENT 2 — SECTIONS CSS
+   Stats · About · Experience
+   ============================================================ */
+
+/* ── UTILITY COLOR HELPERS ──────────────────────────────── */
+.t-cyan   { color: var(--accent-cyan); }
+.t-green  { color: var(--accent-green); }
+.t-purple { color: var(--accent-purple); }
+.t-muted  { color: var(--text-muted); }
+
+
+/* ============================================================
+   1. STATS BAR
+   ============================================================ */
+.stats-section {
+  padding: 2rem 0;
+  background: linear-gradient(180deg, #060b14 0%, #0d1b2a 100%);
+  border-bottom: 1px solid var(--border-glass);
+  border-top: 1px solid var(--border-glass);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.stat-item {
+  text-align: center;
+  padding: 2rem 1rem;
+  border-right: 1px solid var(--border-glass);
+  position: relative;
+}
+
+.stat-item:last-child {
+  border-right: none;
+}
+
+.stat-num {
+  display: block;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: transparent;
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-green));
+  -webkit-background-clip: text;
+  background-clip: text;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: var(--font-sans);
+}
+
+@media (max-width: 640px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-item:nth-child(2) {
+    border-right: none;
+  }
+
+  .stat-item:nth-child(3) {
+    border-right: 1px solid var(--border-glass);
+    border-top: 1px solid var(--border-glass);
+  }
+
+  .stat-item:nth-child(4) {
+    border-right: none;
+    border-top: 1px solid var(--border-glass);
+  }
+}
+
+
+/* ============================================================
+   2. ABOUT
+   ============================================================ */
+.about-inner {
+  display: grid;
+  grid-template-columns: 55% 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* Text column */
+.about-text {
+  margin-top: 1.5rem;
+}
+
+.about-text p {
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  font-size: 0.975rem;
+}
+
+/* Highlights */
+.about-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.about-highlight {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.about-highlight__icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: 0.1rem;
+}
+
+.about-highlight strong {
+  display: block;
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+}
+
+.about-highlight p {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* CTA row */
+.about-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+/* Info card column */
+.about-card {
+  position: sticky;
+  top: 100px;
+}
+
+.about-info-card {
+  padding: 1.75rem;
+}
+
+.about-info-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.about-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  color: #fff;
+  flex-shrink: 0;
+  letter-spacing: 0.05em;
+}
+
+.about-info-name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.about-info-role {
+  font-size: 0.825rem;
+}
+
+.about-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+  border-top: 1px solid var(--border-glass);
+  padding-top: 1.5rem;
+}
+
+.about-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  gap: 0.75rem;
+}
+
+.about-info-row span:last-child {
+  text-align: right;
+  color: var(--text-primary);
+}
+
+.about-info-row a {
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+}
+
+.about-info-row a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* Social icons */
+.about-social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--border-glass);
+  padding-top: 1.5rem;
+}
+
+.about-social-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border-glass);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition:
+    color var(--transition-base),
+    border-color var(--transition-base),
+    background var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.about-social-link:hover {
+  color: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+  background: rgba(0, 212, 255, 0.07);
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.2);
+}
+
+@media (max-width: 900px) {
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-card {
+    position: static;
+  }
+}
+
+
+/* ============================================================
+   3. EXPERIENCE TIMELINE
+   ============================================================ */
+.experience-timeline {
+  position: relative;
+  padding-left: 2.5rem;
+  margin-top: 3.5rem;
+}
+
+.experience-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    var(--accent-cyan) 0%,
+    var(--accent-purple) 60%,
+    transparent 100%
+  );
+}
+
+/* Timeline item */
+.exp-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.exp-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Timeline dot */
+.exp-item::before {
+  content: '';
+  position: absolute;
+  left: -2.65rem;
+  top: 1.5rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  border: 3px solid #060b14;
+  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.3);
+  z-index: 1;
+  transition: box-shadow var(--transition-base), background var(--transition-base);
+}
+
+.exp-item:hover::before {
+  box-shadow: 0 0 0 5px rgba(0, 212, 255, 0.2), var(--shadow-glow-cyan);
+}
+
+/* Card */
+.exp-card {
+  transition:
+    border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-slow);
+}
+
+.exp-card:hover {
+  border-color: var(--accent-cyan) !important;
+  box-shadow: var(--shadow-lg), 0 0 20px rgba(0, 212, 255, 0.1);
+  transform: translateX(4px);
+}
+
+/* Header row */
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.exp-header-right {
+  flex-shrink: 0;
+}
+
+.exp-role {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.exp-company {
+  color: var(--accent-cyan);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* Badges */
+.exp-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 500;
+  font-family: var(--font-mono);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-glass);
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.exp-badge--current {
+  background: rgba(0, 255, 136, 0.12);
+  border-color: rgba(0, 255, 136, 0.35);
+  color: var(--accent-green);
+}
+
+/* Meta row */
+.exp-meta {
+  display: flex;
+  gap: 1.25rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0.6rem 0 0.9rem;
+  flex-wrap: wrap;
+}
+
+/* Bullet list */
+.exp-list {
+  list-style: disc;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.exp-list li::marker {
+  color: var(--border-glass);
+}
+
+/* Highlighted metrics within bullets */
+.exp-metric {
+  color: var(--accent-cyan);
+  font-weight: 600;
+}
+
+/* Mobile: collapse timeline indent */
+@media (max-width: 640px) {
+  .experience-timeline {
+    padding-left: 1.5rem;
+  }
+
+  .exp-item::before {
+    left: -1.65rem;
+    width: 12px;
+    height: 12px;
+  }
+
+  .exp-card:hover {
+    transform: none;
+  }
+
+  .exp-meta {
+    gap: 0.75rem;
+    flex-direction: column;
+  }
+}
