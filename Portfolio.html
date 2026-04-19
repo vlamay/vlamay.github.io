@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vladyslav Maidaniuk — Senior Platform & Integration Engineer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+
+<link rel="stylesheet" href="css/portfolio.css">
+</head>
+<body>
+
+<!-- ── Grain + noise overlay ─────────────────────────── -->
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ── Custom cursor ─────────────────────────────────── -->
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+
+<!-- ── Scroll progress ───────────────────────────────── -->
+<div class="scroll-progress"><div class="scroll-progress__bar"></div></div>
+
+<!-- ── Header / Nav ──────────────────────────────────── -->
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__logo" href="#hero">
+      <span class="nav__logo-mark">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z"/>
+        </svg>
+      </span>
+      <span class="nav__logo-text">vm<span class="nav__logo-dim">.systems</span></span>
+    </a>
+    <nav class="nav__links">
+      <a href="#about" data-nav>About</a>
+      <a href="#experience" data-nav>Experience</a>
+      <a href="#work" data-nav>Work</a>
+      <a href="#stack" data-nav>Stack</a>
+      <a href="#contact" data-nav>Contact</a>
+    </nav>
+    <a href="#contact" class="nav__cta">
+      <span class="nav__cta-dot"></span>
+      Available for hire
+    </a>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════
+     HERO — landing
+═══════════════════════════════════════════════════════ -->
+<section class="hero" id="hero">
+
+  <!-- Grid backdrop -->
+  <div class="hero__grid" aria-hidden="true"></div>
+  <!-- Gradient orbs -->
+  <div class="orb orb--emerald" aria-hidden="true"></div>
+  <div class="orb orb--blue" aria-hidden="true"></div>
+
+  <div class="hero__meta" aria-hidden="true">
+    <span>N 50.0755°</span>
+    <span>E 14.4378°</span>
+    <span class="hero__meta-pulse"><i></i> uptime 99.8%</span>
+  </div>
+
+  <div class="hero__inner">
+    <div class="hero__eyebrow">
+      <span class="hero__eyebrow-dot"></span>
+      <span class="mono">/srv/portfolio/v2026 · Prague CZ — Krakow PL</span>
+    </div>
+
+    <h1 class="hero__title">
+      <span class="hero__title-line" data-line>Infrastructure</span>
+      <span class="hero__title-line" data-line>that cannot afford <em>downtime.</em></span>
+    </h1>
+
+    <div class="hero__col">
+      <div class="hero__bio">
+        <p>
+          I'm <strong>Vladyslav Maidaniuk</strong> — a Senior Platform & Integration Engineer. I take complex, underdocumented systems and make them observable, maintainable and production‑ready.
+        </p>
+        <p class="mono dim">
+          9+ years · Cloud · Kubernetes · MLOps · DevSecOps · SRE
+        </p>
+      </div>
+
+      <div class="hero__stack">
+        <div class="hero__stack-label mono">Currently</div>
+        <div class="hero__stack-row">
+          <div class="hero__stack-dot"></div>
+          <div>
+            <div class="hero__stack-title">Senior AWS Cloud Engineer</div>
+            <div class="hero__stack-sub">ESET s.r.o. — Krakow, PL</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__actions">
+      <a href="#work" class="btn btn--primary">
+        <span>View the work</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="#contact" class="btn btn--ghost">
+        <span>Book a call</span>
+      </a>
+      <a href="resume.html" class="btn btn--text" target="_blank">
+        Resume.pdf ↗
+      </a>
+    </div>
+
+    <!-- Scroll hint -->
+    <div class="hero__scroll">
+      <div class="hero__scroll-rail"><div class="hero__scroll-dot"></div></div>
+      <span class="mono">scroll</span>
+    </div>
+  </div>
+
+  <!-- Floating terminal card -->
+  <div class="hero__terminal">
+    <div class="terminal">
+      <div class="terminal__bar">
+        <span class="terminal__dot terminal__dot--r"></span>
+        <span class="terminal__dot terminal__dot--y"></span>
+        <span class="terminal__dot terminal__dot--g"></span>
+        <span class="terminal__title">vm@prod-eks — zsh</span>
+      </div>
+      <div class="terminal__body">
+        <div class="tline"><span class="c-purple">❯</span> <span class="c-cyan">kubectl</span> get nodes</div>
+        <div class="tline dim">NAME              STATUS   ROLES</div>
+        <div class="tline"><span class="c-green">prod-node-01</span>     Ready    worker</div>
+        <div class="tline"><span class="c-green">prod-node-02</span>     Ready    worker</div>
+        <div class="tline"><span class="c-green">prod-cp-01</span>       Ready    control-plane</div>
+        <div class="tline"><span class="c-purple">❯</span> <span class="c-cyan">terraform</span> plan</div>
+        <div class="tline dim">Plan: <span class="c-green">47 to manage, 0 drift</span></div>
+        <div class="tline"><span class="c-purple">❯</span> <span class="cursor-blink">▍</span></div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     MARQUEE — tech stack ticker
+═══════════════════════════════════════════════════════ -->
+<section class="marquee-section">
+  <div class="marquee">
+    <div class="marquee__track">
+      <span>Kubernetes</span><span class="sep">✦</span>
+      <span>AWS</span><span class="sep">✦</span>
+      <span>Terraform</span><span class="sep">✦</span>
+      <span>Helm</span><span class="sep">✦</span>
+      <span>ArgoCD</span><span class="sep">✦</span>
+      <span>MLflow</span><span class="sep">✦</span>
+      <span>KServe</span><span class="sep">✦</span>
+      <span>Kafka</span><span class="sep">✦</span>
+      <span>Prometheus</span><span class="sep">✦</span>
+      <span>Grafana</span><span class="sep">✦</span>
+      <span>HashiCorp Vault</span><span class="sep">✦</span>
+      <span>Kong Gateway</span><span class="sep">✦</span>
+      <span>Kuma Mesh</span><span class="sep">✦</span>
+      <span>CIS Benchmarks</span><span class="sep">✦</span>
+      <!-- repeat -->
+      <span>Kubernetes</span><span class="sep">✦</span>
+      <span>AWS</span><span class="sep">✦</span>
+      <span>Terraform</span><span class="sep">✦</span>
+      <span>Helm</span><span class="sep">✦</span>
+      <span>ArgoCD</span><span class="sep">✦</span>
+      <span>MLflow</span><span class="sep">✦</span>
+      <span>KServe</span><span class="sep">✦</span>
+      <span>Kafka</span><span class="sep">✦</span>
+      <span>Prometheus</span><span class="sep">✦</span>
+      <span>Grafana</span><span class="sep">✦</span>
+      <span>HashiCorp Vault</span><span class="sep">✦</span>
+      <span>Kong Gateway</span><span class="sep">✦</span>
+      <span>Kuma Mesh</span><span class="sep">✦</span>
+      <span>CIS Benchmarks</span><span class="sep">✦</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     STATS — counter numbers
+═══════════════════════════════════════════════════════ -->
+<section class="stats" id="about">
+  <div class="container">
+
+    <div class="section-head">
+      <span class="eyebrow mono">// impact · in numbers</span>
+      <h2 class="section-title" data-split>A decade making platforms boring — on purpose.</h2>
+      <p class="section-lede">Measured in latency curves, compliance scores, dashboards that don't lie, and engineers who finally sleep through the night.</p>
+    </div>
+
+    <div class="stats__grid">
+      <div class="stat">
+        <div class="stat__num" data-count="9" data-suffix="+">0</div>
+        <div class="stat__label">Years operating production infrastructure</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num" data-count="5000" data-suffix="+">0</div>
+        <div class="stat__label">Users served via ML platforms I own</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num" data-count="70" data-suffix="%" data-prefix="−">0</div>
+        <div class="stat__label">P99 latency reduction, no hardware scaling</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num" data-count="99.8" data-suffix="%" data-decimals="1">0</div>
+        <div class="stat__label">Uptime across ML services at Up Coop</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     PINNED STORY — about / what I do
+═══════════════════════════════════════════════════════ -->
+<section class="story">
+  <div class="story__pin">
+    <div class="story__content">
+      <div class="story__left">
+        <span class="eyebrow mono">// /etc/about</span>
+        <h2 class="story__headline" data-split-heavy>
+          I make <em>invisible</em> systems that engineers can actually trust.
+        </h2>
+      </div>
+
+      <div class="story__right">
+        <div class="story__step" data-step="01">
+          <div class="story__step-num mono">01 — platform</div>
+          <h3>Kubernetes &amp; cloud‑native</h3>
+          <p>EKS, Kong API Gateway, Kuma Service Mesh, Helm, RBAC, HPA/VPA. Multi‑cloud across AWS, Azure, GCP.</p>
+        </div>
+        <div class="story__step" data-step="02">
+          <div class="story__step-num mono">02 — ml &amp; sre</div>
+          <h3>MLOps for production models</h3>
+          <p>MLflow, KServe, Seldon Core, Ray, Kubeflow, Airflow, NVIDIA GPU Operator. Full canary rollouts and error‑budget SLOs.</p>
+        </div>
+        <div class="story__step" data-step="03">
+          <div class="story__step-num mono">03 — security</div>
+          <h3>DevSecOps &amp; compliance</h3>
+          <p>CIS 95%+, PCI DSS, ISO 27001. HashiCorp Vault secrets, Trivy scanning, SAST in every pipeline.</p>
+        </div>
+        <div class="story__step" data-step="04">
+          <div class="story__step-num mono">04 — docs</div>
+          <h3>Documentation as infrastructure</h3>
+          <p>Git‑versioned Markdown + Mermaid diagrams, runbooks engineers actually open. Because undocumented systems age into debt.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     EXPERIENCE — horizontal scroll timeline
+═══════════════════════════════════════════════════════ -->
+<section class="experience" id="experience">
+  <div class="experience__header container">
+    <span class="eyebrow mono">// career.timeline</span>
+    <h2 class="section-title">Eleven years · seven roles · one discipline.</h2>
+    <p class="section-lede">Airport operations, FinTech, Banking, AI platforms, Enterprise manufacturing. Scroll →</p>
+  </div>
+
+  <div class="experience__horiz-wrap">
+    <div class="experience__horiz">
+      <!-- timeline rail -->
+      <div class="xrail" aria-hidden="true"><div class="xrail__progress"></div></div>
+
+      <article class="xcard xcard--current">
+        <div class="xcard__year mono">2026 · now</div>
+        <div class="xcard__badge">Current</div>
+        <h3>Senior AWS Cloud Engineer</h3>
+        <div class="xcard__company">ESET s.r.o. — Krakow, PL</div>
+        <ul>
+          <li>Highly scalable AWS + cloud‑native deployments</li>
+          <li>Kong API Gateway, Kuma Mesh, Nginx networking</li>
+          <li>Terraform + Helm IaC on EKS; Jenkins + GitLab CI/CD</li>
+          <li>Kafka + Protobuf data streaming</li>
+        </ul>
+        <div class="xcard__tags">
+          <span>AWS</span><span>EKS</span><span>Kong</span><span>Kuma</span><span>Kafka</span>
+        </div>
+      </article>
+
+      <article class="xcard">
+        <div class="xcard__year mono">2026 Q1</div>
+        <div class="xcard__badge xcard__badge--contract">Contract</div>
+        <h3>Senior Integration &amp; Platform Engineer</h3>
+        <div class="xcard__company">Prague Airport · CAODB</div>
+        <ul>
+          <li>Reverse‑engineered <strong>15yr</strong> undocumented Sybase + Perl + Java</li>
+          <li>First complete system docs in company history</li>
+          <li>10+ custom monitoring tasks across 150+ production tasks</li>
+          <li>Git‑versioned Markdown + Mermaid replacing Word/PDF specs</li>
+        </ul>
+        <div class="xcard__tags">
+          <span>Sybase ASE</span><span>Apache NiFi</span><span>Oracle EDW</span><span>Mermaid</span>
+        </div>
+      </article>
+
+      <article class="xcard">
+        <div class="xcard__year mono">2025</div>
+        <h3>MLOps &amp; SRE Engineer</h3>
+        <div class="xcard__company">Up Coop (UP Group) — Prague, CZ</div>
+        <ul>
+          <li><strong class="hi">99.8%</strong> uptime SLA with canary rollouts</li>
+          <li>P99 latency <strong class="hi">−70%</strong> via caching + batching</li>
+          <li>GitLab CI + Terraform + Helm — deploy time <strong class="hi">−60%</strong></li>
+          <li>Full observability: Prometheus · Grafana · ELK · Sentry</li>
+        </ul>
+        <div class="xcard__tags">
+          <span>EKS</span><span>GKE</span><span>MLflow</span><span>Terraform</span><span>Vault</span>
+        </div>
+      </article>
+
+      <article class="xcard">
+        <div class="xcard__year mono">2022 — 2025</div>
+        <h3>Senior Platform &amp; MLOps Engineer</h3>
+        <div class="xcard__company">Freelance · Upwork — 10+ clients</div>
+        <ul>
+          <li>Cloud‑native ML platforms serving <strong class="hi">5,000+ users</strong></li>
+          <li>12+ legacy banking apps containerised: <strong class="hi">40min → 8min</strong></li>
+          <li>40+ Terraform modules — provisioning <strong class="hi">4h → 45min</strong></li>
+          <li>Ansible CIS on 80+ servers — 95%+ compliance · PCI DSS</li>
+        </ul>
+        <div class="xcard__tags">
+          <span>Multi‑cloud</span><span>PCI DSS</span><span>ISO 27001</span><span>GitHub Actions</span>
+        </div>
+      </article>
+
+      <article class="xcard">
+        <div class="xcard__year mono">2020 — 2022</div>
+        <h3>Security &amp; Reliability Engineer</h3>
+        <div class="xcard__company">Motorola Solutions — Prague, CZ</div>
+        <ul>
+          <li>Automated security scanning &amp; compliance checks in CI/CD</li>
+          <li>ML service monitoring dashboards — proactive issue detection</li>
+        </ul>
+        <div class="xcard__tags">
+          <span>CI/CD security</span><span>Prometheus</span><span>Grafana</span>
+        </div>
+      </article>
+
+      <article class="xcard">
+        <div class="xcard__year mono">2019 — 2020</div>
+        <h3>Database Reliability Engineer</h3>
+        <div class="xcard__company">N‑iX — Krakow, PL</div>
+        <ul>
+          <li>Owned Oracle 11g/12c RAC clusters dev/staging/prod</li>
+          <li>RMAN automation; validated RTO/RPO via DR drills</li>
+          <li>Critical query latency reduced via execution plan &amp; index tuning</li>
+        </ul>
+        <div class="xcard__tags">
+          <span>Oracle RAC</span><span>RMAN</span><span>Data Guard</span>
+        </div>
+      </article>
+
+      <article class="xcard">
+        <div class="xcard__year mono">2015 — 2019</div>
+        <h3>Infrastructure Eng → Senior Sysadmin</h3>
+        <div class="xcard__company">PESA Bydgoszcz S.A. — Bydgoszcz, PL</div>
+        <ul>
+          <li>VMware vSphere: 20 ESXi hosts, 400+ VMs, 40% better consolidation</li>
+          <li>Pioneered Docker &amp; Kubernetes — first containerised dev environments</li>
+          <li>Azure AD hybrid identity — 30% faster onboarding</li>
+          <li>Ansible + CIS — 60% fewer audit findings</li>
+        </ul>
+        <div class="xcard__tags">
+          <span>VMware</span><span>Azure AD</span><span>Ansible</span><span>CIS</span>
+        </div>
+      </article>
+
+      <!-- Outro tile -->
+      <article class="xcard xcard--outro">
+        <div class="xcard__year mono">next</div>
+        <h3>Your production cluster?</h3>
+        <p class="xcard__outro-text">Open to EU / UK / Remote. FinTech, Banking, AI platforms, regulated enterprise.</p>
+        <a href="#contact" class="btn btn--primary btn--sm">Start a conversation →</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     WORK — case studies
+═══════════════════════════════════════════════════════ -->
+<section class="work" id="work">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow mono">// selected.work</span>
+      <h2 class="section-title" data-split>Three systems. Real outcomes. Audit‑ready.</h2>
+    </div>
+
+    <div class="work__grid">
+
+      <a class="work-card work-card--emerald" href="#">
+        <div class="work-card__meta">
+          <span class="mono">Case 01 / FinTech</span>
+          <span class="work-card__arrow">↗</span>
+        </div>
+        <h3 class="work-card__title">Kubernetes Security Platform</h3>
+        <p class="work-card__desc">Enterprise K8s hardening for a FinTech client — zero‑trust networking, PAM integration, automated compliance scanning on EKS.</p>
+        <div class="work-card__metrics">
+          <div><b>100%</b><span>Compliance score</span></div>
+          <div><b>0</b><span>Security incidents</span></div>
+          <div><b>50+</b><span>Nodes protected</span></div>
+        </div>
+        <div class="work-card__tags">
+          <span>EKS</span><span>CyberArk</span><span>Vault</span><span>Trivy</span><span>ISO 27001</span>
+        </div>
+      </a>
+
+      <a class="work-card work-card--blue" href="#">
+        <div class="work-card__meta">
+          <span class="mono">Case 02 / Enterprise</span>
+          <span class="work-card__arrow">↗</span>
+        </div>
+        <h3 class="work-card__title">Multi‑Cloud Migration Platform</h3>
+        <p class="work-card__desc">8 enterprise cloud migrations across EU clients. $800K+ budget, standardised IaC modules, zero‑downtime cutovers.</p>
+        <div class="work-card__metrics">
+          <div><b>$800K+</b><span>Budget managed</span></div>
+          <div><b>8</b><span>Migrations shipped</span></div>
+          <div><b>−40%</b><span>Cost reduction</span></div>
+        </div>
+        <div class="work-card__tags">
+          <span>AWS</span><span>Azure</span><span>Terraform</span><span>Terragrunt</span><span>ArgoCD</span>
+        </div>
+      </a>
+
+      <a class="work-card work-card--charcoal" href="#">
+        <div class="work-card__meta">
+          <span class="mono">Case 03 / Platform</span>
+          <span class="work-card__arrow">↗</span>
+        </div>
+        <h3 class="work-card__title">CI/CD &amp; GitOps Platform</h3>
+        <p class="work-card__desc">Comprehensive GitOps pipeline with canary deployments and automated rollback. Deploy time from 4h to 45m at 99.9% success.</p>
+        <div class="work-card__metrics">
+          <div><b>4h→45m</b><span>Deploy time</span></div>
+          <div><b>99.9%</b><span>Success rate</span></div>
+          <div><b>−70%</b><span>Faster releases</span></div>
+        </div>
+        <div class="work-card__tags">
+          <span>GitLab CI</span><span>ArgoCD</span><span>Canary</span><span>Prometheus</span><span>PagerDuty</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     STACK — skill bars
+═══════════════════════════════════════════════════════ -->
+<section class="stack" id="stack">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow mono">// tech.stack</span>
+      <h2 class="section-title">The kit I reach for.</h2>
+      <p class="section-lede">Real depth across six domains. Percentages are self‑assessed against production ownership.</p>
+    </div>
+
+    <div class="stack__grid">
+
+      <div class="stack-card" data-color="emerald">
+        <div class="stack-card__head">
+          <div class="stack-card__ico">☁</div>
+          <h3>Cloud &amp; Infrastructure</h3>
+        </div>
+        <div class="skill"><div class="skill__row"><span>AWS <small>EKS · EC2 · RDS · S3 · IAM · Lambda</small></span><b>95%</b></div><div class="bar"><i style="--p:95%"></i></div></div>
+        <div class="skill"><div class="skill__row"><span>Azure <small>AKS · AD</small></span><b>80%</b></div><div class="bar"><i style="--p:80%"></i></div></div>
+        <div class="skill"><div class="skill__row"><span>GCP <small>GKE</small></span><b>70%</b></div><div class="bar"><i style="--p:70%"></i></div></div>
+      </div>
+
+      <div class="stack-card" data-color="blue">
+        <div class="stack-card__head">
+          <div class="stack-card__ico">⎈</div>
+          <h3>Kubernetes &amp; Containers</h3>
+        </div>
+        <div class="skill"><div class="skill__row"><span>Kubernetes <small>EKS · RBAC · HPA/VPA</small></span><b>95%</b></div><div class="bar"><i style="--p:95%"></i></div></div>
+        <div class="skill"><div class="skill__row"><span>Helm + ArgoCD / Flux</span><b>90%</b></div><div class="bar"><i style="--p:90%"></i></div></div>
+        <div class="skill"><div class="skill__row"><span>Kong · Kuma Mesh</span><b>80%</b></div><div class="bar"><i style="--p:80%"></i></div></div>
+      </div>
+
+      <div class="stack-card" data-color="emerald">
+        <div class="stack-card__head">
+          <div class="stack-card__ico">{}</div>
+          <h3>Infrastructure as Code</h3>
+        </div>
+        <div class="skill"><div class="skill__row"><span>Terraform <small>40+ modules</small></span><b>95%</b></div><div class="bar"><i style="--p:95%"></i></div></div>
+        <div class="skill"><div class="skill__row"><span>Ansible / AWX</span><b>85%</b></div><div class="bar"><i style="--p:85%"></i></div></div>
+        <div class="skill"><div class="skill__row"><span>Terragrunt · CloudFormation</span><b>80%</b></div><div class="bar"><i style="--p:80%"></i></div></div>
+      </div>
+
+      <div class="stack-card" data-color="orange">
+        <div class="stack-card__head">
+          <div class="stack-card__ico">◆</div>
+          <h3>MLOps &amp; ML Platforms</h3>
+        </div>
+        <div class="skill"><div class="skill__row"><span>MLflow · KServe · Seldon</span><b>85%</b></div><div class="bar"><i style="--p:85%"></i></div></div>
+        <div class="skill"><div class="skill__row"><span>Ray · Kubeflow · Airflow</span><b>80%</b></div><div class="bar"><i style="--p:80%"></i></div></div>
+        <div class="skill"><div class="skill__row"><span>NVIDIA GPU Operator</span><b>75%</b></div><div class="bar"><i style="--p:75%"></i></div></div>
+      </div>
+
+      <div class="stack-card" data-color="red">
+        <div class="stack-card__head">
+          <div class="stack-card__ico">◎</div>
+          <h3>DevSecOps &amp; Compliance</h3>
+        </div>
+        <div class="skill"><div class="skill__row"><span>Vault · Trivy · SAST</span><b>90%</b></div><div class="bar"><i style="--p:90%"></i></div></div>
+        <div class="skill"><div class="skill__row"><span>CIS Benchmarks <small>95%+</small></span><b>90%</b></div><div class="bar"><i style="--p:90%"></i></div></div>
+        <div class="skill"><div class="skill__row"><span>ISO 27001 · PCI DSS</span><b>85%</b></div><div class="bar"><i style="--p:85%"></i></div></div>
+      </div>
+
+      <div class="stack-card" data-color="blue">
+        <div class="stack-card__head">
+          <div class="stack-card__ico">◔</div>
+          <h3>Observability &amp; SRE</h3>
+        </div>
+        <div class="skill"><div class="skill__row"><span>Prometheus + Grafana</span><b>95%</b></div><div class="bar"><i style="--p:95%"></i></div></div>
+        <div class="skill"><div class="skill__row"><span>ELK · Loki · Splunk</span><b>85%</b></div><div class="bar"><i style="--p:85%"></i></div></div>
+        <div class="skill"><div class="skill__row"><span>SLO/SLI · Error budgets</span><b>80%</b></div><div class="bar"><i style="--p:80%"></i></div></div>
+      </div>
+
+    </div>
+
+    <!-- Certifications strip -->
+    <div class="certs">
+      <div class="certs__label mono">credentials ·</div>
+      <div class="certs__list">
+        <span class="cert">CEH v12 <em>EC‑Council · 2024</em></span>
+        <span class="cert">DevSecOps <em>TryHackMe · 2025</em></span>
+        <span class="cert">Palo Alto Cybersecurity <em>2025</em></span>
+        <span class="cert">Google IT Automation — Python <em>2024</em></span>
+        <span class="cert">CompTIA Linux+ <em>active</em></span>
+        <span class="cert cert--wip">AWS SAA <em>in progress</em></span>
+        <span class="cert cert--wip">CKA <em>in progress</em></span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     PHILOSOPHY / quote
+═══════════════════════════════════════════════════════ -->
+<section class="quote">
+  <div class="container">
+    <div class="quote__mark">“</div>
+    <blockquote>
+      <span data-split-heavy>
+        <em>Good infrastructure</em> is the kind you stop noticing. The metric isn't how clever it looks in a diagram — it's whether a tired engineer at 3AM can figure out what went wrong.
+      </span>
+    </blockquote>
+    <div class="quote__attribution mono">— operating principle</div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     CONTACT — footer CTA
+═══════════════════════════════════════════════════════ -->
+<section class="contact" id="contact">
+  <div class="container contact__inner">
+
+    <div class="contact__mega">
+      <span class="eyebrow mono">// let's.build()</span>
+      <h2 class="contact__title">
+        <span data-line>Got an undocumented</span>
+        <span data-line>prod cluster that scares you?</span>
+      </h2>
+      <p class="contact__lede">I'm open to Senior Platform / Cloud / MLOps / DevSecOps / SRE roles across EU, UK and Remote. FinTech, Banking, AI, regulated enterprise preferred.</p>
+
+      <div class="contact__actions">
+        <a href="mailto:vla.maidaniuk@gmail.com" class="btn btn--primary btn--lg">
+          vla.maidaniuk@gmail.com
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="https://wa.me/420721579603" class="btn btn--ghost btn--lg" target="_blank">WhatsApp +420 721 579 603</a>
+      </div>
+    </div>
+
+    <div class="contact__grid">
+      <a href="https://linkedin.com/in/maidaniuk/" target="_blank" class="contact__link">
+        <span class="mono">01</span>
+        <div>
+          <b>LinkedIn</b>
+          <span>linkedin.com/in/maidaniuk</span>
+        </div>
+        <span class="contact__link-arrow">↗</span>
+      </a>
+      <a href="https://github.com/vlamay" target="_blank" class="contact__link">
+        <span class="mono">02</span>
+        <div>
+          <b>GitHub</b>
+          <span>github.com/vlamay</span>
+        </div>
+        <span class="contact__link-arrow">↗</span>
+      </a>
+      <a href="resume.html" target="_blank" class="contact__link">
+        <span class="mono">03</span>
+        <div>
+          <b>Resume (print‑ready)</b>
+          <span>/resume.pdf</span>
+        </div>
+        <span class="contact__link-arrow">↗</span>
+      </a>
+      <a href="https://wa.me/420721579603" target="_blank" class="contact__link">
+        <span class="mono">04</span>
+        <div>
+          <b>Direct</b>
+          <span>+420 721 579 603</span>
+        </div>
+        <span class="contact__link-arrow">↗</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Giant signature -->
+  <div class="signature" aria-hidden="true">MAIDANIUK</div>
+
+  <div class="foot">
+    <span class="mono">© 2026 · Vladyslav Maidaniuk · Prague</span>
+    <span class="mono">Ukrainian · Czech C1 · English B2 · Polish B2</span>
+    <span class="mono">status: <i class="foot__pulse"></i> shipping</span>
+  </div>
+</section>
+
+<script src="js/portfolio.js"></script>
+</body>
+</html>
